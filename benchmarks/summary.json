@@ -1,0 +1,24 @@
+{
+ "openlibrary": {
+  "window": "Jul 2023 - Jan 2024",
+  "total_instances": 22,
+  "hard_instances": 21,
+  "total_original_gold_files": 81,
+  "total_pr_gold_files": 119,
+  "total_new_files": 10,
+  "src_files": 80,
+  "distinct_base_commits": 22,
+  "docs_instances": 0
+ },
+ "qutebrowser": {
+  "window": "Nov 2020 - Apr 2021",
+  "total_instances": 26,
+  "hard_instances": 19,
+  "total_original_gold_files": 80,
+  "total_pr_gold_files": 119,
+  "total_new_files": 9,
+  "src_files": 70,
+  "distinct_base_commits": 26,
+  "docs_instances": 10
+ }
+}

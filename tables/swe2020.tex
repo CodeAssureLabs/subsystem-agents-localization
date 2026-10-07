@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files), for comparability with SWE-bench Pro reporting, including the matched adaptive and nudged runs used for RQ3. HAG: all-gold on the 16 issues with $|G_{SRC}|\geq 2$. $|\hat F|$: mean predicted set size. For the non-LLM rankers $K$ is tuned on this window (an optimistic upper bound).}
+\label{tab:swe2020}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & $n$ & P & R & F1 & AG & HAG & $|\hat F|$ \\
+\midrule
+Plain LLM (Haiku) & 5 & .142 & .330 & .199\,$\pm$\,.023 & 2.0 & 0.2 & 7.7 \\
+Plain LLM (Sonnet) & 3 & .446 & .492 & \textbf{.468\,$\pm$\,.028} & 4.0 & 2.0 & 3.7 \\
+Single-agent RLM (Haiku) & 3 & .101 & .370 & .151\,$\pm$\,.202 & 3.3 & 0.7 & 19.0 \\
+Single-agent RLM (Sonnet) & 5 & .283 & .419 & .337\,$\pm$\,.046 & 3.4 & 1.2 & 4.9 \\
+Coordinator only (Haiku) & 1 & .361 & .413 & .385 & 4.0 & 1.0 & 3.8 \\
+Domain agents, adaptive (Haiku) & 5 & .345 & .610 & .440\,$\pm$\,.025 & 6.4 & 3.6 & 5.9 \\
+Domain agents, adaptive, matched (Haiku) & 2 & .373 & .595 & \underline{.458\,$\pm$\,.157} & 6.5 & 3.5 & 5.3 \\
+Domain agents, nudged (Haiku) & 1 & .366 & .540 & .436 & 6.0 & 3.0 & 4.9 \\
+Codex 5.5 High (CLI) & 5 & .302 & .705 & .422\,$\pm$\,.028 & 9.2 & 6.2 & 7.8 \\
+BM25 (best $K$=8) & det. & .191 & .460 & .270 & 5 & -- & 8 \\
+Learning-to-rank (best $K$=2) & det. & .421 & .254 & .317 & 3 & -- & 2 \\
+\bottomrule
+\end{tabular}}
+\end{table}

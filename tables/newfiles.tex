@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\caption{Existing-file versus new-file localization. Existing-file F1: micro-F1 of the predictions that exist at the base commit against $G_{PR}^{exist}$. New recall: share of the 185 files created by the resolving PRs whose exact path was predicted (all windows). Phantom: mean share of predicted paths that neither exist at the base commit nor are created by the PR.}
+\label{tab:newfiles}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+& \multicolumn{5}{c}{Existing-file F1} & New & \\
+\cmidrule(lr){2-6}
+Method & Ans.\ 2020 & Ans.\ 2025 & Ans.\ 2026 & OpenLib. & Qutebr. & recall & Phantom \\
+\midrule
+Plain LLM (Haiku) & .324 & .273 & .297 & .161 & .165 & 1.9\% & 62.8\% \\
+Plain LLM (Sonnet) & .368 & .282 & .374 & .264 & .425 & 1.8\% & 36.1\% \\
+Single-agent RLM (Haiku) & .145 & .144 & .255 & .132 & .167 & 0.9\% & 11.9\% \\
+Single-agent RLM (Sonnet) & .429 & .479 & .515 & .584 & .645 & 3.9\% & 18.8\% \\
+Coordinator only (Haiku) & .383 & .520 & .490 & .613 & .720 & 2.2\% & 8.2\% \\
+Domain agents, adaptive (Haiku) & .503 & .472 & .589 & .632 & .720 & 2.7\% & 9.6\% \\
+Codex 5.5 High (CLI) & .607 & .572 & .669 & .707 & .749 & 8.5\% & 14.4\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

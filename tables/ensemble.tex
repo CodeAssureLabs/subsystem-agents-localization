@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Spending more inference without exploration: micro-F1 ($G_{SRC}$) of a single run / majority vote over the 3--5 independent runs of each baseline (a file is kept if more than half of the runs predict it). Union voting was lower than majority voting in every cell and is in the replication package.}
+\label{tab:ensemble}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Method & Ans.\ 2020 & Ans.\ 2025 & Ans.\ 2026 & OpenLib. & Qutebr. \\
+\midrule
+Plain LLM (Haiku) & .196 / .270 & .198 / .274 & .233 / .315 & .078 / .137 & .075 / .113 \\
+Plain LLM (Sonnet) & .457 / .504 & .237 / .270 & .368 / .400 & .192 / .225 & .299 / .367 \\
+RLM (Haiku) & .149 / .326 & .147 / .322 & .233 / .301 & .096 / .195 & .108 / .207 \\
+\midrule
+Domain agents (Haiku), single run & .433 & .405 & .548 & .472 & .562 \\
+\bottomrule
+\end{tabular}
+\end{table*}

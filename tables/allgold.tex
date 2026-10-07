@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{All-gold issues under $G_{SRC}$: mean number of issues (over runs) whose complete source gold set is predicted. Issues per window: 19/19/19/22/26; Hard: all-gold on the 83 issues with $|G_{SRC}|\geq 2$.}
+\label{tab:allgold}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & Ans.\ 2020 & Ans.\ 2025 & Ans.\ 2026 & OpenLib. & Qutebr. & Total & Hard \\
+\midrule
+Plain LLM (Haiku) & 2.0 & 3.3 & 6.0 & 1.0 & 1.0 & 13.3 & 5.5 \\
+Plain LLM (Sonnet) & 3.0 & 3.3 & 6.0 & 1.0 & 5.0 & 18.3 & 9.7 \\
+Single-agent RLM (Haiku) & 2.7 & 1.7 & 4.7 & 4.7 & 2.7 & 16.3 & 8.0 \\
+Single-agent RLM (Sonnet) & 3.4 & 5.7 & 11.3 & 5.7 & 9.7 & 35.7 & 17.9 \\
+Coordinator only (Haiku) & 4.0 & 5.0 & 13.0 & 8.0 & 14.7 & 44.7 & 25.3 \\
+Domain agents, adaptive (Haiku) & 6.0 & 6.0 & 12.3 & 8.3 & 14.0 & 46.7 & 27.5 \\
+Codex 5.5 High (CLI) & 9.2 & 7.3 & 13.3 & 8.3 & 17.3 & 55.5 & 34.2 \\
+\bottomrule
+\end{tabular}}
+\end{table}

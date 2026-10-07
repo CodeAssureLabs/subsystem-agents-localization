@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Non-LLM baselines under $G_{SRC}$, each indexed at the issue's own base commit. F1: micro-F1 at the cutoff $K$ selected on other windows (the two other Ansible windows for Ansible; all Ansible windows for the added repositories, whose learning-to-rank model is also trained on Ansible only). MAP: mean average precision of the full ranking. Best F1 per window in bold.}
+\label{tab:ir}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Ans.\ 2020} & \multicolumn{2}{c}{Ans.\ 2025} & \multicolumn{2}{c}{Ans.\ 2026} & \multicolumn{2}{c}{OpenLib.} & \multicolumn{2}{c}{Qutebr.} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+Ranker & F1 & MAP & F1 & MAP & F1 & MAP & F1 & MAP & F1 & MAP \\
+\midrule
+BM25 & \underline{.260} & 0.28 & .165 & 0.20 & \textbf{.286} & 0.53 & \underline{.397} & 0.47 & \textbf{.405} & 0.45 \\
+VSM (TF-IDF) & .165 & 0.17 & .148 & 0.12 & .112 & 0.15 & .281 & 0.38 & .237 & 0.37 \\
+rVSM (BugLocator) & .193 & 0.22 & \underline{.187} & 0.18 & .177 & 0.25 & .344 & 0.40 & .245 & 0.38 \\
+BM25, path only & .051 & 0.10 & .025 & 0.02 & .093 & 0.11 & .147 & 0.19 & .100 & 0.14 \\
+Learning-to-rank & \textbf{.261} & 0.38 & \textbf{.258} & 0.33 & \underline{.198} & 0.34 & \textbf{.411} & 0.52 & \underline{.400} & 0.47 \\
+\bottomrule
+\end{tabular}
+\end{table*}

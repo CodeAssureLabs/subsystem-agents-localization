@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Checkout-policy sensitivity (Ansible 2020, $G_{SWE}$). Restricting to the 13 issues whose gold files all exist at the earliest commit \texttt{01e7915} (used by the 2020 Sonnet RLM runs) leaves the ranking of methods unchanged.}
+\label{tab:sensitivity}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Method & All 19 & 13 unaffected & $\Delta$ \\
+\midrule
+Plain LLM (Haiku) & .199 & .174 & -0.025 \\
+Plain LLM (Sonnet) & .468 & .458 & -0.009 \\
+Single-agent RLM (Haiku) & .151 & .124 & -0.027 \\
+Single-agent RLM (Sonnet) & .337 & .324 & -0.013 \\
+Coordinator only (Haiku) & .385 & .324 & -0.061 \\
+Domain agents, adaptive (Haiku) & .440 & .423 & -0.017 \\
+Codex 5.5 High (CLI) & .422 & .436 & +0.014 \\
+\bottomrule
+\end{tabular}}
+\end{table}

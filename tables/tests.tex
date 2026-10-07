@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\caption{Paired comparisons on per-issue F1 (each issue's F1 averaged over runs), pooled over all 105 issues of the three repositories. $\Delta$: mean difference (first minus second). W/L: issues on which the first method is better/worse. $p_{Holm}$: two-sided Wilcoxon signed-rank test, Holm-adjusted over the nine planned comparisons. $r$: matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), same registry and timeout, unadjusted.}
+\label{tab:tests}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+& \multicolumn{4}{c}{$G_{SRC}$} & \multicolumn{3}{c}{$G_{PR}^{exist}$} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-8}
+Comparison & $\Delta$ & W/L & $p_{Holm}$ & $r$ & $\Delta$ & $p_{Holm}$ & $r$ \\
+\midrule
+Domain agents vs plain LLM (Haiku) & +0.317 & 92/9 & $<$.001 & +0.96 & +0.405 & $<$.001 & +0.96 \\
+Domain agents vs RLM (Haiku) & +0.271 & 91/12 & $<$.001 & +0.90 & +0.348 & $<$.001 & +0.96 \\
+Coordinator only vs RLM (Haiku) & +0.218 & 77/21 & $<$.001 & +0.72 & +0.304 & $<$.001 & +0.83 \\
+Domain agents vs coordinator only & +0.053 & 54/41 & .049 & +0.28 & +0.044 & .110 & +0.19 \\
+RLM vs plain LLM (Haiku) & +0.046 & 53/35 & .049 & +0.29 & +0.057 & .022 & +0.34 \\
+RLM vs plain LLM (Sonnet) & +0.123 & 66/34 & $<$.001 & +0.47 & +0.225 & $<$.001 & +0.70 \\
+Domain agents (H) vs plain LLM (S) & +0.169 & 75/28 & $<$.001 & +0.56 & +0.284 & $<$.001 & +0.76 \\
+Domain agents (H) vs RLM (S) & +0.046 & 60/40 & .035 & +0.30 & +0.059 & .022 & +0.32 \\
+Domain agents (H) vs Codex & +0.013 & 57/39 & .295 & +0.12 & -0.047 & .033 & -0.28 \\
+\midrule
+Adaptive vs nudged$^\dagger$ & -0.005 & 6/8 & .778 & -0.09 & +0.029 & .691 & +0.12 \\
+\bottomrule
+\end{tabular}
+\end{table*}
