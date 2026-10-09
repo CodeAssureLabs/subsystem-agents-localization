@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Paired comparisons on per-issue F1 (each issue's F1 averaged over runs), pooled over all 105 issues of the three repositories. $\Delta$: mean difference (first minus second). W/L: issues on which the first method is better/worse. $p_{Holm}$: two-sided Wilcoxon signed-rank test, Holm-adjusted over the nine planned comparisons. $r$: matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), same registry and timeout, unadjusted.}
+\caption{Paired comparisons on per-issue F1, with each issue's F1 averaged over runs, pooled over all 105 issues of the three repositories. $\Delta$ is the mean difference (first minus second method), and W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test, Holm-adjusted over the thirteen planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), with the same registry and timeout, unadjusted.}
 \label{tab:tests}
 \small
 \begin{tabular}{lrrrrrrr}
@@ -9,17 +9,21 @@
 \cmidrule(lr){2-5}\cmidrule(lr){6-8}
 Comparison & $\Delta$ & W/L & $p_{Holm}$ & $r$ & $\Delta$ & $p_{Holm}$ & $r$ \\
 \midrule
-Domain agents vs plain LLM (Haiku) & +0.317 & 92/9 & $<$.001 & +0.96 & +0.405 & $<$.001 & +0.96 \\
-Domain agents vs RLM (Haiku) & +0.271 & 91/12 & $<$.001 & +0.90 & +0.348 & $<$.001 & +0.96 \\
-Coordinator only vs RLM (Haiku) & +0.218 & 77/21 & $<$.001 & +0.72 & +0.304 & $<$.001 & +0.83 \\
-Domain agents vs coordinator only & +0.053 & 54/41 & .049 & +0.28 & +0.044 & .110 & +0.19 \\
-RLM vs plain LLM (Haiku) & +0.046 & 53/35 & .049 & +0.29 & +0.057 & .022 & +0.34 \\
-RLM vs plain LLM (Sonnet) & +0.123 & 66/34 & $<$.001 & +0.47 & +0.225 & $<$.001 & +0.70 \\
-Domain agents (H) vs plain LLM (S) & +0.169 & 75/28 & $<$.001 & +0.56 & +0.284 & $<$.001 & +0.76 \\
-Domain agents (H) vs RLM (S) & +0.046 & 60/40 & .035 & +0.30 & +0.059 & .022 & +0.32 \\
-Domain agents (H) vs Codex & +0.013 & 57/39 & .295 & +0.12 & -0.047 & .033 & -0.28 \\
+Domain agents vs plain LLM (Haiku) & +0.440 & 91/11 & $<$.001 & +0.95 & +0.405 & $<$.001 & +0.96 \\
+Domain agents vs RLM (Haiku) & +0.376 & 91/11 & $<$.001 & +0.94 & +0.348 & $<$.001 & +0.96 \\
+Coordinator only vs RLM (Haiku) & +0.332 & 85/15 & $<$.001 & +0.85 & +0.308 & $<$.001 & +0.89 \\
+Domain agents vs coordinator only & +0.044 & 46/34 & .069 & +0.23 & +0.040 & .039 & +0.24 \\
+RLM vs plain LLM (Haiku) & +0.064 & 51/34 & .052 & +0.29 & +0.057 & .022 & +0.34 \\
+RLM vs plain LLM (Sonnet) & +0.227 & 67/26 & $<$.001 & +0.66 & +0.225 & $<$.001 & +0.70 \\
+Domain agents (H) vs plain LLM (S) & +0.286 & 75/24 & $<$.001 & +0.74 & +0.284 & $<$.001 & +0.76 \\
+Domain agents (H) vs RLM (S) & +0.059 & 56/33 & .052 & +0.29 & +0.059 & .022 & +0.32 \\
+Domain agents (H) vs Codex & -0.101 & 18/62 & $<$.001 & -0.63 & -0.047 & .033 & -0.28 \\
+Domain agents vs Reformulate-Retrieve-Localize & +0.291 & 86/19 & $<$.001 & +0.86 & +0.280 & $<$.001 & +0.89 \\
+Domain agents vs Agentless & +0.239 & 86/16 & $<$.001 & +0.77 & +0.244 & $<$.001 & +0.81 \\
+Domain agents vs CoSIL & +0.281 & 90/14 & $<$.001 & +0.88 & +0.264 & $<$.001 & +0.86 \\
+Domain agents vs LocAgent & +0.089 & 60/41 & .011 & +0.34 & +0.128 & $<$.001 & +0.55 \\
 \midrule
-Adaptive vs nudged$^\dagger$ & -0.005 & 6/8 & .778 & -0.09 & +0.029 & .691 & +0.12 \\
+Adaptive vs nudged$^\dagger$ & +0.012 & 7/4 & .790 & +0.09 & +0.029 & .691 & +0.12 \\
 \bottomrule
 \end{tabular}
 \end{table*}

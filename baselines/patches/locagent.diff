@@ -1,0 +1,220 @@
+diff --git a/auto_search_main.py b/auto_search_main.py
+index b49e87c..8711e4e 100644
+--- a/auto_search_main.py
++++ b/auto_search_main.py
+@@ -40,6 +40,33 @@ from evaluation.eval_metric import filtered_instances
+ 
+ 
+ from time import sleep
++import copy as _copy
++
++
++def _cache_messages(messages, model_name):
++    """Anthropic prompt caching (added for the replication study; cost only, outputs unchanged).
++
++    Marks the system prompt and the last message as cache breakpoints so each turn reads the
++    previous conversation prefix from cache.
++    """
++    if "claude" not in model_name:
++        return messages
++    msgs = _copy.deepcopy(messages)
++
++    def mark(m):
++        content = m.get("content")
++        if isinstance(content, str) and content:
++            m["content"] = [{"type": "text", "text": content, "cache_control": {"type": "ephemeral"}}]
++        elif isinstance(content, list) and content and isinstance(content[-1], dict):
++            content[-1] = {**content[-1], "cache_control": {"type": "ephemeral"}}
++        else:
++            m["cache_control"] = {"type": "ephemeral"}
++
++    if msgs and msgs[0].get("role") == "system":
++        mark(msgs[0])
++    if msgs:
++        mark(msgs[-1])
++    return msgs
+ from concurrent.futures import ThreadPoolExecutor, TimeoutError
+ import torch.multiprocessing as mp
+ from util.runtime.fn_call_converter import (
+@@ -135,11 +162,15 @@ def auto_search_process(result_queue,
+         traj_msgs = messages.copy()
+         prompt_tokens = 0
+         completion_tokens = 0
++        cache_read_tokens = 0
++        cache_creation_tokens = 0
+     else:
+         # continue from last traj
+         traj_msgs = traj_data['messages']
+         prompt_tokens = traj_data['usage']['prompt_tokens']
+         completion_tokens = traj_data['usage']['completion_tokens']
++        cache_read_tokens = traj_data['usage'].get('cache_read_input_tokens', 0)
++        cache_creation_tokens = traj_data['usage'].get('cache_creation_input_tokens', 0)
+         
+     cur_interation_num = 0
+     last_message = None
+@@ -170,7 +201,7 @@ def auto_search_process(result_queue,
+                 response = litellm.completion(
+                     model=model_name,
+                     tools=tools,
+-                    messages=messages,
++                    messages=_cache_messages(messages, model_name),
+                     temperature=temp,
+                     # stop=['</execute_ipython>'], #</finish>',
+                 )
+@@ -225,6 +256,8 @@ def auto_search_process(result_queue,
+         traj_msgs.append(convert_to_json(raw_response.choices[0].message))
+         prompt_tokens += response.usage.prompt_tokens
+         completion_tokens += response.usage.completion_tokens  
++        cache_read_tokens += getattr(response.usage, 'cache_read_input_tokens', 0) or 0
++        cache_creation_tokens += getattr(response.usage, 'cache_creation_input_tokens', 0) or 0
+             
+         actions = parser.parse(response)
+         if not isinstance(actions, List):
+@@ -248,7 +281,7 @@ def auto_search_process(result_queue,
+                 function_response = execute_ipython(ipython_code)
+                 try:
+                     function_response = eval(function_response)
+-                except SyntaxError:
++                except (SyntaxError, NameError):  # plain-text tool output (NameError added: e.g. text starting with a path)
+                     function_response = function_response
+                 if not isinstance(function_response, str):
+                     function_response = str(function_response)
+@@ -286,7 +319,9 @@ def auto_search_process(result_queue,
+         'tools': tools,
+         'usage': {
+             'prompt_tokens': prompt_tokens,
+-            'completion_tokens': completion_tokens
++            'completion_tokens': completion_tokens,
++            'cache_read_input_tokens': cache_read_tokens,
++            'cache_creation_input_tokens': cache_creation_tokens,
+         }
+     }
+     # return final_output, messages, traj_data
+@@ -483,7 +518,7 @@ def run_localize(rank, args, bug_queue, log_queue, output_file_lock, traj_file_l
+ 
+ 
+ def localize(args):
+-    bench_data = load_dataset(args.dataset, split=args.split)
++    bench_data = (load_dataset("json", data_files=args.dataset, split="train") if args.dataset.endswith(".jsonl") else load_dataset(args.dataset, split=args.split))  # local benchmark support
+     bench_tests = filter_dataset(bench_data, 'instance_id', args.used_list)
+     if args.eval_n_limit:
+         eval_n_limit = min(args.eval_n_limit, len(bench_tests))
+@@ -598,7 +633,7 @@ def main():
+         choices=["gpt-4o", 
+                  "azure/gpt-4o", "openai/gpt-4o-2024-05-13",
+                  "deepseek/deepseek-chat", "deepseek-ai/DeepSeek-R1",
+-                 "litellm_proxy/claude-3-5-sonnet-20241022", "litellm_proxy/gpt-4o-2024-05-13", "litellm_proxy/o3-mini-2025-01-31",
++                 "litellm_proxy/claude-3-5-sonnet-20241022", "anthropic/claude-haiku-4-5", "anthropic/claude-sonnet-4-6", "litellm_proxy/gpt-4o-2024-05-13", "litellm_proxy/o3-mini-2025-01-31",
+                  # fine-tuned model
+                  "openai/qwen-7B", "openai/qwen-7B-128k", "openai/ft-qwen-7B", "openai/ft-qwen-7B-128k",
+                  "openai/qwen-32B", "openai/qwen-32B-128k", "openai/ft-qwen-32B", "openai/ft-qwen-32B-128k",
+diff --git a/plugins/location_tools/repo_ops/repo_ops.py b/plugins/location_tools/repo_ops/repo_ops.py
+index 0629068..f5e885b 100644
+--- a/plugins/location_tools/repo_ops/repo_ops.py
++++ b/plugins/location_tools/repo_ops/repo_ops.py
+@@ -539,6 +539,22 @@ def search_code_snippets(
+         result = search_code_snippets(search_terms=["MyClass"], file_path_or_pattern="src/**/*.py")
+     """
+     
++    # Normalize array arguments that the model sent as a (JSON-encoded) string, which would
++    # otherwise be iterated character by character.
++    import json as _json
++    if isinstance(search_terms, str):
++        try:
++            search_terms = _json.loads(search_terms)
++        except ValueError:
++            search_terms = [search_terms]
++        if isinstance(search_terms, str):
++            search_terms = [search_terms]
++    if isinstance(line_nums, str):
++        try:
++            line_nums = _json.loads(line_nums)
++        except ValueError:
++            line_nums = None
++
+     files, _, _ = get_current_repo_modules()
+     all_file_paths = [file['name'] for file in files]
+ 
+diff --git a/util/cost_analysis.py b/util/cost_analysis.py
+index bc95b00..da1a455 100644
+--- a/util/cost_analysis.py
++++ b/util/cost_analysis.py
+@@ -5,6 +5,8 @@ logger = logging.getLogger(__name__)
+ 
+ # The cost per token for each model input.
+ MODEL_COST_PER_INPUT = {
++    "anthropic/claude-haiku-4-5": 0.000001,
++    "anthropic/claude-sonnet-4-6": 0.000003,
+     "claude-instant-1": 0.00000163,
+     "claude-2": 0.00001102,
+     "claude-3-opus-20240229": 0.000015,
+@@ -40,6 +42,8 @@ MODEL_COST_PER_INPUT = {
+ 
+ # The cost per token for each model output.
+ MODEL_COST_PER_OUTPUT = {
++    "anthropic/claude-haiku-4-5": 0.000005,
++    "anthropic/claude-sonnet-4-6": 0.000015,
+     "claude-instant-1": 0.00000551,
+     "claude-2": 0.00003268,
+     "claude-3-opus-20240229": 0.000075,
+diff --git a/util/runtime/function_calling.py b/util/runtime/function_calling.py
+index 1803bac..4ba60e7 100644
+--- a/util/runtime/function_calling.py
++++ b/util/runtime/function_calling.py
+@@ -61,6 +61,7 @@ def response_to_actions(response: ModelResponse) -> list[Action]:
+                 raise RuntimeError(
+                     f'Failed to parse tool call arguments: {tool_call.function.arguments}'
+                 ) from e
++            arguments = _repair_tool_arguments(arguments)
+             if tool_call.function.name == 'finish':
+                 if list(arguments.values()):
+                     action = FinishAction(thought=list(arguments.values())[0])
+@@ -114,3 +115,48 @@ def get_tools(
+     return tools
+ 
+ 
++import re as _re
++
++_LEAKED_PARAM = _re.compile(r'<parameter name="(\w+)">(.*?)(?=\s*(?:</parameter>|<parameter name=|$))', _re.S)
++
++
++def _repair_tool_arguments(arguments):
++    """Repair malformed tool arguments (added for the replication study).
++
++    Some models occasionally (a) send an array argument as a JSON-encoded string, or
++    (b) leak further arguments as `<parameter name="x">value` markup inside a string value.
++    Well-formed arguments are returned unchanged.
++    """
++    if not isinstance(arguments, dict):
++        return arguments
++    fixed = dict(arguments)
++    for key, value in arguments.items():
++        if not isinstance(value, str):
++            continue
++        if '<parameter name=' in value:
++            head, _, _ = value.partition('<parameter name=')
++            for name, val in _LEAKED_PARAM.findall(value):
++                val = val.strip().strip(',').strip()
++                if name not in arguments:
++                    try:
++                        fixed[name] = json.loads(val)
++                    except ValueError:
++                        fixed[name] = val
++            value = head.strip().rstrip(',').strip()
++            fixed[key] = value
++        if value.startswith('[') or value.startswith('{'):
++            value = value.rstrip().rstrip(',').rstrip()
++            try:
++                fixed[key] = json.loads(value)
++            except ValueError:
++                # Further arguments leaked as JSON members: '["x"],\n"direction": "down"'
++                try:
++                    merged = json.loads('{"%s": %s}' % (key, value))
++                except ValueError:
++                    merged = None
++                if isinstance(merged, dict):
++                    fixed[key] = merged[key]
++                    for name, val in merged.items():
++                        if name not in arguments:
++                            fixed[name] = val
++    return fixed

@@ -9,12 +9,11 @@ Each G_PR file is further tagged as EXISTING (present at the instance's base
 commit) or NEW (created by the PR).
 """
 import json
+import os
 import re
 import subprocess
 from functools import lru_cache
 from pathlib import Path
-
-import os
 
 PKG = Path(__file__).resolve().parents[1]
 HERE = PKG / "data"
@@ -124,4 +123,8 @@ METHOD_LABELS = {
     "ds_adaptive_t300": "Domain agents, adaptive, matched (Haiku)",
     "ds_nudged": "Domain agents, nudged (Haiku)",
     "codex": "Codex 5.5 High (CLI)",
+    "rrl": "Reformulate-Retrieve-Localize",
+    "agentless": "Agentless (file stage)",
+    "cosil": "CoSIL (file stage)",
+    "locagent": "LocAgent",
 }

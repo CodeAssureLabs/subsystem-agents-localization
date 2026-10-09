@@ -52,6 +52,84 @@ for w in ("openlibrary", "qutebrowser"):
             found.setdefault(method, []).append(str(f.relative_to(ROOT)))
         if found:
             RUNS[w] = found
+# Later Ansible runs with the same protocol as the added repositories: new_runs/ansible_<year>/<method>_<n>.json
+# (coordinator-only runs 2 and 3, 600 s timeout).
+for y in ("2020", "2025", "2026"):
+    for f in sorted((NEW_RUNS / f"ansible_{y}").glob("*.json")):
+        RUNS[y].setdefault(f.stem.rsplit("_", 1)[0], []).append(str(f.relative_to(ROOT)))
+
+
+# Published localization baselines (revision/baselines/results/<tool>/run<i>/), all windows.
+BASELINES = ROOT / "baselines"
+HAIKU = {"in": 1.0, "out": 5.0, "cache_write": 1.25, "cache_read": 0.10}  # $ per million tokens
+
+
+def _baseline_records(tool, run_dir):
+    """Return {instance_id: {"pred": [...], "tokens": int, "cost_usd": float}} for one baseline run."""
+    recs = {}
+    if tool in ("agentless", "cosil"):
+        for line in open(run_dir / "loc_outputs.jsonl"):
+            r = json.loads(line)
+            u = (r.get("file_traj") or {}).get("usage", {})
+            pin, pout = u.get("prompt_tokens", 0), u.get("completion_tokens", 0)
+            recs[r["instance_id"]] = {"pred": r["found_files"], "tokens": pin + pout,
+                                      "cost_usd": (pin * HAIKU["in"] + pout * HAIKU["out"]) / 1e6}
+    elif tool == "rrl":
+        for line in open(run_dir / "loc_outputs.jsonl"):
+            r = json.loads(line)
+            u = r["usage"]
+            cw, cr = u.get("cache_creation_input_tokens", 0), u.get("cache_read_input_tokens", 0)
+            recs[r["instance_id"]] = {"pred": r["found_files"],
+                                      "tokens": u["input_tokens"] + cw + cr + u["output_tokens"],
+                                      "cost_usd": (u["input_tokens"] * HAIKU["in"] + cw * HAIKU["cache_write"]
+                                                   + cr * HAIKU["cache_read"] + u["output_tokens"] * HAIKU["out"]) / 1e6}
+    elif tool == "locagent":
+        merged = {}
+        for line in open(run_dir / "merged_loc_outputs_mrr.jsonl"):
+            r = json.loads(line)
+            merged[r["instance_id"]] = r["found_files"]
+        for line in open(run_dir / "loc_trajs.jsonl"):
+            r = json.loads(line)
+            us = [t["usage"] for t in r["loc_trajs"]["trajs"]]
+            pin = sum(u["prompt_tokens"] for u in us)        # includes cached tokens
+            pout = sum(u["completion_tokens"] for u in us)
+            cr = sum(u.get("cache_read_input_tokens", 0) for u in us)
+            cw = sum(u.get("cache_creation_input_tokens", 0) for u in us)
+            unc = max(pin - cr - cw, 0)
+            recs[r["instance_id"]] = {"pred": merged.get(r["instance_id"], []), "tokens": pin + pout,
+                                      "cost_usd": (unc * HAIKU["in"] + cw * HAIKU["cache_write"] + cr * HAIKU["cache_read"]
+                                                   + pout * HAIKU["out"]) / 1e6}
+    return recs
+
+
+def add_baselines(out):
+    window_of = {iid: w for w, insts in out["windows"].items() for iid in insts}
+    for tool in ("agentless", "cosil", "rrl", "locagent"):
+        tool_dir = BASELINES / "results" / tool
+        for run_dir in sorted(tool_dir.glob("run*")) if tool_dir.is_dir() else []:
+            try:
+                recs = _baseline_records(tool, run_dir)
+            except FileNotFoundError:
+                continue
+            by_window = {}
+            for iid, rec in recs.items():
+                w = window_of.get(iid)
+                if w:
+                    by_window.setdefault(w, {})[iid] = rec
+            for w, insts in by_window.items():
+                instances = {iid: {"pred": sorted({norm(p) for p in rec["pred"] if isinstance(p, str)}),
+                                   "tokens": rec["tokens"], "cost_usd": rec["cost_usd"], "input_tokens": 0,
+                                   "output_tokens": 0, "root_iterations": None, "repl_calls": None,
+                                   "subagent_calls": None, "commit": None, "status": None} for iid, rec in insts.items()}
+                # Issues the tool never completed (e.g. a hung call that was capped) count as failures.
+                for iid in out["windows"][w]:
+                    if iid not in instances:
+                        instances[iid] = {"pred": [], "tokens": 0, "cost_usd": 0.0, "input_tokens": 0,
+                                          "output_tokens": 0, "root_iterations": None, "repl_calls": None,
+                                          "subagent_calls": None, "commit": None, "status": "failed"}
+                out["runs"].setdefault(w, {}).setdefault(tool, []).append({
+                    "file": str(run_dir.relative_to(ROOT)), "config": {"model": "claude-haiku-4-5"}, "init_tokens": 0,
+                    "query_tokens": sum(v["tokens"] for v in instances.values()), "instances": instances})
 
 
 def norm(p):
@@ -116,6 +194,7 @@ def main():
                     "instances": inst,
                 })
                 print(window, method, f, len(inst))
+    add_baselines(out)
     json.dump(out, open(OUT, "w"), indent=1)
     print("wrote", OUT)
 

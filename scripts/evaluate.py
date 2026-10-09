@@ -18,7 +18,7 @@ from collections import defaultdict
 import numpy as np
 from scipy import stats
 
-from common import HERE, load_gold, load_runs, micro, inst_f1, prf, score_instance, tree
+from common import HERE, is_source, load_gold, load_runs, micro, inst_f1, prf, score_instance, tree
 
 B = 5000
 rng = np.random.default_rng(7)
@@ -27,15 +27,21 @@ gold = load_gold()
 # Every window that has recorded runs (Ansible windows first, then added repositories).
 WINDOWS = [w for w in ["2020", "2025", "2026", "openlibrary", "qutebrowser"] if w in runs]
 METHODS = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive",
-           "ds_adaptive_t300", "ds_nudged", "codex"]
+           "ds_adaptive_t300", "ds_nudged", "codex", "rrl", "agentless", "cosil", "locagent"]
 
 
 def gold_map(window, kind):
     return {iid: (g[kind] if g[kind] is not None else set()) for iid, g in gold[window].items()}
 
 
-def run_preds(run):
-    return {iid: set(v["pred"]) for iid, v in run["instances"].items()}
+# Source-file localization (G_SRC, G_SWE) excludes tests, changelogs and build metadata, so
+# predictions outside that scope are removed before scoring, for every method alike.
+SOURCE_KINDS = ("SRC", "SWE")
+
+
+def run_preds(run, kind=None):
+    keep = is_source if kind in SOURCE_KINDS else (lambda f: True)
+    return {iid: {f for f in v["pred"] if keep(f)} for iid, v in run["instances"].items()}
 
 
 def tci(xs):
@@ -65,14 +71,14 @@ def evaluate(window, method, kind, instances=None):
     rs = runs[window].get(method, [])
     if not rs:
         return None
-    per_run = [micro(run_preds(r), gm) for r in rs]
+    per_run = [micro(run_preds(r, kind), gm) for r in rs]
     cells = []
     for iid, g in gm.items():
         if not g:
             continue
-        cells.append([score_instance(run_preds(r).get(iid, set()), g) for r in rs])
+        cells.append([score_instance(run_preds(r, kind).get(iid, set()), g) for r in rs])
     f1s = [x["F1"] for x in per_run]
-    hard = [sum(1 for iid, g in gm.items() if g and gold[window][iid]["hard"] and set(g) <= run_preds(r).get(iid, set())) for r in rs]
+    hard = [sum(1 for iid, g in gm.items() if g and gold[window][iid]["hard"] and set(g) <= run_preds(r, kind).get(iid, set())) for r in rs]
     lo, hi = bootstrap_micro(cells)
     tok = [v["tokens"] for r in rs for v in r["instances"].values()]
     return {
@@ -91,6 +97,8 @@ def evaluate(window, method, kind, instances=None):
         "tokens_per_inst_median": statistics.median(tok),
         "tokens_per_inst_mean": statistics.mean(tok),
         "init_tokens": statistics.mean(r["init_tokens"] for r in rs),
+        "cost_per_inst": (statistics.mean(v["cost_usd"] for r in rs for v in r["instances"].values())
+                          if all("cost_usd" in v for r in rs for v in r["instances"].values()) else None),
     }
 
 
@@ -103,7 +111,7 @@ def pooled(method, kind, windows=("2020", "2025", "2026")):
             return None
         for iid, g in gold_map(w, kind).items():
             if g:
-                cells.append([score_instance(run_preds(r).get(iid, set()), g) for r in rs])
+                cells.append([score_instance(run_preds(r, kind).get(iid, set()), g) for r in rs])
     # Runs per window differ (5 in 2020, 3 later), so TP/FP/FN are averaged over
     # runs within each instance before pooling; every instance then has equal weight.
     norm = [[(c[0] / len(cell), c[1] / len(cell), c[2] / len(cell)) for c in cell] for cell in cells]
@@ -118,7 +126,7 @@ def pooled(method, kind, windows=("2020", "2025", "2026")):
 def per_instance_f1(window, method, kind):
     gm = gold_map(window, kind)
     rs = runs[window][method]
-    return {iid: statistics.mean(inst_f1(run_preds(r).get(iid, set()), g) for r in rs) for iid, g in gm.items() if g}
+    return {iid: statistics.mean(inst_f1(run_preds(r, kind).get(iid, set()), g) for r in rs) for iid, g in gm.items() if g}
 
 
 def paired_test(a, b, kind, windows=("2020", "2025", "2026")):
@@ -225,6 +233,10 @@ def main():
         ("ds_adaptive", "plain_sonnet", "domain agents (Haiku) vs plain LLM (Sonnet)"),
         ("ds_adaptive", "rlm_sonnet", "domain agents (Haiku) vs RLM (Sonnet)"),
         ("ds_adaptive", "codex", "domain agents (Haiku) vs Codex"),
+        ("ds_adaptive", "rrl", "domain agents vs Reformulate-Retrieve-Localize (same model)"),
+        ("ds_adaptive", "agentless", "domain agents vs Agentless (same model)"),
+        ("ds_adaptive", "cosil", "domain agents vs CoSIL (same model)"),
+        ("ds_adaptive", "locagent", "domain agents vs LocAgent (same model)"),
     ]
     for kind in ["SRC", "PR_EXIST"]:
         tests = []
@@ -268,7 +280,8 @@ def main():
                 continue
             for rule in ["union", "majority"]:
                 preds = ensemble(w, m, rule)
-                res = {k: micro(preds, gold_map(w, k)) for k in ["SRC", "PR_EXIST"]}
+                res = {k: micro({i: {f for f in p if k not in SOURCE_KINDS or is_source(f)} for i, p in preds.items()},
+                                gold_map(w, k)) for k in ["SRC", "PR_EXIST"]}
                 tok = sum(v["tokens"] for r in runs[w][m] for v in r["instances"].values()) / 19
                 out["ensembles"][w][f"{m}_{rule}"] = {"k": len(runs[w][m]), "tokens_per_inst": tok, **res}
 

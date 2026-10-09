@@ -28,8 +28,14 @@ STYLE = {
     "ds_nospawn": ("#1baf7a", "D", True),
     "ds_adaptive": ("#2a78d6", "*", True),
     "codex": ("#eb6834", "^", False),
+    # Published localization methods (one family colour, distinct markers), all Haiku 4.5.
+    "rrl": ("#e87ba4", "v", True),
+    "agentless": ("#e87ba4", "P", True),
+    "cosil": ("#e87ba4", "X", True),
+    "locagent": ("#e87ba4", "h", True),
 }
-ORDER = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "codex"]
+ORDER = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "codex",
+         "rrl", "agentless", "cosil", "locagent"]
 WINDOWS = ["2020", "2025", "2026", "openlibrary", "qutebrowser"]
 WTITLE = {"2020": "ansible 2020", "2025": "ansible 2025", "2026": "ansible 2026", "openlibrary": "openlibrary", "qutebrowser": "qutebrowser"}
 

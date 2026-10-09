@@ -26,9 +26,9 @@ from rank_bm25 import BM25Okapi
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 
-from common import ANSIBLE_WINDOWS, HERE, NEW_WINDOWS, ROOT, bare_for, load_gold, micro
+from common import ANSIBLE_WINDOWS, HERE, NEW_WINDOWS, ROOT, bare_for, is_source, load_gold, micro
 
-from tokenizer import tokenize
+from tokenizer import tokenize  # noqa: E402  (same tokenizer as the original BM25 baseline)
 
 EXTS = {".py", ".rst", ".txt", ".yml", ".yaml", ".cs", ".ps1", ".psm1", ".md", ".j2", ".ini", ".cfg"}
 KS = list(range(1, 31))
@@ -119,9 +119,13 @@ def features_for(window, iid):
 FEATURES = ["bm25", "path_bm25", "vsm", "rvsm", "stem_mention", "path_overlap", "recency", "frequency", "log_length"]
 
 
-def rank(paths, scores):
+def rank(paths, scores, kind=None):
+    """Top-N ranking. For source-file localization (SRC, SWE) only source files are candidates."""
     order = np.argsort(-scores, kind="stable")
-    return [paths[i] for i in order[:TOPN]]
+    ranked = [paths[i] for i in order]
+    if kind in ("SRC", "SWE"):
+        ranked = [p for p in ranked if is_source(p)]
+    return ranked[:TOPN]
 
 
 def rank_metrics(ranking, g):
@@ -164,7 +168,7 @@ def train_rank_svm(data, kind, rng):
         if not pos:
             continue
         top = set(np.argsort(-F[:, 0])[:TOPN].tolist())
-        neg_pool = [i for i in top if paths[i] not in g]
+        neg_pool = [i for i in top if paths[i] not in g and (kind not in ("SRC", "SWE") or is_source(paths[i]))]
         neg = rng.choice(neg_pool, size=min(60, len(neg_pool)), replace=False)
         for i in pos:
             for j in neg:
@@ -189,7 +193,7 @@ def main():
     for kind in ["SRC", "PR_EXIST", "SWE"]:
         rankings = {}
         for name in ["bm25", "vsm", "rvsm", "path_bm25"]:
-            rankings[name] = {w: {iid: rank(cache[(w, iid)][0], cache[(w, iid)][1][name]) for iid in gold[w]} for w in WINDOWS}
+            rankings[name] = {w: {iid: rank(cache[(w, iid)][0], cache[(w, iid)][1][name], kind) for iid in gold[w]} for w in WINDOWS}
         rankings["l2r"] = {}
         weights = {}
         for w in WINDOWS:
@@ -197,7 +201,7 @@ def main():
             kind_train = "SRC" if kind == "SWE" else kind
             wv = train_rank_svm(train, kind_train, rng)
             weights[w] = dict(zip(FEATURES, wv.round(4).tolist()))
-            rankings["l2r"][w] = {iid: rank(cache[(w, iid)][0], cache[(w, iid)][2] @ wv) for iid in gold[w]}
+            rankings["l2r"][w] = {iid: rank(cache[(w, iid)][0], cache[(w, iid)][2] @ wv, kind) for iid in gold[w]}
         if kind == "SWE":
             # G_SWE exists only for 2020; score that window alone.
             res = {}
@@ -238,7 +242,7 @@ def main_cross_project():
         for name in ["bm25", "vsm", "rvsm", "path_bm25", "l2r"]:
             def ranking(w, iid):
                 paths, sc, F = cache[(w, iid)]
-                return rank(paths, F @ wv if name == "l2r" else sc[name])
+                return rank(paths, F @ wv if name == "l2r" else sc[name], kind)
             envs = {}
             for w in ANSIBLE_WINDOWS + NEW_WINDOWS:
                 gm = {iid: gold[w][iid][kind] or set() for iid in gold[w]}

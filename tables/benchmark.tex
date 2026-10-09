@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Benchmark windows. Hard: $|G_{SRC}|\geq 2$. Commits: distinct base commits (each issue is evaluated at its own base commit). $G_{PR}^{exist}$ and $G_{PR}^{new}$ split $G_{PR}$ by whether the file exists at the base commit. Docs: issues whose $G_{SRC}$ contains a documentation file (\texttt{docs/} or \texttt{doc/}; the 2025 and 2026 Ansible base commits contain no documentation directory). $G_{SWE}$: SWE-bench Pro gold patch files; the 2025 and 2026 Ansible issues are not in SWE-bench Pro.}
+\caption{Benchmark windows. An issue is hard if $|G_{SRC}|\geq 2$. Commits is the number of distinct base commits, since each issue is evaluated at its own base commit. $G_{PR}^{exist}$ and $G_{PR}^{new}$ split $G_{PR}$ by whether the file exists at the base commit. Docs counts the issues whose $G_{SRC}$ contains a documentation file under \texttt{docs/} or \texttt{doc/}. The 2025 and 2026 Ansible base commits contain no documentation directory. $G_{SWE}$ counts the files of the SWE-bench Pro gold patches, and the 2025 and 2026 Ansible issues are not in SWE-bench Pro.}
 \label{tab:benchmark}
 \small
 \setlength{\tabcolsep}{4pt}

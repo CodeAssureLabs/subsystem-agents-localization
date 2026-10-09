@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Candidate files from Agentless (RQ3), over the 105 issues. In the second row the coordinator receives the Agentless candidates in its prompt (three runs). The last three rows combine the final outputs of existing runs without new LLM calls. Pooled micro-F1 under $G_{SRC}$ with 95\% issue-bootstrap intervals, and under $G_{PR}^{exist}$.}
+\label{tab:seed}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{3.1cm}ccccc}
+\toprule
+& \multicolumn{3}{c}{$G_{SRC}$} & $G_{PR}^{exist}$ & \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-5}
+Method & P & R & F1 [95\% CI] & F1 & Tokens \\
+\midrule
+Domain agents & .638 & .636 & .637 [.589, .685] & .560 & 1.00M \\
+Domain agents, Agentless candidates in prompt & .638 & .624 & .631 [.582, .678] & .554 & 1.26M \\
+\midrule
+Agentless (file stage) & .344 & .463 & .395 [.348, .440] & .309 & 4k \\
+\midrule
+Union of domain agents and Agentless & .385 & .724 & .503 [.461, .543] & .485 & 1.01M \\
+Files predicted by both & .827 & .378 & .518 [.461, .578] & .355 & 1.01M \\
+Cascade (Agentless if it agrees with CoSIL) & .594 & .613 & .604 [.556, .651] & .533 & 0.84M \\
+\bottomrule
+\end{tabular}
+\end{table}

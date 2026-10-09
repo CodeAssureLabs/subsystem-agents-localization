@@ -19,6 +19,9 @@ WL = {"2020": "Ans.\\ 2020", "2025": "Ans.\\ 2025", "2026": "Ans.\\ 2026", "open
 REPO = {"2020": "ansible/ansible", "2025": "ansible/ansible", "2026": "ansible/ansible",
         "openlibrary": "internetarchive/openlibrary", "qutebrowser": "qutebrowser/qutebrowser"}
 LLM = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "codex"]
+# Published localization methods, all run with Claude Haiku 4.5.
+BASE = ["rrl", "agentless", "cosil", "locagent"]
+ALL = LLM + BASE
 N_ALL = sum(len(gold[w]) for w in W)
 
 
@@ -77,7 +80,7 @@ def benchmark_table():
     rows.append("Total & & " + " & ".join(tot) + r" \\")
     write("benchmark", r"""\begin{table*}[t]
 \centering
-\caption{Benchmark windows. Hard: $|G_{SRC}|\geq 2$. Commits: distinct base commits (each issue is evaluated at its own base commit). $G_{PR}^{exist}$ and $G_{PR}^{new}$ split $G_{PR}$ by whether the file exists at the base commit. Docs: issues whose $G_{SRC}$ contains a documentation file (\texttt{docs/} or \texttt{doc/}; the 2025 and 2026 Ansible base commits contain no documentation directory). $G_{SWE}$: SWE-bench Pro gold patch files; the 2025 and 2026 Ansible issues are not in SWE-bench Pro.}
+\caption{Benchmark windows. An issue is hard if $|G_{SRC}|\geq 2$. Commits is the number of distinct base commits, since each issue is evaluated at its own base commit. $G_{PR}^{exist}$ and $G_{PR}^{new}$ split $G_{PR}$ by whether the file exists at the base commit. Docs counts the issues whose $G_{SRC}$ contains a documentation file under \texttt{docs/} or \texttt{doc/}. The 2025 and 2026 Ansible base commits contain no documentation directory. $G_{SWE}$ counts the files of the SWE-bench Pro gold patches, and the 2025 and 2026 Ansible issues are not in SWE-bench Pro.}
 \label{tab:benchmark}
 \small
 \setlength{\tabcolsep}{4pt}
@@ -94,7 +97,7 @@ Repository & Issue dates & Issues & Hard & Commits & $|G_{SRC}|$ & $|G_{PR}|$ & 
 
 def main_table():
     rows = []
-    names = LLM + ["bm25", "l2r"]
+    names = ALL + ["bm25", "l2r"]
     cols = []
     for w in W:
         cells, vals = [], []
@@ -106,22 +109,22 @@ def main_table():
                 v = R["by_window"][w][m]["SRC"]
                 cells.append(ci(v)); vals.append(v["F1"])
         cols.append(bold_best(cells, vals))
-    pa = [R["pooled_all"][m]["SRC"] for m in LLM]
+    pa = [R["pooled_all"][m]["SRC"] for m in ALL]
     pcells = bold_best([f"{f3(v['F1'])} [{f3(v['F1_boot'][0])}, {f3(v['F1_boot'][1])}]" for v in pa], [v["F1"] for v in pa])
     for i, m in enumerate(names):
         label = {"bm25": "BM25", "l2r": "Learning-to-rank"}.get(m, METHOD_LABELS.get(m))
-        if m in LLM:
+        if m in ALL:
             n = "/".join(str(R["by_window"][w][m]["SRC"]["n_runs"]) for w in W)
             t = tok(statistics.mean(R["by_window"][w][m]["SRC"]["tokens_per_inst_mean"] for w in W))
             pc = pcells[i]
         else:
             n, t, pc = "det.", "--", "--"
-        if m in ("ds_nospawn", "codex", "bm25"):
+        if m in ("ds_nospawn", "codex", "rrl", "bm25"):
             rows.append(r"\midrule")
         rows.append(" & ".join([label, n] + [cols[j][i] for j in range(len(W))] + [pc, t]) + r" \\")
     write("main", r"""\begin{table*}[t]
 \centering
-\caption{Micro-F1 under the source gold $G_{SRC}$ (same rule in every repository). Per window: mean over $n$ independent runs $\pm$ 95\% Student-$t$ half-width across runs (omitted when $n=1$). Pooled: micro-F1 over all """ + str(N_ALL) + r""" issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. Tokens: mean tokens per issue (input+output), excluding one-off registry initialization. Non-LLM rankers return the top-$K$ files; $K$ (and the learning-to-rank model) is chosen on other windows only: the two other Ansible windows for Ansible, and all Ansible windows for the two added repositories. Best per column in bold, second underlined.}
+\caption{Micro-F1 under the source gold set $G_{SRC}$, defined by the same rule in every repository. Each window shows the mean over $n$ independent runs with the 95\% Student-$t$ half-width across runs, omitted when $n=1$. Pooled is the micro-F1 over all """ + str(N_ALL) + r""" issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. Tokens is the mean number of input and output tokens per issue, excluding the one-off registry initialization. The non-LLM rankers return the top-$K$ files. $K$, and the learning-to-rank model, are chosen on other windows only, namely the two other Ansible windows for Ansible and all Ansible windows for the two added repositories. The best value per column is in bold and the second best is underlined.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{3.5pt}
@@ -140,7 +143,7 @@ Method & $n$ & 2020 & 2025 & 2026 & \texttt{openlibrary} & \texttt{qutebrowser} 
 
 def allgold_table():
     rows = []
-    for m in LLM:
+    for m in ALL:
         cells = [f"{R['by_window'][w][m]['SRC']['all_gold']:.1f}" for w in W]
         hard = sum(R['by_window'][w][m]['SRC']['hard_all_gold'] for w in W)
         tot = sum(R['by_window'][w][m]['SRC']['all_gold'] for w in W)
@@ -149,7 +152,7 @@ def allgold_table():
     nh = sum(v['hard'] for w in W for v in gold[w].values())
     write("allgold", r"""\begin{table}[t]
 \centering
-\caption{All-gold issues under $G_{SRC}$: mean number of issues (over runs) whose complete source gold set is predicted. Issues per window: """ + "/".join(map(str, n)) + r"""; Hard: all-gold on the """ + str(nh) + r""" issues with $|G_{SRC}|\geq 2$.}
+\caption{All-gold issues under $G_{SRC}$, given as the mean number of issues over runs whose complete source gold set is predicted. The windows contain """ + "/".join(map(str, n)) + r""" issues. Hard gives the all-gold count on the """ + str(nh) + r""" issues with $|G_{SRC}|\geq 2$.}
 \label{tab:allgold}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrrrrrrr}
@@ -176,7 +179,7 @@ def swe_table():
         rows.append(f"{lab} (best $K$={v['K_oracle']}) & det. & {f3(e['P'])} & {f3(e['R'])} & {f3(v['F1_oracle'])} & {v['all_gold']} & -- & {v['K_oracle']} \\\\")
     write("swe2020", r"""\begin{table}[t]
 \centering
-\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files), for comparability with SWE-bench Pro reporting, including the matched adaptive and nudged runs used for RQ3. HAG: all-gold on the 16 issues with $|G_{SRC}|\geq 2$. $|\hat F|$: mean predicted set size. For the non-LLM rankers $K$ is tuned on this window (an optimistic upper bound).}
+\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files) for comparability with SWE-bench Pro reporting, including the matched adaptive and nudged runs used for RQ3. HAG is the all-gold count on the 16 issues with $|G_{SRC}|\geq 2$, and $|\hat F|$ is the mean predicted set size. For the non-LLM rankers, $K$ is tuned on this window, which gives an optimistic upper bound.}
 \label{tab:swe2020}
 \scriptsize
 \setlength{\tabcolsep}{2.5pt}
@@ -194,7 +197,7 @@ Method & $n$ & P & R & F1 & AG & HAG & $|\hat F|$ \\
 def newfile_table():
     rows = []
     gnew = sum(R["new_files"][w]["codex"]["gold_new"] for w in W)
-    for m in LLM:
+    for m in ALL:
         v = {w: R["new_files"][w][m] for w in W}
         nr = sum(v[w]["new_hit"] for w in W) / sum(v[w]["gold_new"] for w in W)
         ph = statistics.mean(v[w]["phantom_rate"] for w in W)
@@ -202,7 +205,7 @@ def newfile_table():
                     f" & {100*nr:.1f}\\% & {100*ph:.1f}\\% \\\\")
     write("newfiles", r"""\begin{table*}[t]
 \centering
-\caption{Existing-file versus new-file localization. Existing-file F1: micro-F1 of the predictions that exist at the base commit against $G_{PR}^{exist}$. New recall: share of the """ + f"{gnew:.0f}" + r""" files created by the resolving PRs whose exact path was predicted (all windows). Phantom: mean share of predicted paths that neither exist at the base commit nor are created by the PR.}
+\caption{Existing-file and new-file localization. Existing-file F1 is the micro-F1 of the predictions that exist at the base commit, scored against $G_{PR}^{exist}$. New recall is the share of the """ + f"{gnew:.0f}" + r""" files created by the resolving PRs whose exact path was predicted, over all windows. Phantom is the mean share of predicted paths that neither exist at the base commit nor are created by the PR.}
 \label{tab:newfiles}
 \small
 \begin{tabular}{lrrrrrrr}
@@ -232,6 +235,10 @@ def tests_table():
         ("ds_adaptive", "plain_sonnet"): "Domain agents (H) vs plain LLM (S)",
         ("ds_adaptive", "rlm_sonnet"): "Domain agents (H) vs RLM (S)",
         ("ds_adaptive", "codex"): "Domain agents (H) vs Codex",
+        ("ds_adaptive", "rrl"): "Domain agents vs Reformulate-Retrieve-Localize",
+        ("ds_adaptive", "agentless"): "Domain agents vs Agentless",
+        ("ds_adaptive", "cosil"): "Domain agents vs CoSIL",
+        ("ds_adaptive", "locagent"): "Domain agents vs LocAgent",
     }
 
     def p(x):
@@ -246,7 +253,7 @@ def tests_table():
                 f"{n2['mean_a']-n2['mean_b']:+.3f} & {p(n2['p'])} & {n2['rank_biserial']:+.2f} \\\\")
     write("tests", r"""\begin{table*}[t]
 \centering
-\caption{Paired comparisons on per-issue F1 (each issue's F1 averaged over runs), pooled over all """ + str(N_ALL) + r""" issues of the three repositories. $\Delta$: mean difference (first minus second). W/L: issues on which the first method is better/worse. $p_{Holm}$: two-sided Wilcoxon signed-rank test, Holm-adjusted over the nine planned comparisons. $r$: matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), same registry and timeout, unadjusted.}
+\caption{Paired comparisons on per-issue F1, with each issue's F1 averaged over runs, pooled over all """ + str(N_ALL) + r""" issues of the three repositories. $\Delta$ is the mean difference (first minus second method), and W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test, Holm-adjusted over the thirteen planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), with the same registry and timeout, unadjusted.}
 \label{tab:tests}
 \small
 \begin{tabular}{lrrrrrrr}
@@ -272,7 +279,7 @@ def ir_table():
         rows.append(f"{lab} & " + " & ".join(f"{cols[j][i]} & {ir(n, w)['MAP']:.2f}" for j, w in enumerate(W)) + r" \\")
     write("ir", r"""\begin{table*}[t]
 \centering
-\caption{Non-LLM baselines under $G_{SRC}$, each indexed at the issue's own base commit. F1: micro-F1 at the cutoff $K$ selected on other windows (the two other Ansible windows for Ansible; all Ansible windows for the added repositories, whose learning-to-rank model is also trained on Ansible only). MAP: mean average precision of the full ranking. Best F1 per window in bold.}
+\caption{Non-LLM baselines under $G_{SRC}$, each indexed at the issue's own base commit. F1 is the micro-F1 at the cutoff $K$ selected on other windows, namely the two other Ansible windows for Ansible and all Ansible windows for the added repositories, whose learning-to-rank model is also trained on Ansible only. MAP is the mean average precision of the full ranking. The best F1 per window is in bold.}
 \label{tab:ir}
 \small
 \setlength{\tabcolsep}{4pt}
@@ -300,7 +307,7 @@ def ensemble_table():
     rows.append("Domain agents (Haiku), single run & " + " & ".join(f3(R['by_window'][w]['ds_adaptive']['SRC']['F1']) for w in W) + r" \\")
     write("ensemble", r"""\begin{table*}[t]
 \centering
-\caption{Spending more inference without exploration: micro-F1 ($G_{SRC}$) of a single run / majority vote over the 3--5 independent runs of each baseline (a file is kept if more than half of the runs predict it). Union voting was lower than majority voting in every cell and is in the replication package.}
+\caption{Extra inference without exploration. Each cell gives the micro-F1 under $G_{SRC}$ of a single run and of a majority vote over the 3 to 5 independent runs of each baseline, in which a file is kept if more than half of the runs predict it. Union voting was lower than majority voting in every cell and is reported in the replication package.}
 \label{tab:ensemble}
 \small
 \begin{tabular}{lccccc}
@@ -345,12 +352,12 @@ def docs_table():
         dg = {iid: {f for f in x["SRC"] if f.startswith(pre)} for iid, x in g.items()}
         sg = {iid: {f for f in x["SRC"] if not f.startswith(pre)} for iid, x in g.items()}
         stats[w] = (sum(len(v) for v in sg.values()), sum(len(v) for v in dg.values()))
-        for m in LLM:
+        for m in ALL:
             rs = runs[w][m]
             dr = statistics.mean(sum(len(set(r["instances"][iid]["pred"]) & dg[iid]) for iid in g) for r in rs) / stats[w][1]
             sr = statistics.mean(sum(len(set(r["instances"][iid]["pred"]) & sg[iid]) for iid in g) for r in rs) / stats[w][0]
             stats[(w, m)] = (sr, dr)
-    for m in LLM:
+    for m in ALL:
         cells = []
         for w, _ in specs:
             sr, dr = stats[(w, m)]
@@ -358,7 +365,7 @@ def docs_table():
         rows.append(f"{METHOD_LABELS[m]} & " + " & ".join(cells) + r" \\")
     write("docs", r"""\begin{table}[t]
 \centering
-\caption{Documentation co-change: recall of code and of documentation files in $G_{SRC}$ for Ansible 2020 (""" + f"{stats['2020'][0]} code, {stats['2020'][1]} documentation files" + r""") and qutebrowser (""" + f"{stats['qutebrowser'][0]} code, {stats['qutebrowser'][1]} documentation files" + r""").}
+\caption{Documentation co-change. Recall of code and of documentation files in $G_{SRC}$ for Ansible 2020 (""" + f"{stats['2020'][0]} code, {stats['2020'][1]} documentation files" + r""") and qutebrowser (""" + f"{stats['qutebrowser'][0]} code, {stats['qutebrowser'][1]} documentation files" + r""").}
 \label{tab:docs}
 \scriptsize
 \begin{tabular}{lrrrr}
