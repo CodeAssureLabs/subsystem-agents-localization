@@ -1,0 +1,2197 @@
+[
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 374,
+    "chars": 11729
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-ba3abfb6af6e722185d3715929ab0f3e5a134eed-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 21,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 761,
+    "chars": 26711
+   },
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1004,
+    "chars": 30538
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 418,
+    "chars": 12090
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 24,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1016,
+    "chars": 30976
+   },
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 764,
+    "chars": 26822
+   },
+   {
+    "path": "openlibrary/catalog/add_book/tests/test_add_book.py",
+    "lines": 1278,
+    "chars": 42119
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-30bc73a1395fba2300087c7f307e54bb5372b60a-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 24,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-bb152d23c004f3d68986877143bb0f83531fe401-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-7c8dc180281491ccaa1b4b43518506323750d1e4-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+  "reads": 6,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 21,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 337,
+    "chars": 10651
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 12,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 458,
+    "chars": 13498
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 13,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/openlibrary/lists.py",
+    "lines": 926,
+    "chars": 28118
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-3f7db6bbbcc7c418b3db72d157c6aed1d45b2ccf-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 18,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   },
+   {
+    "path": "openlibrary/utils/bulkimport.py",
+    "lines": 490,
+    "chars": 16125
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-c4eebe6677acc4629cb541a98d5e91311444f5d4-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 17,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 770,
+    "chars": 27091
+   },
+   {
+    "path": "openlibrary/records/functions.py",
+    "lines": 424,
+    "chars": 12612
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-fdbc0d8f418333c7e575c40b661b582c301ef7ac-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 16,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-798a582540019363d14b2090755cc7b89a350788-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 22,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-308a35d6999427c02b1dbf5211c033ad3b352556-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 23,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/models.py",
+    "lines": 1242,
+    "chars": 43114
+   },
+   {
+    "path": "openlibrary/plugins/upstream/models.py",
+    "lines": 1045,
+    "chars": 34760
+   },
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-322d7a46cdc965bfabbf9500e98fde098c9d95b2-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1627,
+    "chars": 53385
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1583,
+    "chars": 52384
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 16,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1402,
+    "chars": 46908
+   },
+   {
+    "path": "scripts/solr_updater.py",
+    "lines": 323,
+    "chars": 10913
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-6fdbbeee4c0a7e976ff3e46fb1d36f4eb110c428-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 18,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 550,
+    "chars": 17728
+   },
+   {
+    "path": "openlibrary/plugins/openlibrary/lists.py",
+    "lines": 922,
+    "chars": 28312
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/imports.py",
+    "lines": 431,
+    "chars": 14662
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 21,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 543,
+    "chars": 17560
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 374,
+    "chars": 11729
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-ba3abfb6af6e722185d3715929ab0f3e5a134eed-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 23,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 761,
+    "chars": 26711
+   },
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1004,
+    "chars": 30538
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 16,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1004,
+    "chars": 30654
+   },
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 418,
+    "chars": 12090
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 23,
+  "limited_reads": 4,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/add_book/tests/test_add_book.py",
+    "lines": 1278,
+    "chars": 42119
+   },
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1016,
+    "chars": 30976
+   },
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 764,
+    "chars": 26822
+   },
+   {
+    "path": "openlibrary/core/vendors.py",
+    "lines": 547,
+    "chars": 19656
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-30bc73a1395fba2300087c7f307e54bb5372b60a-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 24,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-bb152d23c004f3d68986877143bb0f83531fe401-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 19,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-7c8dc180281491ccaa1b4b43518506323750d1e4-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+  "reads": 5,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/marc/parse.py",
+    "lines": 722,
+    "chars": 25320
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 19,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 337,
+    "chars": 10651
+   },
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 438,
+    "chars": 12887
+   },
+   {
+    "path": "openlibrary/records/functions.py",
+    "lines": 424,
+    "chars": 12612
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 20,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 337,
+    "chars": 10651
+   },
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 458,
+    "chars": 13498
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 13,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/openlibrary/lists.py",
+    "lines": 926,
+    "chars": 28118
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-3f7db6bbbcc7c418b3db72d157c6aed1d45b2ccf-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-c4eebe6677acc4629cb541a98d5e91311444f5d4-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 22,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 770,
+    "chars": 27091
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-fdbc0d8f418333c7e575c40b661b582c301ef7ac-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/records/functions.py",
+    "lines": 424,
+    "chars": 12612
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-798a582540019363d14b2090755cc7b89a350788-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 22,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-308a35d6999427c02b1dbf5211c033ad3b352556-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 19,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   },
+   {
+    "path": "openlibrary/core/models.py",
+    "lines": 1242,
+    "chars": 43114
+   },
+   {
+    "path": "openlibrary/plugins/upstream/models.py",
+    "lines": 1045,
+    "chars": 34760
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-322d7a46cdc965bfabbf9500e98fde098c9d95b2-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1627,
+    "chars": 53385
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1583,
+    "chars": 52384
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1402,
+    "chars": 46908
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-6fdbbeee4c0a7e976ff3e46fb1d36f4eb110c428-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 13,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 550,
+    "chars": 17728
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 22,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/imports.py",
+    "lines": 431,
+    "chars": 14662
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 26,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 543,
+    "chars": 17560
+   },
+   {
+    "path": "openlibrary/plugins/openlibrary/lists.py",
+    "lines": 932,
+    "chars": 28735
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 374,
+    "chars": 11729
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-ba3abfb6af6e722185d3715929ab0f3e5a134eed-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 19,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 761,
+    "chars": 26711
+   },
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1004,
+    "chars": 30538
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 18,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/tests/catalog/test_utils.py",
+    "lines": 414,
+    "chars": 12261
+   },
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 418,
+    "chars": 12090
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+  "reads": 23,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/add_book/__init__.py",
+    "lines": 1016,
+    "chars": 30976
+   },
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 764,
+    "chars": 26822
+   },
+   {
+    "path": "openlibrary/catalog/add_book/tests/test_add_book.py",
+    "lines": 1278,
+    "chars": 42119
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-30bc73a1395fba2300087c7f307e54bb5372b60a-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-bb152d23c004f3d68986877143bb0f83531fe401-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 21,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/coverstore/code.py",
+    "lines": 610,
+    "chars": 19024
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-7c8dc180281491ccaa1b4b43518506323750d1e4-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+  "reads": 8,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/marc/parse.py",
+    "lines": 722,
+    "chars": 25320
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/merge/merge_marc.py",
+    "lines": 337,
+    "chars": 10651
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/catalog/utils/__init__.py",
+    "lines": 458,
+    "chars": 13498
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/openlibrary/lists.py",
+    "lines": 926,
+    "chars": 28118
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-3f7db6bbbcc7c418b3db72d157c6aed1d45b2ccf-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "scripts/partner_batch_imports.py",
+    "lines": 312,
+    "chars": 9785
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-c4eebe6677acc4629cb541a98d5e91311444f5d4-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 23,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/plugins/importapi/code.py",
+    "lines": 770,
+    "chars": 27091
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-fdbc0d8f418333c7e575c40b661b582c301ef7ac-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 13,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/imports.py",
+    "lines": 325,
+    "chars": 10845
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-798a582540019363d14b2090755cc7b89a350788-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+  "reads": 23,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-308a35d6999427c02b1dbf5211c033ad3b352556-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 21,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 447,
+    "chars": 14455
+   },
+   {
+    "path": "openlibrary/core/models.py",
+    "lines": 1242,
+    "chars": 43114
+   },
+   {
+    "path": "openlibrary/plugins/upstream/models.py",
+    "lines": 1045,
+    "chars": 34760
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-322d7a46cdc965bfabbf9500e98fde098c9d95b2-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1627,
+    "chars": 53385
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1583,
+    "chars": 52384
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/solr/update_work.py",
+    "lines": 1402,
+    "chars": 46908
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-6fdbbeee4c0a7e976ff3e46fb1d36f4eb110c428-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 550,
+    "chars": 17728
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "reads": 24,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/imports.py",
+    "lines": 431,
+    "chars": 14662
+   }
+  ]
+ },
+ {
+  "repo": "openlibrary",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+  "reads": 23,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "openlibrary/core/lists/model.py",
+    "lines": 543,
+    "chars": 17560
+   },
+   {
+    "path": "openlibrary/plugins/openlibrary/js/lists/ShowcaseItem.js",
+    "lines": 312,
+    "chars": 10024
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 18,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/qtutils.py",
+    "lines": 477,
+    "chars": 14231
+   },
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 691,
+    "chars": 22439
+   },
+   {
+    "path": "tests/unit/utils/test_qtutils.py",
+    "lines": 939,
+    "chars": 33702
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 8,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/commands/command.py",
+    "lines": 581,
+    "chars": 23353
+   },
+   {
+    "path": "tests/unit/utils/test_utils.py",
+    "lines": 821,
+    "chars": 26746
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-cc360cd4a34a126274c7b51f3b63afbaf3e05a02-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 11,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-01d1d1494411380d97cac14614a829d3a69cecaf-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 22,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 807,
+    "chars": 26826
+   },
+   {
+    "path": "qutebrowser/components/adblock.py",
+    "lines": 305,
+    "chars": 9989
+   },
+   {
+    "path": "tests/unit/components/test_braveadblock.py",
+    "lines": 380,
+    "chars": 14225
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-e57b6e0eeeb656eb2c84d6547d5a0a7333ecee85-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "tests/unit/components/test_adblock.py",
+    "lines": 565,
+    "chars": 19726
+   },
+   {
+    "path": "tests/unit/components/test_braveadblock.py",
+    "lines": 404,
+    "chars": 14930
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-fcfa069a06ade76d91bac38127f3235c13d78eb1-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 17,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/sql.py",
+    "lines": 392,
+    "chars": 12722
+   },
+   {
+    "path": "qutebrowser/browser/history.py",
+    "lines": 473,
+    "chars": 16213
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-36ade4bba504eb96f05d32ceab9972df7eb17bcc-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "tests/unit/config/test_qtargs.py",
+    "lines": 503,
+    "chars": 20096
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 20,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 20,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+  "reads": 19,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-54bcdc1eefa86cc20790973d6997b60c3bba884c-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 11,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/resources.py",
+    "lines": 5475,
+    "chars": 357342
+   },
+   {
+    "path": "tests/unit/utils/test_utils.py",
+    "lines": 910,
+    "chars": 29161
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-34a13afd36b5e529d553892b1cd8b9d5ce8881c4-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 7,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/elf.py",
+    "lines": 319,
+    "chars": 9332
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-394bfaed6544c952c6b3463751abab3176ad4997-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-3d01c201b8aa54dd71d4f801b1dd12feb4c0a08a-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 20,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "tests/conftest.py",
+    "lines": 313,
+    "chars": 9623
+   },
+   {
+    "path": "qutebrowser/resources.py",
+    "lines": 5475,
+    "chars": 357342
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-ef5ba1a0360b39f9eff027fbdc57f363597c3c3b-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 20,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/browser/webengine/webenginesettings.py",
+    "lines": 505,
+    "chars": 18805
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 19,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-16de05407111ddd82fa12e54389d532362489da9-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-9b71c1ea67a9e7eb70dd83214d881c2031db6541-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/earlyinit.py",
+    "lines": 301,
+    "chars": 10766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-44e64199ed38003253f0296badd4a447645067b6-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 10,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 950,
+    "chars": 31784
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-66cfa15c372fa9e613ea5a82d3b03e4609399fb6-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-0b621cb0ce2b54d3f93d8d41d8ff4257888a87e5-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 301,
+    "chars": 10688
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-c09e1439f145c66ee3af574386e277dd2388d094-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 347,
+    "chars": 12540
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 505,
+    "chars": 17147
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-cf06f4e3708f886032d4d2a30108c2fddb042d81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 14,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 369,
+    "chars": 13429
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 522,
+    "chars": 17766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_1",
+  "instance_id": "instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/mainwindow/statusbar/bar.py",
+    "lines": 442,
+    "chars": 16223
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 21,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 691,
+    "chars": 22439
+   },
+   {
+    "path": "qutebrowser/utils/qtutils.py",
+    "lines": 477,
+    "chars": 14231
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/qtutils.py",
+    "lines": 476,
+    "chars": 14169
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 8,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-cc360cd4a34a126274c7b51f3b63afbaf3e05a02-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 9,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-01d1d1494411380d97cac14614a829d3a69cecaf-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 807,
+    "chars": 26826
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-e57b6e0eeeb656eb2c84d6547d5a0a7333ecee85-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 19,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-fcfa069a06ade76d91bac38127f3235c13d78eb1-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 15,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/sql.py",
+    "lines": 392,
+    "chars": 12722
+   },
+   {
+    "path": "qutebrowser/browser/history.py",
+    "lines": 473,
+    "chars": 16213
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-36ade4bba504eb96f05d32ceab9972df7eb17bcc-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 10,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "tests/unit/config/test_qtargs.py",
+    "lines": 503,
+    "chars": 20096
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 19,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-54bcdc1eefa86cc20790973d6997b60c3bba884c-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/resources.py",
+    "lines": 5475,
+    "chars": 357342
+   },
+   {
+    "path": "qutebrowser/utils/utils.py",
+    "lines": 847,
+    "chars": 26723
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-34a13afd36b5e529d553892b1cd8b9d5ce8881c4-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 9,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/elf.py",
+    "lines": 319,
+    "chars": 9332
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-394bfaed6544c952c6b3463751abab3176ad4997-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 18,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-3d01c201b8aa54dd71d4f801b1dd12feb4c0a08a-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 13,
+  "limited_reads": 3,
+  "limited_files": [
+   {
+    "path": "tests/unit/utils/test_utils.py",
+    "lines": 1062,
+    "chars": 34509
+   },
+   {
+    "path": "tests/conftest.py",
+    "lines": 313,
+    "chars": 9623
+   },
+   {
+    "path": "qutebrowser/resources.py",
+    "lines": 5475,
+    "chars": 357342
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-ef5ba1a0360b39f9eff027fbdc57f363597c3c3b-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 20,
+  "limited_reads": 4,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   },
+   {
+    "path": "qutebrowser/misc/backendproblem.py",
+    "lines": 453,
+    "chars": 17489
+   },
+   {
+    "path": "qutebrowser/browser/webengine/webenginesettings.py",
+    "lines": 505,
+    "chars": 18805
+   },
+   {
+    "path": "qutebrowser/misc/earlyinit.py",
+    "lines": 301,
+    "chars": 10766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 16,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   },
+   {
+    "path": "tests/unit/config/test_qtargs.py",
+    "lines": 659,
+    "chars": 25352
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-16de05407111ddd82fa12e54389d532362489da9-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 19,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-9b71c1ea67a9e7eb70dd83214d881c2031db6541-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 14,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-44e64199ed38003253f0296badd4a447645067b6-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 10,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 950,
+    "chars": 31784
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-66cfa15c372fa9e613ea5a82d3b03e4609399fb6-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 24,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/browser/webengine/webenginesettings.py",
+    "lines": 505,
+    "chars": 18805
+   },
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-0b621cb0ce2b54d3f93d8d41d8ff4257888a87e5-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 17,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 301,
+    "chars": 10688
+   },
+   {
+    "path": "qutebrowser/commands/userscripts.py",
+    "lines": 469,
+    "chars": 16216
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-c09e1439f145c66ee3af574386e277dd2388d094-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 347,
+    "chars": 12540
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 505,
+    "chars": 17147
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-cf06f4e3708f886032d4d2a30108c2fddb042d81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 12,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 369,
+    "chars": 13429
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 522,
+    "chars": 17766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_2",
+  "instance_id": "instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 23,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/mainwindow/statusbar/bar.py",
+    "lines": 442,
+    "chars": 16223
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 21,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 691,
+    "chars": 22439
+   },
+   {
+    "path": "qutebrowser/utils/qtutils.py",
+    "lines": 477,
+    "chars": 14231
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/utils.py",
+    "lines": 839,
+    "chars": 26526
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 10,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-cc360cd4a34a126274c7b51f3b63afbaf3e05a02-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 8,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 11,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-01d1d1494411380d97cac14614a829d3a69cecaf-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 19,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 807,
+    "chars": 26826
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-e57b6e0eeeb656eb2c84d6547d5a0a7333ecee85-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-fcfa069a06ade76d91bac38127f3235c13d78eb1-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 15,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/browser/history.py",
+    "lines": 473,
+    "chars": 16213
+   },
+   {
+    "path": "qutebrowser/misc/sql.py",
+    "lines": 392,
+    "chars": 12722
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-36ade4bba504eb96f05d32ceab9972df7eb17bcc-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 10,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "tests/unit/config/test_qtargs.py",
+    "lines": 503,
+    "chars": 20096
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 21,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-54bcdc1eefa86cc20790973d6997b60c3bba884c-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 13,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/resources.py",
+    "lines": 5475,
+    "chars": 357342
+   },
+   {
+    "path": "qutebrowser/utils/utils.py",
+    "lines": 847,
+    "chars": 26723
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-34a13afd36b5e529d553892b1cd8b9d5ce8881c4-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 8,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/elf.py",
+    "lines": 319,
+    "chars": 9332
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-394bfaed6544c952c6b3463751abab3176ad4997-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+  "reads": 14,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 782,
+    "chars": 25313
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-3d01c201b8aa54dd71d4f801b1dd12feb4c0a08a-v5fc38aaf22415ab0b70567368332beee7955b367",
+  "reads": 8,
+  "limited_reads": 0,
+  "limited_files": []
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-ef5ba1a0360b39f9eff027fbdc57f363597c3c3b-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 16,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/browser/webengine/webenginesettings.py",
+    "lines": 505,
+    "chars": 18805
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 17,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-16de05407111ddd82fa12e54389d532362489da9-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 22,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-9b71c1ea67a9e7eb70dd83214d881c2031db6541-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 20,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/browser/webengine/webenginesettings.py",
+    "lines": 505,
+    "chars": 18805
+   },
+   {
+    "path": "qutebrowser/misc/earlyinit.py",
+    "lines": 301,
+    "chars": 10766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-44e64199ed38003253f0296badd4a447645067b6-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/utils/version.py",
+    "lines": 950,
+    "chars": 31784
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-66cfa15c372fa9e613ea5a82d3b03e4609399fb6-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "reads": 20,
+  "limited_reads": 4,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/backendproblem.py",
+    "lines": 453,
+    "chars": 17489
+   },
+   {
+    "path": "qutebrowser/config/qtargs.py",
+    "lines": 328,
+    "chars": 13208
+   },
+   {
+    "path": "qutebrowser/utils/standarddir.py",
+    "lines": 360,
+    "chars": 11394
+   },
+   {
+    "path": "qutebrowser/misc/elf.py",
+    "lines": 329,
+    "chars": 9735
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-0b621cb0ce2b54d3f93d8d41d8ff4257888a87e5-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 19,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 301,
+    "chars": 10688
+   },
+   {
+    "path": "qutebrowser/commands/userscripts.py",
+    "lines": 469,
+    "chars": 16216
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-c09e1439f145c66ee3af574386e277dd2388d094-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 16,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 347,
+    "chars": 12540
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 505,
+    "chars": 17147
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-cf06f4e3708f886032d4d2a30108c2fddb042d81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 10,
+  "limited_reads": 2,
+  "limited_files": [
+   {
+    "path": "qutebrowser/misc/guiprocess.py",
+    "lines": 369,
+    "chars": 13429
+   },
+   {
+    "path": "tests/unit/misc/test_guiprocess.py",
+    "lines": 522,
+    "chars": 17766
+   }
+  ]
+ },
+ {
+  "repo": "qutebrowser",
+  "run": "ds_nospawn_3",
+  "instance_id": "instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "reads": 15,
+  "limited_reads": 1,
+  "limited_files": [
+   {
+    "path": "qutebrowser/mainwindow/statusbar/bar.py",
+    "lines": 442,
+    "chars": 16223
+   }
+  ]
+ }
+]

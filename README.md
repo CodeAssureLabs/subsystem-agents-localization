@@ -2,7 +2,7 @@
 
 This package regenerates every table and figure of the paper from the recorded predictions.
 
-The agent implementation used for all LLM runs (coordinator, bounded repository tools, domain-agent registry,
+The agent implementation used for all LLM runs (coordinator, repository tools, domain-agent registry,
 RLM and Codex runners) is at https://github.com/CodeAssureLabs/swe-agent-spawning.
 
 ## Contents
@@ -19,6 +19,7 @@ RLM and Codex runners) is at https://github.com/CodeAssureLabs/swe-agent-spawnin
 | `data/results.json`, `data/ir_results.json`, `data/ir_results_new_repos.json` | Outputs of `evaluate.py` and `ir_baselines.py` (Ansible leave-one-window-out; `--new-repos`: trained on Ansible, tested on the added repositories). |
 | `data/swebench_pro_v1_repo_stats.csv` | Per-repository statistics of SWE-bench Pro v1 used for repository selection. |
 | `scripts/` | Analysis code (see below). |
+| `data/tool_limits.json`, `scripts/tool_limits.py` | Every file read of the coordinator-only runs on Open Library and qutebrowser, with the reads that returned only the first lines of a long file (RQ2). `python3 tool_limits.py` prints the counts reported in the paper. |
 | `traces/` | (to be added) raw run reports including full agent trajectories and domain-agent registries. |
 
 ## Reproducing
