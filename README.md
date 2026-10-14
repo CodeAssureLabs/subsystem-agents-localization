@@ -20,7 +20,8 @@ RLM and Codex runners) is at https://github.com/CodeAssureLabs/swe-agent-spawnin
 | `data/swebench_pro_v1_repo_stats.csv` | Per-repository statistics of SWE-bench Pro v1 used for repository selection. |
 | `scripts/` | Analysis code (see below). |
 | `data/tool_limits.json`, `scripts/tool_limits.py` | Every file read of the coordinator-only runs on Open Library and qutebrowser, with the reads that returned only the first lines of a long file (RQ2). `python3 tool_limits.py` prints the counts reported in the paper. |
-| `traces/` | (to be added) raw run reports including full agent trajectories and domain-agent registries. |
+| `data/registries.json` | Every domain-agent registry (41 runs): window, method, run, the commit at which it was built, initialization tokens, and for each agent its name, folders, area description and familiarization summary. |
+| `prompts.md` | All prompts: task prompts, system prompts of the coordinator and the domain agents, registry construction, the seeded variant, and the baselines. |
 
 ## Reproducing
 
@@ -37,7 +38,7 @@ python3 tables.py          # LaTeX tables -> ../tables/
 python3 figures.py         # figures -> ../figures/
 ```
 
-`extract_runs.py` builds `data/runs.json` from the raw run reports (in `traces/`); it is included for transparency and is not needed to reproduce the tables.
+`extract_runs.py` builds `data/runs.json` from the raw run reports; it is included for transparency and is not needed to reproduce the tables.
 
 ## Gold-set definitions
 
@@ -51,5 +52,5 @@ python3 figures.py         # figures -> ../figures/
 * Under `SRC` and `SWE`, predicted files that `common.is_source` classifies as tests, changelogs or metadata are removed before scoring, for every method; the rankers' candidate lists are filtered before the top-K cutoff. `PR`, `PR_EXIST` and `PR_NEW` are scored on all predictions.
 
 * The Ansible 2020 Sonnet RLM runs used a single checkout at `01e7915`; all other repository-accessing methods used each instance's own base commit. `evaluate.py` reports a sensitivity analysis excluding affected instances.
-* Raw run reports with full trajectories (about 7 GB) are archived separately; `data/runs.json` holds everything the analysis uses.
+* The raw run reports with the full agent conversations (about 7 GB) are too large for this repository and are available from the authors on request. `data/runs.json` holds everything the analysis uses.
 * Bootstrap resampling uses a fixed seed; results are deterministic.
