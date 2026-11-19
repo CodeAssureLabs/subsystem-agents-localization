@@ -18,10 +18,12 @@ W = ["2020", "2025", "2026", "openlibrary", "qutebrowser"]
 WL = {"2020": "Ans.\\ 2020", "2025": "Ans.\\ 2025", "2026": "Ans.\\ 2026", "openlibrary": "OpenLib.", "qutebrowser": "Qutebr."}
 REPO = {"2020": "ansible/ansible", "2025": "ansible/ansible", "2026": "ansible/ansible",
         "openlibrary": "internetarchive/openlibrary", "qutebrowser": "qutebrowser/qutebrowser"}
-LLM = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "codex"]
-# Published localization methods, all run with Claude Haiku 4.5.
+LLM = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_repl", "ds_nospawn", "ds_maponly", "ds_adaptive", "codex"]
+# Published localization methods, all run with Claude Haiku 4.5: complete lists and held-out top-K.
 BASE = ["rrl", "agentless", "cosil", "locagent"]
+BASE_K = [m + "_k" for m in BASE]
 ALL = LLM + BASE
+ALLK = LLM + BASE + BASE_K
 N_ALL = sum(len(gold[w]) for w in W)
 
 
@@ -48,7 +50,7 @@ def bold_best(cells, vals):
 
 
 def write(name, s):
-    if name in ("main", "benchmark") and "\\resizebox" not in s:
+    if name in ("main", "benchmark", "newfiles") and "\\resizebox" not in s:
         s = s.replace("\\begin{tabular}", "\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}", 1)
         s = s.replace("\\end{tabular}", "\\end{tabular}}", 1)
     if name in ("swe2020", "docs", "sensitivity") and "\\resizebox" not in s:
@@ -97,7 +99,7 @@ Repository & Issue dates & Issues & Hard & Commits & $|G_{SRC}|$ & $|G_{PR}|$ & 
 
 def main_table():
     rows = []
-    names = ALL + ["bm25", "l2r"]
+    names = ALLK + ["bm25", "l2r"]
     cols = []
     for w in W:
         cells, vals = [], []
@@ -109,22 +111,22 @@ def main_table():
                 v = R["by_window"][w][m]["SRC"]
                 cells.append(ci(v)); vals.append(v["F1"])
         cols.append(bold_best(cells, vals))
-    pa = [R["pooled_all"][m]["SRC"] for m in ALL]
+    pa = [R["pooled_all"][m]["SRC"] for m in ALLK]
     pcells = bold_best([f"{f3(v['F1'])} [{f3(v['F1_boot'][0])}, {f3(v['F1_boot'][1])}]" for v in pa], [v["F1"] for v in pa])
     for i, m in enumerate(names):
         label = {"bm25": "BM25", "l2r": "Learning-to-rank"}.get(m, METHOD_LABELS.get(m))
-        if m in ALL:
+        if m in ALLK:
             n = "/".join(str(R["by_window"][w][m]["SRC"]["n_runs"]) for w in W)
             t = tok(statistics.mean(R["by_window"][w][m]["SRC"]["tokens_per_inst_mean"] for w in W))
             pc = pcells[i]
         else:
             n, t, pc = "det.", "--", "--"
-        if m in ("ds_nospawn", "codex", "rrl", "bm25"):
+        if m in ("ds_repl", "codex", "rrl", "rrl_k", "bm25"):
             rows.append(r"\midrule")
         rows.append(" & ".join([label, n] + [cols[j][i] for j in range(len(W))] + [pc, t]) + r" \\")
     write("main", r"""\begin{table*}[t]
 \centering
-\caption{Micro-F1 under the source gold set $G_{SRC}$, defined by the same rule in every repository. Each window shows the mean over $n$ independent runs with the 95\% Student-$t$ half-width across runs, omitted when $n=1$. Pooled is the micro-F1 over all """ + str(N_ALL) + r""" issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. Tokens is the mean number of input and output tokens per issue, excluding the one-off registry initialization. The non-LLM rankers return the top-$K$ files. $K$, and the learning-to-rank model, are chosen on other windows only, namely the two other Ansible windows for Ansible and all Ansible windows for the two added repositories. The best value per column is in bold and the second best is underlined.}
+\caption{Micro-F1 under the source gold set $G_{SRC}$, defined by the same rule in every repository. Each window shows the mean over $n$ independent runs with the 95\% Student-$t$ half-width across runs, omitted when $n=1$. Pooled is the micro-F1 over all """ + str(N_ALL) + r""" issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. The published localizers are scored on their complete ranked lists and, in the rows marked top-$K$, on their first $K$ files with $K$ chosen on the other four windows. Tokens is the mean number of input and output tokens per issue, excluding the one-off registry initialization. The non-LLM rankers return the top-$K$ files. $K$, and the learning-to-rank model, are chosen on other windows only, namely the two other Ansible windows for Ansible and all Ansible windows for the two added repositories. The best value per column is in bold and the second best is underlined.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{3.5pt}
@@ -168,7 +170,7 @@ Method & """ + " & ".join(WL[w] for w in W) + r""" & Total & Hard \\
 
 def swe_table():
     rows = []
-    ms = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "ds_adaptive_t300", "ds_nudged", "codex"]
+    ms = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_repl", "ds_nospawn", "ds_maponly", "ds_adaptive", "ds_nudged", "ds_seeded", "codex"]
     vals = [R["by_window"]["2020"][m]["SWE"] for m in ms]
     cells = bold_best([ci(v) for v in vals], [v["F1"] for v in vals])
     for m, v, c in zip(ms, vals, cells):
@@ -179,7 +181,7 @@ def swe_table():
         rows.append(f"{lab} (best $K$={v['K_oracle']}) & det. & {f3(e['P'])} & {f3(e['R'])} & {f3(v['F1_oracle'])} & {v['all_gold']} & -- & {v['K_oracle']} \\\\")
     write("swe2020", r"""\begin{table}[t]
 \centering
-\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files) for comparability with SWE-bench Pro reporting, including the matched adaptive and nudged runs used for RQ3. HAG is the all-gold count on the 16 issues with $|G_{SRC}|\geq 2$, and $|\hat F|$ is the mean predicted set size. For the non-LLM rankers, $K$ is tuned on this window, which gives an optimistic upper bound.}
+\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files) for comparability with SWE-bench Pro reporting, including the RQ3 variants. HAG is the all-gold count on the 16 issues with $|G_{SRC}|\geq 2$, and $|\hat F|$ is the mean predicted set size. For the non-LLM rankers, $K$ is tuned on this window, which gives an optimistic upper bound.}
 \label{tab:swe2020}
 \scriptsize
 \setlength{\tabcolsep}{2.5pt}
@@ -196,23 +198,28 @@ Method & $n$ & P & R & F1 & AG & HAG & $|\hat F|$ \\
 
 def newfile_table():
     rows = []
-    gnew = sum(R["new_files"][w]["codex"]["gold_new"] for w in W)
+    agg = lambda m, key: sum(R["new_files"][w][m].get(key, 0.0) for w in W)
+    gnew = {k: agg("codex", "gold_new_" + k) for k in ("source", "test", "changelog", "other")}
     for m in ALL:
         v = {w: R["new_files"][w][m] for w in W}
-        nr = sum(v[w]["new_hit"] for w in W) / sum(v[w]["gold_new"] for w in W)
-        ph = statistics.mean(v[w]["phantom_rate"] for w in W)
+        nr_src = agg(m, "new_hit_source") / gnew["source"] if gnew["source"] else 0.0
+        nr_oth = sum(agg(m, "new_hit_" + k) for k in ("test", "changelog", "other")) / max(1e-9, sum(gnew[k] for k in ("test", "changelog", "other")))
+        ph_src = agg(m, "phantom_source") / N_ALL
+        ph_tc = (agg(m, "phantom_test") + agg(m, "phantom_changelog") + agg(m, "phantom_other")) / N_ALL
+        share = agg(m, "phantom_source") / max(1e-9, agg(m, "pred_exist") + agg(m, "pred_nonexist"))
         rows.append(f"{METHOD_LABELS[m]} & " + " & ".join(f3(v[w]['existing_F1']) for w in W) +
-                    f" & {100*nr:.1f}\\% & {100*ph:.1f}\\% \\\\")
+                    f" & {100*nr_src:.0f}\\% & {100*nr_oth:.0f}\\% & {ph_tc:.2f} & {ph_src:.2f} & {100*share:.0f}\\% \\\\")
     write("newfiles", r"""\begin{table*}[t]
 \centering
-\caption{Existing-file and new-file localization. Existing-file F1 is the micro-F1 of the predictions that exist at the base commit, scored against $G_{PR}^{exist}$. New recall is the share of the """ + f"{gnew:.0f}" + r""" files created by the resolving PRs whose exact path was predicted, over all windows. Phantom is the mean share of predicted paths that neither exist at the base commit nor are created by the PR.}
+\caption{Existing-file and new-file localization. Existing-file F1 is the micro-F1 of the predictions that exist at the base commit, scored against $G_{PR}^{exist}$. New recall is the share of files created by the resolving PRs whose exact path was predicted, separately for the """ + f"{gnew['source']:.0f}" + r""" new source files (by the $G_{SRC}$ rule) and the """ + f"{sum(gnew[k] for k in ('test', 'changelog', 'other')):.0f}" + r""" new tests, changelog fragments, and other files. The last three columns count predicted paths that neither exist at the base commit nor are created by the PR, per issue, split into proposed tests, changelogs, and other non-source files, and source paths, and give the share of all predicted paths that are such source paths.}
 \label{tab:newfiles}
 \small
-\begin{tabular}{lrrrrrrr}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrrrrrr}
 \toprule
-& \multicolumn{5}{c}{Existing-file F1} & New & \\
-\cmidrule(lr){2-6}
-Method & """ + " & ".join(WL[w] for w in W) + r""" & recall & Phantom \\
+& \multicolumn{5}{c}{Existing-file F1} & \multicolumn{2}{c}{New recall} & \multicolumn{3}{c}{Non-existent paths} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-11}
+Method & """ + " & ".join(WL[w] for w in W) + r""" & Source & Other & Test etc./iss. & Source/iss. & Source share \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
@@ -224,43 +231,135 @@ Method & """ + " & ".join(WL[w] for w in W) + r""" & recall & Phantom \\
 def tests_table():
     rows = []
     s = R["tests"]["SRC"]["family_all"]
-    e = R["tests"]["PR_EXIST"]["family_all"]
+    e = {(t["a"], t["b"]): t for t in R["tests"]["PR_EXIST"]["family_all"]}
     labels = {
-        ("ds_adaptive", "plain_haiku"): "Domain agents vs plain LLM (Haiku)",
-        ("ds_adaptive", "rlm_haiku"): "Domain agents vs RLM (Haiku)",
-        ("ds_nospawn", "rlm_haiku"): "Coordinator only vs RLM (Haiku)",
-        ("ds_adaptive", "ds_nospawn"): "Domain agents vs coordinator only",
-        ("rlm_haiku", "plain_haiku"): "RLM vs plain LLM (Haiku)",
+        ("ds_adaptive", "plain_haiku"): "Domain agents vs plain LLM",
+        ("ds_adaptive", "rlm_haiku"): "Domain agents vs RLM",
+        ("ds_nospawn", "ds_repl"): r"Repository tools vs REPL only$^\star$",
+        ("ds_repl", "rlm_haiku"): r"Coordinator harness vs RLM runner$^\star$",
+        ("ds_nospawn", "rlm_haiku"): "Coordinator only vs RLM",
+        ("ds_adaptive", "ds_nospawn"): r"Registry (map + consultation)$^\star$",
+        ("ds_maponly", "ds_nospawn"): r"Registry map only$^\star$",
+        ("ds_adaptive", "ds_maponly"): r"Consultation, given the map$^\star$",
+        ("rlm_haiku", "plain_haiku"): r"RLM vs plain LLM$^\star$",
         ("rlm_sonnet", "plain_sonnet"): "RLM vs plain LLM (Sonnet)",
-        ("ds_adaptive", "plain_sonnet"): "Domain agents (H) vs plain LLM (S)",
-        ("ds_adaptive", "rlm_sonnet"): "Domain agents (H) vs RLM (S)",
-        ("ds_adaptive", "codex"): "Domain agents (H) vs Codex",
-        ("ds_adaptive", "rrl"): "Domain agents vs Reformulate-Retrieve-Localize",
+        ("ds_adaptive", "plain_sonnet"): "Domain agents vs plain LLM (Sonnet)",
+        ("ds_adaptive", "rlm_sonnet"): "Domain agents vs RLM (Sonnet)",
+        ("ds_adaptive", "codex"): "Domain agents vs Codex",
+        ("ds_adaptive", "rrl"): "Domain agents vs RRL",
         ("ds_adaptive", "agentless"): "Domain agents vs Agentless",
         ("ds_adaptive", "cosil"): "Domain agents vs CoSIL",
         ("ds_adaptive", "locagent"): "Domain agents vs LocAgent",
+        ("ds_adaptive", "rrl_k"): "Domain agents vs RRL, top-$K$",
+        ("ds_adaptive", "agentless_k"): "Domain agents vs Agentless, top-$K$",
+        ("ds_adaptive", "cosil_k"): "Domain agents vs CoSIL, top-$K$",
+        ("ds_adaptive", "locagent_k"): "Domain agents vs LocAgent, top-$K$",
     }
 
     def p(x):
         return "$<$.001" if x < 0.001 else f"{x:.3f}".lstrip("0")
 
-    for a, b in zip(s, e):
-        rows.append(f"{labels[(a['a'], a['b'])]} & {a['mean_a']-a['mean_b']:+.3f} & {a['wins']}/{a['losses']} & {p(a['p_holm'])} & {a['rank_biserial']:+.2f} & "
-                    f"{b['mean_a']-b['mean_b']:+.3f} & {p(b['p_holm'])} & {b['rank_biserial']:+.2f} \\\\")
-    n = R["tests"]["SRC"]["nudge"]; n2 = R["tests"]["PR_EXIST"]["nudge"]
-    rows.append(r"\midrule")
-    rows.append(f"Adaptive vs nudged$^\\dagger$ & {n['mean_a']-n['mean_b']:+.3f} & {n['wins']}/{n['losses']} & {p(n['p'])} & {n['rank_biserial']:+.2f} & "
-                f"{n2['mean_a']-n2['mean_b']:+.3f} & {p(n2['p'])} & {n2['rank_biserial']:+.2f} \\\\")
+    def d(x):
+        return f"{x:+.3f}".replace("-", "$-$")
+
+    def ci(lo, hi):
+        return f"[{d(lo)}, {d(hi)}]"
+
+    for a in s:
+        b = e[(a["a"], a["b"])]
+        da, db = a["diff"], b["diff"]
+        rows.append(f"{labels[(a['a'], a['b'])]} & {d(da['d_micro'])} {ci(*da['d_micro_ci'])} & {d(da['d_mean'])} {ci(*da['d_mean_ci'])} & "
+                    f"{a['wins']}/{a['losses']} & {p(a['p_holm'])} & {a['rank_biserial']:+.2f} & {d(db['d_mean'])} & {p(b['p_holm'])} \\\\")
     write("tests", r"""\begin{table*}[t]
 \centering
-\caption{Paired comparisons on per-issue F1, with each issue's F1 averaged over runs, pooled over all """ + str(N_ALL) + r""" issues of the three repositories. $\Delta$ is the mean difference (first minus second method), and W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test, Holm-adjusted over the thirteen planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), with the same registry and timeout, unadjusted.}
+\caption{Paired comparisons over all """ + str(N_ALL) + r""" issues, all methods with Claude Haiku 4.5 unless marked Sonnet or Codex. $\Delta_{\mu}$ is the difference in pooled micro-F1 and $\Delta_{i}$ the mean difference in per-issue F1 (first minus second method, each issue's F1 averaged over runs), each with a 95\% paired bootstrap interval over issues. W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test on per-issue F1, Holm-adjusted over the """ + str(len(s)) + r""" planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\star$Step of the sequence of RQ2; only ``Repository tools vs REPL only'' changes a single component (Section~\ref{sec:rq2}).}
 \label{tab:tests}
-\small
-\begin{tabular}{lrrrrrrr}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccrrrrr}
 \toprule
-& \multicolumn{4}{c}{$G_{SRC}$} & \multicolumn{3}{c}{$G_{PR}^{exist}$} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-8}
-Comparison & $\Delta$ & W/L & $p_{Holm}$ & $r$ & $\Delta$ & $p_{Holm}$ & $r$ \\
+& \multicolumn{5}{c}{$G_{SRC}$} & \multicolumn{2}{c}{$G_{PR}^{exist}$} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+Comparison & $\Delta_{\mu}$ [95\% CI] & $\Delta_{i}$ [95\% CI] & W/L & $p_{Holm}$ & $r$ & $\Delta_{i}$ & $p_{Holm}$ \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}
+\end{table*}
+""")
+
+
+def subsets_table():
+    """Python-only gold set and the 67 issues whose texts were not written for this study."""
+    rows = []
+    for m in ALLK:
+        a = R["pooled_all"][m]["SRC"]; b = R["pooled_all"][m]["SRC_PY"]; c = R["pooled_organic"][m]["SRC"]
+        cell = lambda v: f"{f3(v['F1'])} [{f3(v['F1_boot'][0])}, {f3(v['F1_boot'][1])}]"
+        if m in ("ds_repl", "codex", "rrl", "rrl_k"):
+            rows.append(r"\midrule")
+        rows.append(f"{METHOD_LABELS[m]} & {cell(a)} & {cell(b)} & {cell(c)} \\\\")
+    npy = sum(len(g['SRC_PY']) for w in W for g in gold[w].values()) if 'SRC_PY' in next(iter(gold['2020'].values())) else \
+        sum(1 for w in W for g in gold[w].values() for f in g['SRC'] if f.endswith('.py'))
+    nsrc = sum(len(g['SRC']) for w in W for g in gold[w].values())
+    n_org = sum(len(gold[w]) for w in ("2020", "openlibrary", "qutebrowser"))
+    write("subsets", r"""\begin{table}[t]
+\centering
+\caption{Pooled micro-F1 with 95\% issue-bootstrap CIs on three scopes. $G_{SRC}$: all """ + str(N_ALL) + r""" issues. Python only: the """ + str(npy) + r""" Python files of the """ + str(nsrc) + r""" $G_{SRC}$ files, with predictions restricted to Python source files, which is the scope that the published localizers index. Without generated texts: the """ + str(n_org) + r""" issues of Ansible 2020, Open Library, and qutebrowser, whose issue texts come from SWE-bench Pro.}
+\label{tab:subsets}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Method & $G_{SRC}$ & Python only & Without generated texts \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}}
+\end{table}
+""")
+
+
+def guidance_table():
+    """RQ3: forced consultation and Agentless candidates against the default system, plus output combinations."""
+    def d(x):
+        return f"{x:+.3f}".replace("-", "$-$")
+
+    def ci(lo, hi):
+        return f"[{d(lo)}, {d(hi)}]"
+
+    rows = []
+    gd = {t["a"]: t for t in R["tests"]["SRC"]["guidance"]}
+    for m, lab in (("ds_adaptive", "Default (adaptive)"), ("ds_nudged", "Nudged consultation"), ("ds_seeded", "Seeded with Agentless")):
+        v = R["pooled_all"][m]["SRC"]
+        calls = statistics.mean(R["consultation"][w][m]["calls_per_inst"] for w in W)
+        t = tok(statistics.mean(R["by_window"][w][m]["SRC"]["tokens_per_inst_mean"] for w in W))
+        if m in gd:
+            g = gd[m]; dd = g["diff"]
+            pval = "$<$.001" if g["p"] < 0.001 else f"{g['p']:.2f}"
+            cmp = (f"{d(dd['d_micro'])} {ci(*dd['d_micro_ci'])} & {d(dd['d_mean'])} {ci(*dd['d_mean_ci'])} & "
+                   f"{g['wins']}/{g['losses']} & {pval}")
+        else:
+            cmp = "-- & -- & -- & --"
+        rows.append(f"{lab} & {f3(v['F1'])} & {f3(v['P'])} & {f3(v['R'])} & {calls:.2f} & {t} & {cmp} \\\\")
+    c = R.get("combinations") or {}
+    if c:
+        rows.append(r"\midrule")
+        for rule, lab in (("union", "Union with Agentless"), ("intersection", "Intersection with Agentless"), ("cascade", r"Cascade$^\dagger$")):
+            v = c[rule]
+            rows.append(f"{lab} & {f3(v['F1'])} & {f3(v['P'])} & {f3(v['R'])} & & & & & & \\\\")
+    note = ""
+    if c:
+        note = (r" $^\dagger$Answers with the Agentless files when Agentless and CoSIL return the same set ("
+                + f"{100*c['cascade']['frac_cheap']:.0f}" + r"\% of issue runs) and with the default system otherwise, saving "
+                + f"{100*c['cascade']['token_saving']:.0f}" + r"\% of its tokens.")
+    write("guidance", r"""\begin{table*}[t]
+\centering
+\caption{Guiding the coordinator (RQ3), pooled over all """ + str(N_ALL) + r""" issues under $G_{SRC}$, with three runs of the default system and one run of each variant. Consult. is the mean number of consultation calls per issue and Tokens the mean tokens per issue. $\Delta_{\mu}$ and $\Delta_{i}$ are the differences from the default system in pooled micro-F1 and in mean per-issue F1, with 95\% paired bootstrap intervals, W/L counts issues better and worse than the default, and $p$ is from the two-sided Wilcoxon signed-rank test. The lower rows combine the final outputs of the default system and of Agentless without changing the coordinator.""" + note + r"""}
+\label{tab:guidance}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrccrr}
+\toprule
+Variant & F1 & P & R & Consult. & Tokens & $\Delta_{\mu}$ [95\% CI] & $\Delta_{i}$ [95\% CI] & W/L & $p$ \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
@@ -343,6 +442,39 @@ Method & All 19 & 13 unaffected & $\Delta$ \\
 """)
 
 
+def audit_table():
+    A = json.load(open(HERE / "access_audit.json"))
+    runs_with = lambda m, cat, roles: len({(x["window"], x["run"], x["instance_id"]) for x in A["flags"]
+                                           if x["method"] == m and x["category"] == cat and x["role"] in roles})
+    rows = []
+    order = ["rlm_haiku", "rlm_sonnet", "ds_repl", "ds_nospawn", "ds_maponly", "ds_adaptive", "ds_nudged", "ds_seeded", "codex"]
+    for m in order:
+        c = A["coverage"].get(m)
+        if not c:
+            continue
+        act = c.get("reported_actions", 0) + c.get("repetition_actions", 0)
+        out = c.get("reported_outputs", 0) + c.get("repetition_outputs", 0)
+        mb = (c.get("reported_output_chars", 0) + c.get("repetition_output_chars", 0)) / 1e6
+        n = lambda x: f"{x:,}".replace(",", "{,}")
+        rows.append(f"{METHOD_LABELS[m]} & {c['issue_runs']} & {n(act)} & {n(out)} & {mb:.1f} & "
+                    f"{runs_with(m, 'temp_dir', ('reported', 'first_attempt'))} & "
+                    f"{runs_with(m, 'analysis_tool_files', ('first_attempt',))} \\\\")
+    write("audit", r"""\begin{table}[t]
+\centering
+\caption{Coverage of the access audit per configuration: issue runs, agent actions (tool calls, REPL blocks, Codex commands) and their outputs scanned, size of the scanned outputs, issue runs whose agent code used the shared temporary directory, and among them the issue runs whose output showed files of our analysis tools, which were repeated (Section~\ref{sec:protocol}).}
+\label{tab:audit}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+Configuration & Runs & Actions & Outputs & MB & \texttt{/tmp} & Repeated \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}
+\end{table}
+""")
+
+
 def docs_table():
     rows = []
     specs = [("2020", "docs/"), ("qutebrowser", "doc/")]
@@ -383,5 +515,5 @@ Method & Code & Docs & Code & Docs \\
 
 if __name__ == "__main__":
     benchmark_table(); main_table(); allgold_table(); swe_table(); newfile_table(); tests_table(); ir_table()
-    ensemble_table(); sensitivity_table(); docs_table()
+    docs_table(); subsets_table(); guidance_table(); audit_table()
     print("tables written to", OUT)

@@ -1,6 +1,6 @@
 \begin{table}[t]
 \centering
-\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files) for comparability with SWE-bench Pro reporting, including the matched adaptive and nudged runs used for RQ3. HAG is the all-gold count on the 16 issues with $|G_{SRC}|\geq 2$, and $|\hat F|$ is the mean predicted set size. For the non-LLM rankers, $K$ is tuned on this window, which gives an optimistic upper bound.}
+\caption{Ansible 2020 window scored against the SWE-bench Pro gold set $G_{SWE}$ (63 files) for comparability with SWE-bench Pro reporting, including the RQ3 variants. HAG is the all-gold count on the 16 issues with $|G_{SRC}|\geq 2$, and $|\hat F|$ is the mean predicted set size. For the non-LLM rankers, $K$ is tuned on this window, which gives an optimistic upper bound.}
 \label{tab:swe2020}
 \scriptsize
 \setlength{\tabcolsep}{2.5pt}
@@ -10,15 +10,17 @@
 Method & $n$ & P & R & F1 & AG & HAG & $|\hat F|$ \\
 \midrule
 Plain LLM (Haiku) & 5 & .218 & .330 & .262\,$\pm$\,.030 & 2.0 & 0.2 & 7.7 \\
-Plain LLM (Sonnet) & 3 & .452 & .492 & .471\,$\pm$\,.029 & 4.0 & 2.0 & 3.7 \\
-Single-agent RLM (Haiku) & 3 & .172 & .370 & .214\,$\pm$\,.313 & 3.3 & 0.7 & 19.0 \\
-Single-agent RLM (Sonnet) & 5 & .481 & .419 & .446\,$\pm$\,.052 & 3.4 & 1.2 & 4.9 \\
-Coordinator only (Haiku) & 3 & .544 & .524 & .530\,$\pm$\,.141 & 6.0 & 3.0 & 5.2 \\
-Domain agents, adaptive (Haiku) & 5 & .561 & .610 & .583\,$\pm$\,.035 & 6.4 & 3.6 & 5.9 \\
-Domain agents, adaptive, matched (Haiku) & 2 & .626 & .595 & \underline{.609\,$\pm$\,.202} & 6.5 & 3.5 & 5.3 \\
-Domain agents, nudged (Haiku) & 1 & .596 & .540 & .567 & 6.0 & 3.0 & 4.9 \\
-Codex 5.5 High (CLI) & 5 & .686 & .705 & \textbf{.694\,$\pm$\,.034} & 9.2 & 6.2 & 7.8 \\
-BM25 (best $K$=3) & det. & .351 & .317 & .333 & 4 & -- & 3 \\
+Plain LLM (Sonnet) & 3 & .461 & .492 & .476\,$\pm$\,.035 & 4.0 & 2.0 & 3.7 \\
+Single-agent RLM (Haiku) & 3 & .476 & .534 & .502\,$\pm$\,.117 & 5.7 & 2.7 & 6.2 \\
+Single-agent RLM (Sonnet) & 1 & .773 & .540 & .636 & 5.0 & 2.0 & 3.9 \\
+Coordinator, REPL only (Haiku) & 3 & .619 & .587 & .602\,$\pm$\,.076 & 5.0 & 2.0 & 5.3 \\
+Coordinator only (Haiku) & 3 & .629 & .640 & .633\,$\pm$\,.076 & 6.7 & 3.7 & 5.9 \\
+Coordinator + registry map (Haiku) & 3 & .658 & .651 & \underline{.654\,$\pm$\,.020} & 7.0 & 4.0 & 5.5 \\
+Domain agents, adaptive (Haiku) & 3 & .563 & .593 & .577\,$\pm$\,.052 & 7.3 & 4.3 & 6.0 \\
+Domain agents, nudged (Haiku) & 1 & .639 & .619 & .629 & 7.0 & 4.0 & 5.7 \\
+Domain agents, seeded (Haiku) & 1 & .571 & .635 & .602 & 7.0 & 4.0 & 5.8 \\
+Codex CLI (GPT-6.1-Terra, high) & 3 & .761 & .640 & \textbf{.695\,$\pm$\,.050} & 6.7 & 3.7 & 5.6 \\
+BM25 (best $K$=5) & det. & .274 & .413 & .329 & 5 & -- & 5 \\
 Learning-to-rank (best $K$=3) & det. & .404 & .365 & .383 & 3 & -- & 3 \\
 \bottomrule
 \end{tabular}}

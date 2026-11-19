@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Guiding the coordinator (RQ3), pooled over all 105 issues under $G_{SRC}$, with three runs of the default system and one run of each variant. Consult. is the mean number of consultation calls per issue and Tokens the mean tokens per issue. $\Delta_{\mu}$ and $\Delta_{i}$ are the differences from the default system in pooled micro-F1 and in mean per-issue F1, with 95\% paired bootstrap intervals, W/L counts issues better and worse than the default, and $p$ is from the two-sided Wilcoxon signed-rank test. The lower rows combine the final outputs of the default system and of Agentless without changing the coordinator. $^\dagger$Answers with the Agentless files when Agentless and CoSIL return the same set (17\% of issue runs) and with the default system otherwise, saving 15\% of its tokens.}
+\label{tab:guidance}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrccrr}
+\toprule
+Variant & F1 & P & R & Consult. & Tokens & $\Delta_{\mu}$ [95\% CI] & $\Delta_{i}$ [95\% CI] & W/L & $p$ \\
+\midrule
+Default (adaptive) & .664 & .655 & .674 & 0.72 & 1.12M & -- & -- & -- & -- \\
+Nudged consultation & .676 & .686 & .667 & 1.40 & 1.39M & +0.012 [$-$0.026, +0.048] & +0.004 [$-$0.033, +0.037] & 38/36 & 0.56 \\
+Seeded with Agentless & .671 & .651 & .691 & 0.46 & 1.27M & +0.006 [$-$0.033, +0.045] & $-$0.001 [$-$0.033, +0.031] & 38/35 & 0.90 \\
+\midrule
+Union with Agentless & .509 & .390 & .734 & & & & & & \\
+Intersection with Agentless & .540 & .815 & .403 & & & & & & \\
+Cascade$^\dagger$ & .607 & .588 & .629 & & & & & & \\
+\bottomrule
+\end{tabular}
+\end{table*}

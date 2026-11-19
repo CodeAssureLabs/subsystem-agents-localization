@@ -1,0 +1,33 @@
+\begin{table}[t]
+\centering
+\caption{Pooled micro-F1 with 95\% issue-bootstrap CIs on three scopes. $G_{SRC}$: all 105 issues. Python only: the 266 Python files of the 324 $G_{SRC}$ files, with predictions restricted to Python source files, which is the scope that the published localizers index. Without generated texts: the 67 issues of Ansible 2020, Open Library, and qutebrowser, whose issue texts come from SWE-bench Pro.}
+\label{tab:subsets}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Method & $G_{SRC}$ & Python only & Without generated texts \\
+\midrule
+Plain LLM (Haiku) & .199 [.152, .253] & .220 [.164, .277] & .147 [.097, .202] \\
+Plain LLM (Sonnet) & .362 [.297, .425] & .381 [.310, .453] & .347 [.270, .425] \\
+Single-agent RLM (Haiku) & .598 [.538, .657] & .649 [.592, .707] & .575 [.509, .644] \\
+Single-agent RLM (Sonnet) & .714 [.660, .767] & .754 [.696, .807] & .703 [.644, .761] \\
+\midrule
+Coordinator, REPL only (Haiku) & .677 [.628, .724] & .714 [.665, .763] & .657 [.606, .708] \\
+Coordinator only (Haiku) & .695 [.649, .742] & .719 [.668, .770] & .689 [.640, .738] \\
+Coordinator + registry map (Haiku) & .684 [.634, .734] & .721 [.670, .773] & .667 [.610, .722] \\
+Domain agents, adaptive (Haiku) & .664 [.614, .715] & .696 [.642, .750] & .653 [.594, .712] \\
+\midrule
+Codex CLI (GPT-6.1-Terra, high) & .751 [.701, .800] & .785 [.735, .834] & .736 [.680, .789] \\
+\midrule
+Reformulate-Retrieve-Localize & .375 [.330, .418] & .402 [.357, .446] & .402 [.350, .454] \\
+Agentless (file stage) & .395 [.351, .440] & .427 [.379, .474] & .387 [.338, .439] \\
+CoSIL (file stage) & .378 [.337, .418] & .406 [.363, .447] & .363 [.313, .413] \\
+LocAgent & .540 [.488, .592] & .582 [.527, .634] & .542 [.482, .603] \\
+\midrule
+RRL, held-out top-$K$ & .382 [.337, .427] & .417 [.370, .465] & .418 [.368, .470] \\
+Agentless, held-out top-$K$ & .429 [.379, .480] & .474 [.418, .528] & .421 [.363, .477] \\
+CoSIL, held-out top-$K$ & .409 [.363, .455] & .457 [.405, .508] & .400 [.345, .453] \\
+LocAgent, held-out top-$K$ & .586 [.545, .627] & .647 [.604, .689] & .584 [.529, .637] \\
+\bottomrule
+\end{tabular}}
+\end{table}

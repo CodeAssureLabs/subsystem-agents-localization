@@ -1,0 +1,114 @@
+[
+ {
+  "window": "ansible_2025",
+  "method": "ds_maponly",
+  "run": 2,
+  "instance_id": "instance_ansible__ansible-f2612fbe3ae3c9d5aafab612ee3f04dc2eb24378-v8aad1418f6069d90de963d5187204419f62ad893",
+  "first_attempt": {
+   "run_started": "2026-11-18T14:18:08.904691",
+   "guard": {
+    "mode": "shared-tmp",
+    "used_for": "all revision issue runs except the repeated ones (2026-11-18)",
+    "reproduce_with": "AGENT_GUARD_MODE=shared-tmp in the published harness"
+   },
+   "session_id": "session-0a5d8697"
+  },
+  "repetition": {
+   "run_started": "2026-11-19T10:48:08.609141",
+   "guard": {
+    "mode": "strict",
+    "used_for": "the repeated issue runs (2026-11-19)",
+    "reproduce_with": "AGENT_GUARD_MODE=strict (the default) in the published harness"
+   },
+   "session_id": "session-0a5d8697",
+   "registry_reused": true,
+   "blocked_access": []
+  },
+  "registry_agents": 30,
+  "registry_identical": true
+ },
+ {
+  "window": "ansible_2026",
+  "method": "ds_nospawn",
+  "run": 3,
+  "instance_id": "instance_ansible__ansible-51d5a456ef5342f5b18739d4211ac09ff9ad9a70-v895481957b6613ad7e0e511c98914c4ebec111cc",
+  "first_attempt": {
+   "run_started": "2026-11-18T14:57:49.151273",
+   "guard": {
+    "mode": "shared-tmp",
+    "used_for": "all revision issue runs except the repeated ones (2026-11-18)",
+    "reproduce_with": "AGENT_GUARD_MODE=shared-tmp in the published harness"
+   },
+   "session_id": "session-d1ef83f9"
+  },
+  "repetition": {
+   "run_started": "2026-11-19T10:48:23.405457",
+   "guard": {
+    "mode": "strict",
+    "used_for": "the repeated issue runs (2026-11-19)",
+    "reproduce_with": "AGENT_GUARD_MODE=strict (the default) in the published harness"
+   },
+   "session_id": "session-78151bf9",
+   "registry_reused": false,
+   "blocked_access": []
+  },
+  "registry_agents": 0,
+  "registry_identical": true
+ },
+ {
+  "window": "openlibrary",
+  "method": "ds_maponly",
+  "run": 2,
+  "instance_id": "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+  "first_attempt": {
+   "run_started": "2026-11-18T14:20:19.159892",
+   "guard": {
+    "mode": "shared-tmp",
+    "used_for": "all revision issue runs except the repeated ones (2026-11-18)",
+    "reproduce_with": "AGENT_GUARD_MODE=shared-tmp in the published harness"
+   },
+   "session_id": "session-9f91274c"
+  },
+  "repetition": {
+   "run_started": "2026-11-19T10:47:31.179939",
+   "guard": {
+    "mode": "strict",
+    "used_for": "the repeated issue runs (2026-11-19)",
+    "reproduce_with": "AGENT_GUARD_MODE=strict (the default) in the published harness"
+   },
+   "session_id": "session-9f91274c",
+   "registry_reused": true,
+   "blocked_access": []
+  },
+  "registry_agents": 16,
+  "registry_identical": true
+ },
+ {
+  "window": "qutebrowser",
+  "method": "ds_maponly",
+  "run": 2,
+  "instance_id": "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+  "first_attempt": {
+   "run_started": "2026-11-18T14:39:33.263263",
+   "guard": {
+    "mode": "shared-tmp",
+    "used_for": "all revision issue runs except the repeated ones (2026-11-18)",
+    "reproduce_with": "AGENT_GUARD_MODE=shared-tmp in the published harness"
+   },
+   "session_id": "session-b56efea2"
+  },
+  "repetition": {
+   "run_started": "2026-11-19T10:47:22.033840",
+   "guard": {
+    "mode": "strict",
+    "used_for": "the repeated issue runs (2026-11-19)",
+    "reproduce_with": "AGENT_GUARD_MODE=strict (the default) in the published harness"
+   },
+   "session_id": "session-b56efea2",
+   "registry_reused": true,
+   "blocked_access": []
+  },
+  "registry_agents": 15,
+  "registry_identical": true
+ }
+]

@@ -25,7 +25,9 @@ STYLE = {
     "plain_sonnet": ("#eda100", "o", False),
     "rlm_haiku": ("#4a3aa7", "s", True),
     "rlm_sonnet": ("#4a3aa7", "s", False),
+    "ds_repl": ("#8a6d3b", "d", True),
     "ds_nospawn": ("#1baf7a", "D", True),
+    "ds_maponly": ("#1b8f9f", "p", True),
     "ds_adaptive": ("#2a78d6", "*", True),
     "codex": ("#eb6834", "^", False),
     # Published localization methods (one family colour, distinct markers), all Haiku 4.5.
@@ -34,8 +36,8 @@ STYLE = {
     "cosil": ("#e87ba4", "X", True),
     "locagent": ("#e87ba4", "h", True),
 }
-ORDER = ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_nospawn", "ds_adaptive", "codex",
-         "rrl", "agentless", "cosil", "locagent"]
+ORDER = [m for m in ["plain_haiku", "plain_sonnet", "rlm_haiku", "rlm_sonnet", "ds_repl", "ds_nospawn", "ds_maponly", "ds_adaptive", "codex",
+         "rrl", "agentless", "cosil", "locagent"] if all(m in R["by_window"][w] for w in ["2020", "2025", "2026", "openlibrary", "qutebrowser"])]
 WINDOWS = ["2020", "2025", "2026", "openlibrary", "qutebrowser"]
 WTITLE = {"2020": "ansible 2020", "2025": "ansible 2025", "2026": "ansible 2026", "openlibrary": "openlibrary", "qutebrowser": "qutebrowser"}
 
@@ -72,7 +74,7 @@ def fig_pr():
             v = R["by_window"][w][m]["SRC"]
             marker(ax, v["R"], v["P"], m, label=METHOD_LABELS[m])
         ax.set_title(f"{WTITLE[w]} ($G_{{SRC}}$)")
-        ax.set_xlim(0, 1); ax.set_ylim(0, 0.8)
+        ax.set_xlim(0, 1); ax.set_ylim(0, 1)
         ax.grid(color="#ececea", lw=0.4)
     for ax in axs[1]:
         ax.set_xlabel("Micro recall  (dashed: iso-F1)")
@@ -101,7 +103,8 @@ def fig_cost():
     ax.set_xscale("log")
     ax.set_xlabel("Mean tokens per instance (log scale)")
     ax.set_ylabel("Pooled micro-F1, $G_{SRC}$ (105 issues)")
-    ax.set_ylim(0, 0.6)
+    # Show every method and its whole interval.
+    ax.set_ylim(0, min(1.0, max(R["pooled_all"][m]["SRC"]["F1_boot"][1] for m in ORDER) + 0.05))
     ax.grid(color="#ececea", lw=0.4)
     ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.2), ncol=2, frameon=False, fontsize=6.2,
               handletextpad=0.3, columnspacing=0.8)
@@ -129,7 +132,8 @@ def fig_forest():
             ax.scatter([p["F1"]], [ys[m]], marker="|", s=170, color="#0b0b0b", lw=1.6, zorder=5)
         ax.set_title(title)
         ax.set_xlabel("Micro-F1 (95% instance-bootstrap CI)")
-        ax.set_xlim(0, 0.8)
+        top = max(R["by_window"][w][m][k]["F1_boot"][1] for m in ORDER for w in WINDOWS)
+        ax.set_xlim(0, min(1.0, top + 0.02))
         ax.grid(axis="x", color="#ececea", lw=0.4)
     axes[0].set_yticks(list(ys.values()))
     axes[0].set_yticklabels([METHOD_LABELS[m] for m in ys])

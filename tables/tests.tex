@@ -1,29 +1,36 @@
 \begin{table*}[t]
 \centering
-\caption{Paired comparisons on per-issue F1, with each issue's F1 averaged over runs, pooled over all 105 issues of the three repositories. $\Delta$ is the mean difference (first minus second method), and W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test, Holm-adjusted over the thirteen planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\dagger$Ansible 2020 only (19 issues), with the same registry and timeout, unadjusted.}
+\caption{Paired comparisons over all 105 issues, all methods with Claude Haiku 4.5 unless marked Sonnet or Codex. $\Delta_{\mu}$ is the difference in pooled micro-F1 and $\Delta_{i}$ the mean difference in per-issue F1 (first minus second method, each issue's F1 averaged over runs), each with a 95\% paired bootstrap interval over issues. W/L counts the issues on which the first method is better or worse. $p_{Holm}$ is from the two-sided Wilcoxon signed-rank test on per-issue F1, Holm-adjusted over the 21 planned comparisons, and $r$ is the matched-pairs rank-biserial correlation. $^\star$Step of the sequence of RQ2; only ``Repository tools vs REPL only'' changes a single component (Section~\ref{sec:rq2}).}
 \label{tab:tests}
-\small
-\begin{tabular}{lrrrrrrr}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccrrrrr}
 \toprule
-& \multicolumn{4}{c}{$G_{SRC}$} & \multicolumn{3}{c}{$G_{PR}^{exist}$} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-8}
-Comparison & $\Delta$ & W/L & $p_{Holm}$ & $r$ & $\Delta$ & $p_{Holm}$ & $r$ \\
+& \multicolumn{5}{c}{$G_{SRC}$} & \multicolumn{2}{c}{$G_{PR}^{exist}$} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+Comparison & $\Delta_{\mu}$ [95\% CI] & $\Delta_{i}$ [95\% CI] & W/L & $p_{Holm}$ & $r$ & $\Delta_{i}$ & $p_{Holm}$ \\
 \midrule
-Domain agents vs plain LLM (Haiku) & +0.440 & 91/11 & $<$.001 & +0.95 & +0.405 & $<$.001 & +0.96 \\
-Domain agents vs RLM (Haiku) & +0.376 & 91/11 & $<$.001 & +0.94 & +0.348 & $<$.001 & +0.96 \\
-Coordinator only vs RLM (Haiku) & +0.332 & 85/15 & $<$.001 & +0.85 & +0.308 & $<$.001 & +0.89 \\
-Domain agents vs coordinator only & +0.044 & 46/34 & .069 & +0.23 & +0.040 & .039 & +0.24 \\
-RLM vs plain LLM (Haiku) & +0.064 & 51/34 & .052 & +0.29 & +0.057 & .022 & +0.34 \\
-RLM vs plain LLM (Sonnet) & +0.227 & 67/26 & $<$.001 & +0.66 & +0.225 & $<$.001 & +0.70 \\
-Domain agents (H) vs plain LLM (S) & +0.286 & 75/24 & $<$.001 & +0.74 & +0.284 & $<$.001 & +0.76 \\
-Domain agents (H) vs RLM (S) & +0.059 & 56/33 & .052 & +0.29 & +0.059 & .022 & +0.32 \\
-Domain agents (H) vs Codex & -0.101 & 18/62 & $<$.001 & -0.63 & -0.047 & .033 & -0.28 \\
-Domain agents vs Reformulate-Retrieve-Localize & +0.291 & 86/19 & $<$.001 & +0.86 & +0.280 & $<$.001 & +0.89 \\
-Domain agents vs Agentless & +0.239 & 86/16 & $<$.001 & +0.77 & +0.244 & $<$.001 & +0.81 \\
-Domain agents vs CoSIL & +0.281 & 90/14 & $<$.001 & +0.88 & +0.264 & $<$.001 & +0.86 \\
-Domain agents vs LocAgent & +0.089 & 60/41 & .011 & +0.34 & +0.128 & $<$.001 & +0.55 \\
-\midrule
-Adaptive vs nudged$^\dagger$ & +0.012 & 7/4 & .790 & +0.09 & +0.029 & .691 & +0.12 \\
+Domain agents vs plain LLM & +0.465 [+0.408, +0.525] & +0.483 [+0.421, +0.546] & 93/7 & $<$.001 & +0.98 & +0.430 & $<$.001 \\
+Domain agents vs RLM & +0.066 [+0.041, +0.092] & +0.052 [+0.025, +0.078] & 53/22 & .001 & +0.51 & +0.028 & .059 \\
+Repository tools vs REPL only$^\star$ & +0.019 [$-$0.003, +0.039] & +0.009 [$-$0.013, +0.031] & 41/27 & 1.000 & +0.14 & +0.003 & 1.000 \\
+Coordinator harness vs RLM runner$^\star$ & +0.079 [+0.046, +0.111] & +0.055 [+0.027, +0.084] & 50/25 & .003 & +0.48 & +0.044 & .004 \\
+Coordinator only vs RLM & +0.097 [+0.065, +0.130] & +0.064 [+0.035, +0.095] & 50/20 & $<$.001 & +0.56 & +0.048 & .016 \\
+Registry (map + consultation)$^\star$ & $-$0.031 [$-$0.052, $-$0.012] & $-$0.013 [$-$0.033, +0.008] & 26/42 & .416 & -0.24 & $-$0.020 & .052 \\
+Registry map only$^\star$ & $-$0.011 [$-$0.034, +0.013] & $-$0.004 [$-$0.026, +0.018] & 29/34 & 1.000 & -0.05 & $-$0.005 & 1.000 \\
+Consultation, given the map$^\star$ & $-$0.020 [$-$0.046, +0.004] & $-$0.009 [$-$0.030, +0.012] & 32/36 & 1.000 & -0.10 & $-$0.015 & .313 \\
+RLM vs plain LLM$^\star$ & +0.399 [+0.338, +0.461] & +0.432 [+0.368, +0.494] & 91/9 & $<$.001 & +0.95 & +0.403 & $<$.001 \\
+RLM vs plain LLM (Sonnet) & +0.353 [+0.290, +0.416] & +0.346 [+0.269, +0.423] & 76/14 & $<$.001 & +0.82 & +0.354 & $<$.001 \\
+Domain agents vs plain LLM (Sonnet) & +0.303 [+0.239, +0.368] & +0.329 [+0.258, +0.400] & 75/21 & $<$.001 & +0.81 & +0.308 & $<$.001 \\
+Domain agents vs RLM (Sonnet) & $-$0.050 [$-$0.085, $-$0.016] & $-$0.017 [$-$0.059, +0.026] & 31/43 & 1.000 & -0.13 & $-$0.046 & .024 \\
+Domain agents vs Codex & $-$0.087 [$-$0.124, $-$0.048] & $-$0.060 [$-$0.108, $-$0.012] & 23/52 & .005 & -0.44 & $-$0.047 & .024 \\
+Domain agents vs RRL & +0.290 [+0.236, +0.349] & +0.334 [+0.279, +0.389] & 90/15 & $<$.001 & +0.88 & +0.306 & $<$.001 \\
+Domain agents vs Agentless & +0.270 [+0.216, +0.322] & +0.282 [+0.227, +0.335] & 87/14 & $<$.001 & +0.87 & +0.270 & $<$.001 \\
+Domain agents vs CoSIL & +0.286 [+0.238, +0.339] & +0.324 [+0.272, +0.375] & 93/10 & $<$.001 & +0.93 & +0.290 & $<$.001 \\
+Domain agents vs LocAgent & +0.125 [+0.079, +0.170] & +0.132 [+0.084, +0.180] & 67/33 & $<$.001 & +0.54 & +0.154 & $<$.001 \\
+Domain agents vs RRL, top-$K$ & +0.283 [+0.226, +0.341] & +0.313 [+0.255, +0.372] & 91/13 & $<$.001 & +0.85 & +0.300 & $<$.001 \\
+Domain agents vs Agentless, top-$K$ & +0.235 [+0.175, +0.297] & +0.253 [+0.194, +0.313] & 82/17 & $<$.001 & +0.78 & +0.259 & $<$.001 \\
+Domain agents vs CoSIL, top-$K$ & +0.256 [+0.195, +0.318] & +0.273 [+0.213, +0.334] & 85/16 & $<$.001 & +0.81 & +0.284 & $<$.001 \\
+Domain agents vs LocAgent, top-$K$ & +0.078 [+0.028, +0.132] & +0.089 [+0.044, +0.135] & 64/37 & .003 & +0.41 & +0.137 & $<$.001 \\
 \bottomrule
 \end{tabular}
 \end{table*}

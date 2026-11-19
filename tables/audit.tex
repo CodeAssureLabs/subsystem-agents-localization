@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Coverage of the access audit per configuration: issue runs, agent actions (tool calls, REPL blocks, Codex commands) and their outputs scanned, size of the scanned outputs, issue runs whose agent code used the shared temporary directory, and among them the issue runs whose output showed files of our analysis tools, which were repeated (Section~\ref{sec:protocol}).}
+\label{tab:audit}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+Configuration & Runs & Actions & Outputs & MB & \texttt{/tmp} & Repeated \\
+\midrule
+Single-agent RLM (Haiku) & 315 & 7{,}454 & 7{,}454 & 14.7 & 1 & 0 \\
+Single-agent RLM (Sonnet) & 105 & 2{,}103 & 2{,}103 & 4.4 & 0 & 0 \\
+Coordinator, REPL only (Haiku) & 315 & 11{,}135 & 33{,}405 & 30.6 & 0 & 0 \\
+Coordinator only (Haiku) & 315 & 11{,}952 & 14{,}044 & 6.1 & 18 & 1 \\
+Coordinator + registry map (Haiku) & 315 & 11{,}895 & 14{,}023 & 5.9 & 25 & 3 \\
+Domain agents, adaptive (Haiku) & 315 & 17{,}217 & 17{,}217 & 33.8 & 31 & 0 \\
+Domain agents, nudged (Haiku) & 105 & 10{,}563 & 10{,}563 & 18.5 & 7 & 0 \\
+Domain agents, seeded (Haiku) & 105 & 5{,}734 & 5{,}734 & 12.1 & 14 & 0 \\
+Codex CLI (GPT-6.1-Terra, high) & 315 & 2{,}350 & 2{,}350 & 14.5 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

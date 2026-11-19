@@ -125,7 +125,11 @@ init_question = (
         )
 ```
 
-The nudged run on Ansible 2020 used an earlier version of the harness, whose instruction asked the coordinator to consult the relevant domain agents for every issue (Section III-D of the paper).
+Forced consultation (the nudged variant of RQ3) replaces the consultation instruction above with:
+
+```
+First route the problem to any relevant available folder agents and use their specialist input as the starting point for investigation. Use your own repository tools to verify, disambiguate, or fill gaps after routing.
+```
 
 ## Plain LLM (`evals/run_plain_llm.py`)
 

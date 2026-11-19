@@ -1,0 +1,3372 @@
+{
+ "instance_ansible__ansible-ecea15c508f0e081525be036cf76bbb56dbcdd9d-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "GalaxyCLI",
+   "_execute_install_collection",
+   "_execute_install_role",
+   "_get_default_collection_path",
+   "_require_one_of_collections_requirements",
+   "add_install_options",
+   "execute_download",
+   "execute_install",
+   "execute_verify",
+   "galaxy",
+   "role-file",
+   "roles-path"
+  ],
+  "ids_in_statement": [
+   "galaxy"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "galaxy",
+   "installing_multiple_collections"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-34db57a47f875d11c4068567b9ec7ace174ec4cf-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "ansible_processor_nproc",
+   "get_cpu_facts",
+   "linux"
+  ],
+  "ids_in_statement": [
+   "ansible_processor_nproc"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "linux",
+   "playbooks_variables",
+   "porting_guide_2.10"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-b748edea457a4576847a10275678127895d2f02f-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "Content-length",
+   "Content-type",
+   "body_format",
+   "mime_type",
+   "prepare_multipart",
+   "publish_collection",
+   "text_form_field",
+   "urls"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-1ee70fc272aff6bf3415357c6e13c5de5b928d9b-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "_isidentifier_PY2",
+   "_isidentifier_PY3",
+   "isidentifier"
+  ],
+  "ids_in_statement": [
+   "isidentifier"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-ea04e0048dbb3b63f876aad7020e1de8eee9f362-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "_handle_aliases",
+   "_handle_no_log_values",
+   "_return_formatted",
+   "basic",
+   "deprecate",
+   "deprecated",
+   "display",
+   "list_deprecations",
+   "parameters",
+   "warnings"
+  ],
+  "ids_in_statement": [
+   "display"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "Ansible.Basic",
+   "testing_validate-modules"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-e40889e7112ae00a21a2c74312b330e67a766cc0-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "CollectionRequirement",
+   "_build_collection_dir",
+   "_build_collection_tar",
+   "_build_dependency_map",
+   "_build_files_manifest",
+   "_collections_from_scm",
+   "_get_collection_info",
+   "_parse_requirements_file",
+   "_require_one_of_collections_requirements",
+   "artifact_info",
+   "build_collection",
+   "collection",
+   "collection_info",
+   "download_collections",
+   "from_path",
+   "galaxy",
+   "galaxy_metadata",
+   "get_collection_info_from_req",
+   "get_galaxy_metadata_path",
+   "install",
+   "install_artifact",
+   "install_collections",
+   "install_scm",
+   "parse_scm",
+   "prefix",
+   "publish_collection",
+   "requirement",
+   "run_scm_cmd",
+   "scm_archive_collection",
+   "scm_archive_resource",
+   "scm_archive_role",
+   "update_dep_map_collection_info",
+   "validate_collection_name",
+   "validate_collection_path"
+  ],
+  "ids_in_statement": [
+   "collection",
+   "galaxy",
+   "requirement"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "collections_using",
+   "developing_collections",
+   "galaxy",
+   "installing_collections_git_repo",
+   "installing_multiple_collections",
+   "user_guide"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-984216f52e76b904e5b0fa0fb956ab4f1e0a7751-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "AnsibleCollectionUnsupportedVersionError",
+   "AnsiblePluginCircularRedirect",
+   "AnsiblePluginError",
+   "AnsiblePluginRemoved",
+   "AnsiblePluginRemovedError",
+   "PluginLoader",
+   "_collection_finder",
+   "_configure_module",
+   "_find_fq_plugin",
+   "_get_connection",
+   "_get_subpackage_search_paths",
+   "_resolve_plugin_step",
+   "action",
+   "deprecated",
+   "display",
+   "errors",
+   "find_plugin_with_context",
+   "get_deprecation_message",
+   "get_with_context",
+   "loader",
+   "record_deprecation",
+   "task_executor",
+   "template"
+  ],
+  "ids_in_statement": [
+   "deprecated",
+   "display",
+   "loader"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "ansible_builtin_runtime",
+   "collection_finder",
+   "task_executor"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-d30fc6c0b359f631130b0e979d9a78a7b3747d48-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "_build_collection_tar",
+   "_extract_tar_dir",
+   "_extract_tar_file",
+   "_get_json_from_tar_file",
+   "_get_tar_file_hash",
+   "_is_child_path",
+   "_tarfile_extract",
+   "_walk",
+   "collection",
+   "from_tar",
+   "install_artifact",
+   "reset_stat"
+  ],
+  "ids_in_statement": [
+   "collection"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-e22e103cdf8edc56ff7d9b848a58f94f1471a263-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "_kerb_auth",
+   "kinit_args",
+   "version_added",
+   "winrm"
+  ],
+  "ids_in_statement": [
+   "winrm"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "winrm"
+  ],
+  "stems_named": [
+   "winrm"
+  ]
+ },
+ "instance_ansible__ansible-c616e54a6e23fa5616a1d56d243f69576164ef9b-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "CollectionModuleInfo",
+   "CollectionModuleUtilLocator",
+   "InternalRedirectModuleInfo",
+   "LegacyModuleUtilLocator",
+   "ModuleDepFinder",
+   "ModuleInfo",
+   "ModuleUtilLocatorBase",
+   "_collection_finder",
+   "_find_module",
+   "_find_module_utils",
+   "_generate_redirect_shim_source",
+   "_get_module_utils_remainder",
+   "_get_module_utils_remainder_parts",
+   "_handle_redirect",
+   "_locate",
+   "acl_interfaces",
+   "address_family",
+   "ansible_tower",
+   "aws.batch",
+   "aws.cloudfront_facts",
+   "aws.core",
+   "aws.direct_connect",
+   "aws.elb_utils",
+   "aws.elbv2",
+   "aws.iam",
+   "aws.rds",
+   "aws.s3",
+   "aws.urls",
+   "aws.waf",
+   "aws.waiters",
+   "azure_rm_common",
+   "azure_rm_common_ext",
+   "azure_rm_common_rest",
+   "bfd_interfaces",
+   "candidate_names_joined",
+   "cloudfront_facts",
+   "compat.ipaddress",
+   "direct_connect",
+   "ecs.api",
+   "elb_utils",
+   "firewall_global",
+   "firewall_interfaces",
+   "firewall_rules",
+   "gcp_utils",
+   "get_data",
+   "get_source",
+   "hsrp_interfaces",
+   "identity.keycloak.keycloak",
+   "k8s.common",
+   "k8s.raw",
+   "k8s.scale",
+   "l2_interfaces",
+   "l3_interfaces",
+   "lacp_interfaces",
+   "lag_interfaces",
+   "lldp_global",
+   "lldp_interfaces",
+   "module_common",
+   "net_tools.netbox.netbox_utils",
+   "net_tools.nios",
+   "net_tools.nios.api",
+   "netapp_elementsw_module",
+   "netapp_module",
+   "netbox_utils",
+   "network.a10",
+   "network.a10.a10",
+   "network.aci.aci",
+   "network.aci.mso",
+   "network.aireos",
+   "network.aireos.aireos",
+   "network.aos",
+   "network.aos.aos",
+   "network.apconos",
+   "network.aruba",
+   "network.aruba.aruba",
+   "network.asa.asa",
+   "network.bigswitch",
+   "network.bigswitch.bigswitch",
+   "network.checkpoint.checkpoint",
+   "network.common.cfg.base",
+   "network.common.config",
+   "network.common.facts.facts",
+   "network.common.netconf",
+   "network.common.network",
+   "network.common.parsing",
+   "network.common.utils",
+   "network.dellos10.dellos10",
+   "network.edgeos",
+   "network.edgeos.edgeos",
+   "network.enos",
+   "network.enos.enos",
+   "network.eos.argspec.facts",
+   "network.eos.argspec.facts.facts",
+   "network.eos.argspec.interfaces",
+   "network.eos.argspec.interfaces.interfaces",
+   "network.eos.argspec.l2_interfaces",
+   "network.eos.argspec.l2_interfaces.l2_interfaces",
+   "network.eos.argspec.l3_interfaces",
+   "network.eos.argspec.l3_interfaces.l3_interfaces",
+   "network.eos.argspec.lacp",
+   "network.eos.argspec.lacp.lacp",
+   "network.eos.argspec.lacp_interfaces",
+   "network.eos.argspec.lacp_interfaces.lacp_interfaces",
+   "network.eos.argspec.lag_interfaces",
+   "network.eos.argspec.lag_interfaces.lag_interfaces",
+   "network.eos.argspec.lldp_global",
+   "network.eos.argspec.lldp_global.lldp_global",
+   "network.eos.argspec.lldp_interfaces",
+   "network.eos.argspec.lldp_interfaces.lldp_interfaces",
+   "network.eos.argspec.vlans",
+   "network.eos.argspec.vlans.vlans",
+   "network.eos.config",
+   "network.eos.config.interfaces",
+   "network.eos.config.interfaces.interfaces",
+   "network.eos.config.l2_interfaces",
+   "network.eos.config.l2_interfaces.l2_interfaces",
+   "network.eos.config.l3_interfaces",
+   "network.eos.config.l3_interfaces.l3_interfaces",
+   "network.eos.config.lacp",
+   "network.eos.config.lacp.lacp",
+   "network.eos.config.lacp_interfaces",
+   "network.eos.config.lacp_interfaces.lacp_interfaces",
+   "network.eos.config.lag_interfaces",
+   "network.eos.config.lag_interfaces.lag_interfaces",
+   "network.eos.config.lldp_global",
+   "network.eos.config.lldp_global.lldp_global",
+   "network.eos.config.lldp_interfaces",
+   "network.eos.config.lldp_interfaces.lldp_interfaces",
+   "network.eos.config.vlans",
+   "network.eos.config.vlans.vlans",
+   "network.eos.eos",
+   "network.eos.facts",
+   "network.eos.facts.facts",
+   "network.eos.facts.interfaces",
+   "network.eos.facts.interfaces.interfaces",
+   "network.eos.facts.l2_interfaces",
+   "network.eos.facts.l2_interfaces.l2_interfaces",
+   "network.eos.facts.l3_interfaces",
+   "network.eos.facts.l3_interfaces.l3_interfaces",
+   "network.eos.facts.lacp",
+   "network.eos.facts.lacp.lacp",
+   "network.eos.facts.lacp_interfaces",
+   "network.eos.facts.lacp_interfaces.lacp_interfaces",
+   "network.eos.facts.lag_interfaces",
+   "network.eos.facts.lag_interfaces.lag_interfaces",
+   "network.eos.facts.legacy",
+   "network.eos.facts.legacy.base",
+   "network.eos.facts.lldp_global",
+   "network.eos.facts.lldp_global.lldp_global",
+   "network.eos.facts.lldp_interfaces",
+   "network.eos.facts.lldp_interfaces.lldp_interfaces",
+   "network.eos.facts.vlans",
+   "network.eos.facts.vlans.vlans",
+   "network.eos.providers",
+   "network.eos.providers.cli",
+   "network.eos.providers.cli.config",
+   "network.eos.providers.cli.config.bgp",
+   "network.eos.providers.cli.config.bgp.address_family",
+   "network.eos.providers.cli.config.bgp.neighbors",
+   "network.eos.providers.cli.config.bgp.process",
+   "network.eos.providers.module",
+   "network.eos.providers.providers",
+   "network.eos.utils",
+   "network.eos.utils.utils",
+   "network.eric_eccli",
+   "network.eric_eccli.eric_eccli",
+   "network.exos",
+   "network.exos.argspec.facts.facts",
+   "network.exos.argspec.lldp_global",
+   "network.exos.argspec.lldp_global.lldp_global",
+   "network.exos.config.lldp_global",
+   "network.exos.config.lldp_global.lldp_global",
+   "network.exos.exos",
+   "network.exos.facts.facts",
+   "network.exos.facts.legacy.base",
+   "network.exos.facts.lldp_global",
+   "network.exos.facts.lldp_global.lldp_global",
+   "network.exos.utils.utils",
+   "network.f5.bigip",
+   "network.f5.bigiq",
+   "network.f5.common",
+   "network.f5.compare",
+   "network.f5.icontrol",
+   "network.f5.ipaddress",
+   "network.f5.urls",
+   "network.fortianalyzer",
+   "network.fortianalyzer.common",
+   "network.fortianalyzer.fortianalyzer",
+   "network.fortimanager.common",
+   "network.fortimanager.fortimanager",
+   "network.fortios.argspec",
+   "network.fortios.argspec.facts",
+   "network.fortios.argspec.facts.facts",
+   "network.fortios.argspec.system",
+   "network.fortios.argspec.system.system",
+   "network.fortios.facts",
+   "network.fortios.facts.facts",
+   "network.fortios.facts.system",
+   "network.fortios.facts.system.system",
+   "network.fortios.fortios",
+   "network.frr",
+   "network.frr.frr",
+   "network.frr.providers",
+   "network.frr.providers.cli",
+   "network.frr.providers.cli.config",
+   "network.frr.providers.cli.config.base",
+   "network.frr.providers.cli.config.bgp",
+   "network.frr.providers.cli.config.bgp.address_family",
+   "network.frr.providers.cli.config.bgp.neighbors",
+   "network.frr.providers.cli.config.bgp.process",
+   "network.frr.providers.module",
+   "network.frr.providers.providers",
+   "network.ftd",
+   "network.ftd.common",
+   "network.icx.icx",
+   "network.ingate",
+   "network.ingate.common",
+   "network.ios",
+   "network.ios.argspec",
+   "network.ios.argspec.facts",
+   "network.ios.argspec.facts.facts",
+   "network.ios.argspec.interfaces",
+   "network.ios.argspec.interfaces.interfaces",
+   "network.ios.argspec.l2_interfaces",
+   "network.ios.argspec.l2_interfaces.l2_interfaces",
+   "network.ios.argspec.l3_interfaces",
+   "network.ios.argspec.l3_interfaces.l3_interfaces",
+   "network.ios.argspec.lacp",
+   "network.ios.argspec.lacp.lacp",
+   "network.ios.argspec.lacp_interfaces",
+   "network.ios.argspec.lacp_interfaces.lacp_interfaces",
+   "network.ios.argspec.lag_interfaces",
+   "network.ios.argspec.lag_interfaces.lag_interfaces",
+   "network.ios.argspec.lldp_global",
+   "network.ios.argspec.lldp_global.lldp_global",
+   "network.ios.argspec.lldp_interfaces",
+   "network.ios.argspec.lldp_interfaces.lldp_interfaces",
+   "network.ios.argspec.vlans",
+   "network.ios.argspec.vlans.vlans",
+   "network.ios.config",
+   "network.ios.config.interfaces",
+   "network.ios.config.interfaces.interfaces",
+   "network.ios.config.l2_interfaces",
+   "network.ios.config.l2_interfaces.l2_interfaces",
+   "network.ios.config.l3_interfaces",
+   "network.ios.config.l3_interfaces.l3_interfaces",
+   "network.ios.config.lacp",
+   "network.ios.config.lacp.lacp",
+   "network.ios.config.lacp_interfaces",
+   "network.ios.config.lacp_interfaces.lacp_interfaces",
+   "network.ios.config.lag_interfaces",
+   "network.ios.config.lag_interfaces.lag_interfaces",
+   "network.ios.config.lldp_global",
+   "network.ios.config.lldp_global.lldp_global",
+   "network.ios.config.lldp_interfaces",
+   "network.ios.config.lldp_interfaces.lldp_interfaces",
+   "network.ios.config.vlans",
+   "network.ios.config.vlans.vlans",
+   "network.ios.facts",
+   "network.ios.facts.facts",
+   "network.ios.facts.interfaces",
+   "network.ios.facts.interfaces.interfaces",
+   "network.ios.facts.l2_interfaces",
+   "network.ios.facts.l2_interfaces.l2_interfaces",
+   "network.ios.facts.l3_interfaces",
+   "network.ios.facts.l3_interfaces.l3_interfaces",
+   "network.ios.facts.lacp",
+   "network.ios.facts.lacp.lacp",
+   "network.ios.facts.lacp_interfaces",
+   "network.ios.facts.lacp_interfaces.lacp_interfaces",
+   "network.ios.facts.lag_interfaces",
+   "network.ios.facts.lag_interfaces.lag_interfaces",
+   "network.ios.facts.legacy",
+   "network.ios.facts.legacy.base",
+   "network.ios.facts.lldp_global",
+   "network.ios.facts.lldp_global.lldp_global",
+   "network.ios.facts.lldp_interfaces",
+   "network.ios.facts.lldp_interfaces.lldp_interfaces",
+   "network.ios.facts.vlans",
+   "network.ios.facts.vlans.vlans",
+   "network.ios.ios",
+   "network.ios.providers",
+   "network.ios.providers.cli",
+   "network.ios.providers.cli.config",
+   "network.ios.providers.cli.config.base",
+   "network.ios.providers.cli.config.bgp",
+   "network.ios.providers.cli.config.bgp.address_family",
+   "network.ios.providers.cli.config.bgp.neighbors",
+   "network.ios.providers.cli.config.bgp.process",
+   "network.ios.providers.module",
+   "network.ios.providers.providers",
+   "network.ios.utils",
+   "network.ios.utils.utils",
+   "network.iosxr",
+   "network.iosxr.argspec",
+   "network.iosxr.argspec.facts",
+   "network.iosxr.argspec.facts.facts",
+   "network.iosxr.argspec.interfaces",
+   "network.iosxr.argspec.interfaces.interfaces",
+   "network.iosxr.argspec.l2_interfaces",
+   "network.iosxr.argspec.l2_interfaces.l2_interfaces",
+   "network.iosxr.argspec.l3_interfaces",
+   "network.iosxr.argspec.l3_interfaces.l3_interfaces",
+   "network.iosxr.argspec.lacp",
+   "network.iosxr.argspec.lacp.lacp",
+   "network.iosxr.argspec.lacp_interfaces",
+   "network.iosxr.argspec.lacp_interfaces.lacp_interfaces",
+   "network.iosxr.argspec.lag_interfaces",
+   "network.iosxr.argspec.lag_interfaces.lag_interfaces",
+   "network.iosxr.argspec.lldp_global",
+   "network.iosxr.argspec.lldp_global.lldp_global",
+   "network.iosxr.argspec.lldp_interfaces",
+   "network.iosxr.argspec.lldp_interfaces.lldp_interfaces",
+   "network.iosxr.config",
+   "network.iosxr.config.interfaces",
+   "network.iosxr.config.interfaces.interfaces",
+   "network.iosxr.config.l2_interfaces",
+   "network.iosxr.config.l2_interfaces.l2_interfaces",
+   "network.iosxr.config.l3_interfaces",
+   "network.iosxr.config.l3_interfaces.l3_interfaces",
+   "network.iosxr.config.lacp",
+   "network.iosxr.config.lacp.lacp",
+   "network.iosxr.config.lacp_interfaces",
+   "network.iosxr.config.lacp_interfaces.lacp_interfaces",
+   "network.iosxr.config.lag_interfaces",
+   "network.iosxr.config.lag_interfaces.lag_interfaces",
+   "network.iosxr.config.lldp_global",
+   "network.iosxr.config.lldp_global.lldp_global",
+   "network.iosxr.config.lldp_interfaces",
+   "network.iosxr.config.lldp_interfaces.lldp_interfaces",
+   "network.iosxr.facts",
+   "network.iosxr.facts.facts",
+   "network.iosxr.facts.interfaces",
+   "network.iosxr.facts.interfaces.interfaces",
+   "network.iosxr.facts.l2_interfaces",
+   "network.iosxr.facts.l2_interfaces.l2_interfaces",
+   "network.iosxr.facts.l3_interfaces",
+   "network.iosxr.facts.l3_interfaces.l3_interfaces",
+   "network.iosxr.facts.lacp",
+   "network.iosxr.facts.lacp.lacp",
+   "network.iosxr.facts.lacp_interfaces",
+   "network.iosxr.facts.lacp_interfaces.lacp_interfaces",
+   "network.iosxr.facts.lag_interfaces",
+   "network.iosxr.facts.lag_interfaces.lag_interfaces",
+   "network.iosxr.facts.legacy",
+   "network.iosxr.facts.legacy.base",
+   "network.iosxr.facts.lldp_global",
+   "network.iosxr.facts.lldp_global.lldp_global",
+   "network.iosxr.facts.lldp_interfaces",
+   "network.iosxr.facts.lldp_interfaces.lldp_interfaces",
+   "network.iosxr.iosxr",
+   "network.iosxr.providers",
+   "network.iosxr.providers.cli",
+   "network.iosxr.providers.cli.config",
+   "network.iosxr.providers.cli.config.bgp",
+   "network.iosxr.providers.cli.config.bgp.address_family",
+   "network.iosxr.providers.cli.config.bgp.neighbors",
+   "network.iosxr.providers.cli.config.bgp.process",
+   "network.iosxr.providers.module",
+   "network.iosxr.providers.providers",
+   "network.iosxr.utils",
+   "network.iosxr.utils.utils",
+   "network.ironware.ironware",
+   "network.iworkflow",
+   "network.junos",
+   "network.junos.argspec",
+   "network.junos.argspec.facts",
+   "network.junos.argspec.facts.facts",
+   "network.junos.argspec.interfaces",
+   "network.junos.argspec.interfaces.interfaces",
+   "network.junos.argspec.l2_interfaces",
+   "network.junos.argspec.l2_interfaces.l2_interfaces",
+   "network.junos.argspec.l3_interfaces",
+   "network.junos.argspec.l3_interfaces.l3_interfaces",
+   "network.junos.argspec.lacp",
+   "network.junos.argspec.lacp.lacp",
+   "network.junos.argspec.lacp_interfaces",
+   "network.junos.argspec.lacp_interfaces.lacp_interfaces",
+   "network.junos.argspec.lag_interfaces",
+   "network.junos.argspec.lag_interfaces.lag_interfaces",
+   "network.junos.argspec.lldp_global",
+   "network.junos.argspec.lldp_global.lldp_global",
+   "network.junos.argspec.lldp_interfaces",
+   "network.junos.argspec.lldp_interfaces.lldp_interfaces",
+   "network.junos.argspec.vlans",
+   "network.junos.argspec.vlans.vlans",
+   "network.junos.config",
+   "network.junos.config.interfaces",
+   "network.junos.config.interfaces.interfaces",
+   "network.junos.config.l2_interfaces",
+   "network.junos.config.l2_interfaces.l2_interfaces",
+   "network.junos.config.l3_interfaces",
+   "network.junos.config.l3_interfaces.l3_interfaces",
+   "network.junos.config.lacp",
+   "network.junos.config.lacp.lacp",
+   "network.junos.config.lacp_interfaces",
+   "network.junos.config.lacp_interfaces.lacp_interfaces",
+   "network.junos.config.lag_interfaces",
+   "network.junos.config.lag_interfaces.lag_interfaces",
+   "network.junos.config.lldp_global",
+   "network.junos.config.lldp_global.lldp_global",
+   "network.junos.config.lldp_interfaces",
+   "network.junos.config.lldp_interfaces.lldp_interfaces",
+   "network.junos.config.vlans",
+   "network.junos.config.vlans.vlans",
+   "network.junos.facts",
+   "network.junos.facts.facts",
+   "network.junos.facts.interfaces",
+   "network.junos.facts.interfaces.interfaces",
+   "network.junos.facts.l2_interfaces",
+   "network.junos.facts.l2_interfaces.l2_interfaces",
+   "network.junos.facts.l3_interfaces",
+   "network.junos.facts.l3_interfaces.l3_interfaces",
+   "network.junos.facts.lacp",
+   "network.junos.facts.lacp.lacp",
+   "network.junos.facts.lacp_interfaces",
+   "network.junos.facts.lacp_interfaces.lacp_interfaces",
+   "network.junos.facts.lag_interfaces",
+   "network.junos.facts.lag_interfaces.lag_interfaces",
+   "network.junos.facts.legacy",
+   "network.junos.facts.legacy.base",
+   "network.junos.facts.lldp_global",
+   "network.junos.facts.lldp_global.lldp_global",
+   "network.junos.facts.lldp_interfaces",
+   "network.junos.facts.lldp_interfaces.lldp_interfaces",
+   "network.junos.facts.vlans",
+   "network.junos.facts.vlans.vlans",
+   "network.junos.junos",
+   "network.junos.utils",
+   "network.junos.utils.utils",
+   "network.meraki",
+   "network.meraki.meraki",
+   "network.netconf",
+   "network.netconf.netconf",
+   "network.netscaler.netscaler",
+   "network.netvisor",
+   "network.nos.nos",
+   "network.nso.nso",
+   "network.nxos",
+   "network.nxos.argspec",
+   "network.nxos.argspec.bfd_interfaces",
+   "network.nxos.argspec.bfd_interfaces.bfd_interfaces",
+   "network.nxos.argspec.facts",
+   "network.nxos.argspec.facts.facts",
+   "network.nxos.argspec.interfaces",
+   "network.nxos.argspec.interfaces.interfaces",
+   "network.nxos.argspec.l2_interfaces",
+   "network.nxos.argspec.l2_interfaces.l2_interfaces",
+   "network.nxos.argspec.l3_interfaces",
+   "network.nxos.argspec.l3_interfaces.l3_interfaces",
+   "network.nxos.argspec.lacp",
+   "network.nxos.argspec.lacp.lacp",
+   "network.nxos.argspec.lacp_interfaces",
+   "network.nxos.argspec.lacp_interfaces.lacp_interfaces",
+   "network.nxos.argspec.lag_interfaces",
+   "network.nxos.argspec.lag_interfaces.lag_interfaces",
+   "network.nxos.argspec.lldp_global",
+   "network.nxos.argspec.lldp_global.lldp_global",
+   "network.nxos.argspec.telemetry",
+   "network.nxos.argspec.telemetry.telemetry",
+   "network.nxos.argspec.vlans",
+   "network.nxos.argspec.vlans.vlans",
+   "network.nxos.cmdref",
+   "network.nxos.cmdref.telemetry",
+   "network.nxos.cmdref.telemetry.telemetry",
+   "network.nxos.config",
+   "network.nxos.config.bfd_interfaces",
+   "network.nxos.config.bfd_interfaces.bfd_interfaces",
+   "network.nxos.config.interfaces",
+   "network.nxos.config.interfaces.interfaces",
+   "network.nxos.config.l2_interfaces",
+   "network.nxos.config.l2_interfaces.l2_interfaces",
+   "network.nxos.config.l3_interfaces",
+   "network.nxos.config.l3_interfaces.l3_interfaces",
+   "network.nxos.config.lacp",
+   "network.nxos.config.lacp.lacp",
+   "network.nxos.config.lacp_interfaces",
+   "network.nxos.config.lacp_interfaces.lacp_interfaces",
+   "network.nxos.config.lag_interfaces",
+   "network.nxos.config.lag_interfaces.lag_interfaces",
+   "network.nxos.config.lldp_global",
+   "network.nxos.config.lldp_global.lldp_global",
+   "network.nxos.config.telemetry",
+   "network.nxos.config.telemetry.telemetry",
+   "network.nxos.config.vlans",
+   "network.nxos.config.vlans.vlans",
+   "network.nxos.facts",
+   "network.nxos.facts.bfd_interfaces",
+   "network.nxos.facts.bfd_interfaces.bfd_interfaces",
+   "network.nxos.facts.facts",
+   "network.nxos.facts.interfaces",
+   "network.nxos.facts.interfaces.interfaces",
+   "network.nxos.facts.l2_interfaces",
+   "network.nxos.facts.l2_interfaces.l2_interfaces",
+   "network.nxos.facts.l3_interfaces",
+   "network.nxos.facts.l3_interfaces.l3_interfaces",
+   "network.nxos.facts.lacp",
+   "network.nxos.facts.lacp.lacp",
+   "network.nxos.facts.lacp_interfaces",
+   "network.nxos.facts.lacp_interfaces.lacp_interfaces",
+   "network.nxos.facts.lag_interfaces",
+   "network.nxos.facts.lag_interfaces.lag_interfaces",
+   "network.nxos.facts.legacy",
+   "network.nxos.facts.legacy.base",
+   "network.nxos.facts.lldp_global",
+   "network.nxos.facts.lldp_global.lldp_global",
+   "network.nxos.facts.telemetry",
+   "network.nxos.facts.telemetry.telemetry",
+   "network.nxos.facts.vlans",
+   "network.nxos.facts.vlans.vlans",
+   "network.nxos.nxos",
+   "network.nxos.utils",
+   "network.nxos.utils.telemetry",
+   "network.nxos.utils.telemetry.telemetry",
+   "network.nxos.utils.utils",
+   "network.onyx.onyx",
+   "network.ordnance.ordnance",
+   "network.panos.panos",
+   "network.restconf",
+   "network.restconf.restconf",
+   "network.routeros.routeros",
+   "network.skydive",
+   "network.skydive.api",
+   "network.slxos.slxos",
+   "network.sros.sros",
+   "network.voss.voss",
+   "network.vyos",
+   "network.vyos.argspec",
+   "network.vyos.argspec.facts",
+   "network.vyos.argspec.facts.facts",
+   "network.vyos.argspec.interfaces",
+   "network.vyos.argspec.interfaces.interfaces",
+   "network.vyos.argspec.l3_interfaces",
+   "network.vyos.argspec.l3_interfaces.l3_interfaces",
+   "network.vyos.argspec.lag_interfaces",
+   "network.vyos.argspec.lag_interfaces.lag_interfaces",
+   "network.vyos.argspec.lldp_global",
+   "network.vyos.argspec.lldp_global.lldp_global",
+   "network.vyos.argspec.lldp_interfaces",
+   "network.vyos.argspec.lldp_interfaces.lldp_interfaces",
+   "network.vyos.config",
+   "network.vyos.config.interfaces",
+   "network.vyos.config.interfaces.interfaces",
+   "network.vyos.config.l3_interfaces",
+   "network.vyos.config.l3_interfaces.l3_interfaces",
+   "network.vyos.config.lag_interfaces",
+   "network.vyos.config.lag_interfaces.lag_interfaces",
+   "network.vyos.config.lldp_global",
+   "network.vyos.config.lldp_global.lldp_global",
+   "network.vyos.config.lldp_interfaces",
+   "network.vyos.config.lldp_interfaces.lldp_interfaces",
+   "network.vyos.facts",
+   "network.vyos.facts.facts",
+   "network.vyos.facts.interfaces",
+   "network.vyos.facts.interfaces.interfaces",
+   "network.vyos.facts.l3_interfaces",
+   "network.vyos.facts.l3_interfaces.l3_interfaces",
+   "network.vyos.facts.lag_interfaces",
+   "network.vyos.facts.lag_interfaces.lag_interfaces",
+   "network.vyos.facts.legacy",
+   "network.vyos.facts.legacy.base",
+   "network.vyos.facts.lldp_global",
+   "network.vyos.facts.lldp_global.lldp_global",
+   "network.vyos.facts.lldp_interfaces",
+   "network.vyos.facts.lldp_interfaces.lldp_interfaces",
+   "network.vyos.utils",
+   "network.vyos.utils.utils",
+   "network.vyos.vyos",
+   "podman.common",
+   "recursive_finder",
+   "remote_management.dellemc",
+   "remote_management.intersight",
+   "remote_management.lxca",
+   "remote_management.lxca.common",
+   "remote_management.ucs",
+   "service_now",
+   "source_control",
+   "static_routes",
+   "storage.emc",
+   "storage.hpe3par.hpe3par",
+   "visit_ImportFrom",
+   "warning_text"
+  ],
+  "ids_in_statement": [
+   "module_common"
+  ],
+  "paths_named_pr": [
+   "test/integration/targets/collections/collection_root_user/ansible_collections/testns/testcoll/meta/runtime.yml"
+  ],
+  "stems_eligible": [
+   "ansible_builtin_runtime",
+   "collection_finder",
+   "module_common"
+  ],
+  "stems_named": [
+   "module_common"
+  ]
+ },
+ "instance_ansible__ansible-bf98f031f3f5af31a2d78dc2f0a58fe92ebae0bb-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "_sanitize_keys_conditions",
+   "basic",
+   "remove_values",
+   "sanitize_keys"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "developing_modules_best_practices"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-502270c804c33d3bc963930dc85e0f4ca359674d-v7eee2454f617569fd6889f2211f75bc02a35f9f8": {
+  "window": "2020",
+  "ids": [
+   "AlpineStrategy",
+   "BaseStrategy",
+   "CommandStrategy",
+   "CumulusHostname",
+   "DarwinStrategy",
+   "DebianHostname",
+   "DebianStrategy",
+   "DevuanHostname",
+   "FileStrategy",
+   "FreeBSDStrategy",
+   "GenericStrategy",
+   "KaliHostname",
+   "KylinHostname",
+   "LinaroHostname",
+   "LinuxmintHostname",
+   "NeonHostname",
+   "OpenBSDStrategy",
+   "OpenRCStrategy",
+   "ParrotHostname",
+   "PopHostname",
+   "RaspbianHostname",
+   "RedHatStrategy",
+   "SLESStrategy",
+   "SolarisStrategy",
+   "SystemdStrategy",
+   "UbuntuHostname",
+   "VoidLinuxHostname",
+   "get_current_hostname",
+   "get_permanent_hostname",
+   "hostname",
+   "pretty",
+   "set_current_hostname",
+   "set_permanent_hostname",
+   "static",
+   "transient",
+   "update_current_and_permanent_hostname"
+  ],
+  "ids_in_statement": [
+   "GenericStrategy",
+   "hostname"
+  ],
+  "paths_named_pr": [
+   "test/units/modules/test_hostname.py"
+  ],
+  "stems_eligible": [
+   "hostname",
+   "porting_guide_core_2.12"
+  ],
+  "stems_named": [
+   "hostname"
+  ]
+ },
+ "instance_ansible__ansible-5260527c4a71bfed99d803e687dd19619423b134-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "AnsibleModule",
+   "_return_formatted",
+   "add_atomic_move_warnings",
+   "atomic_move",
+   "basic",
+   "file",
+   "set_mode_if_different"
+  ],
+  "ids_in_statement": [
+   "atomic_move",
+   "basic",
+   "file"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "porting_guide_2.11"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-fb144c44144f8bd3542e71f5db62b6d322c7bd85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "DocCLI",
+   "tty_ify"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "developing_modules_documenting"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-3db08adbb1cc6aa9941be5e0fc810132c6e1fa4b-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "mathstuff"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "mathstuff",
+   "playbooks_filters"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-709484969c8a4ffd74b839a673431a8c5caa6457-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "OpenBSDHardware",
+   "get_sysctl",
+   "get_uptime_facts",
+   "openbsd",
+   "populate",
+   "sysctl",
+   "uptime_seconds"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "openbsd",
+   "sysctl"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-83909bfa22573777e3db5688773bda59721962ad-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5": {
+  "window": "2020",
+  "ids": [
+   "GALAXY_TOKEN",
+   "GalaxyCLI",
+   "GalaxyLogin",
+   "_add_auth_token",
+   "add_login_options",
+   "create_github_token",
+   "execute_login",
+   "galaxy",
+   "get_credentials",
+   "github-token",
+   "init_parser",
+   "login",
+   "remove_github_token",
+   "version"
+  ],
+  "ids_in_statement": [
+   "galaxy",
+   "login"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "galaxy",
+   "porting_guide_base_2.10",
+   "porting_guide_base_2.11"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-cb94c0cc550df9e98f1247bc71d8c2b861c75049-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "ConsoleCLI",
+   "TaskInclude",
+   "_play_ds",
+   "add_tasknoplay_options",
+   "adhoc",
+   "console",
+   "default",
+   "do_timeout",
+   "do_verbosity",
+   "init_parser",
+   "option_helpers",
+   "task-timeout",
+   "task_include"
+  ],
+  "ids_in_statement": [
+   "console",
+   "task_include"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "adhoc",
+   "console",
+   "option_helpers",
+   "task_include"
+  ],
+  "stems_named": [
+   "console",
+   "task_include"
+  ]
+ },
+ "instance_ansible__ansible-de5858f48dc9e1ce9117034e0d7e76806f420ca8-v1055803c3a812189a1133297f7f5468579283f86": {
+  "window": "2020",
+  "ids": [
+   "GALAXY_CACHE_DIR",
+   "GalaxyAPI",
+   "_call_galaxy",
+   "_load_cache",
+   "_set_cache",
+   "cache_lock",
+   "clear-response-cache",
+   "galaxy",
+   "get_cache_id",
+   "get_collection_metadata",
+   "get_collection_version_metadata",
+   "get_collection_versions",
+   "init_parser",
+   "no-cache",
+   "version_added",
+   "wrapped"
+  ],
+  "ids_in_statement": [
+   "galaxy"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "galaxy"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-352d8ec33a2e80c1cb58a3ae5e6e949dfd2a51f9-v9ddfe9db390e52767f66a38b37f940818fef0d48": {
+  "window": "2025",
+  "ids": [
+   "add_fields",
+   "warp_fill"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-2a4b1c8248d7bf4cc81ecb2659282544841626b1-v7d0886457ac7d84219583115f131f67d95eb9987": {
+  "window": "2025",
+  "ids": [
+   "_get_galaxy_server_configs",
+   "_get_global_configs",
+   "_get_plugin_configs",
+   "_render_settings",
+   "config",
+   "execute_dump",
+   "manager"
+  ],
+  "ids_in_statement": [
+   "config"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-244c2f06edd3331495de27ecce2066cfa49d1e00-vfcdf0b80b3112ae01cc7687c1b3f29fbcceb42dd": {
+  "window": "2025",
+  "ids": [
+   "AdHocCLI",
+   "Connection",
+   "ConsoleCLI",
+   "DSAPrivateKeyMsg",
+   "DSAPublicKeyMsg",
+   "EcdsaPrivateKeyMsg",
+   "EcdsaPublicKeyMsg",
+   "Ed25519PrivateKeyMsg",
+   "Ed25519PublicKeyMsg",
+   "KeyAlgo",
+   "KeyAlgo.ECDSA256",
+   "KeyAlgo.ECDSA384",
+   "KeyAlgo.ECDSA521",
+   "KeyList",
+   "PlaybookCLI",
+   "PrivateKeyMsg",
+   "ProtocolMsgNumbers",
+   "PublicKeyMsg",
+   "PublicKeyMsgList",
+   "RSAPrivateKeyMsg",
+   "RSAPublicKeyMsg",
+   "SSH_AGENT",
+   "SSH_AGENT_KEY_LIFETIME",
+   "SshAgentClient",
+   "SshAgentFailure",
+   "SupportsFromBlob",
+   "SupportsToBlob",
+   "VariableSized",
+   "_ECDSA_KEY_TYPE",
+   "_build_command",
+   "_consume_field",
+   "_key_data_into_crypto_objects",
+   "_launch_ssh_agent",
+   "_play_prereqs",
+   "_populate_agent",
+   "_split_blob",
+   "_ssh_agent",
+   "_ssh_agent_timeout_handler",
+   "adhoc",
+   "binary_string",
+   "close",
+   "console",
+   "constraints",
+   "consume_from_blob",
+   "dsa_pn",
+   "ecdsa_curve_name",
+   "ecdsa_pn",
+   "enc_a",
+   "exc_type",
+   "exc_value",
+   "fingerprint",
+   "from_blob",
+   "from_private_key",
+   "from_public_key",
+   "get_dataclass",
+   "k_env_a",
+   "main_type",
+   "mpint",
+   "playbook",
+   "private_key",
+   "private_key_passphrase",
+   "public_key",
+   "remove",
+   "remove_all",
+   "rsa_pn",
+   "self._populated_agent",
+   "send",
+   "to_blob",
+   "uint32",
+   "unicode_string",
+   "version_added"
+  ],
+  "ids_in_statement": [
+   "Connection",
+   "SSH_AGENT",
+   "console",
+   "playbook"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "adhoc",
+   "console",
+   "playbook",
+   "ssh_agent"
+  ],
+  "stems_named": [
+   "console",
+   "playbook",
+   "ssh_agent"
+  ]
+ },
+ "instance_ansible__ansible-4fe960653068895c7bbfab1ccf3a9c38ecbac1e5-vd33bedc48fdd933b5abd65a77c081876298e2f07": {
+  "window": "2025",
+  "ids": [
+   "template"
+  ],
+  "ids_in_statement": [
+   "template"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-9a426fe3030d7777c3291f2853dcd2d1e51cae75-vfc8a22764724c3b06cb8ecf05b0202af523023df": {
+  "window": "2025",
+  "ids": [
+   "_EncryptedStringProtocol",
+   "_decrypt",
+   "_ensure_type",
+   "collection_loader",
+   "manager"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "collection_loader"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-91453e30afb2bef252049e73d853be06e7af8598-ve2a5377b9a9f3709a312fdb91732555779f6c000": {
+  "window": "2025",
+  "ids": [
+   "AnsibleEnvironment",
+   "_SandboxMode",
+   "_TEMPLAR_SANDBOX_MODE",
+   "_TemplateConfig",
+   "_jinja_bits",
+   "_jinja_common",
+   "is_safe_attribute",
+   "sandbox_mode"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "jinja_bits",
+   "jinja_common"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-532edf4c357257b68b828a620c6a890fef53c450-v4956619ac222b491058121e100ea7cbff476ac72": {
+  "window": "2025",
+  "ids": [
+   "Taggable",
+   "_flatten_tags",
+   "_get_all_taggable_objects",
+   "evaluate_tags",
+   "taggable"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "taggable"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-1c06c46cc14324df35ac4f39a45fb3ccd602195d-v6198c7377f545207218fe8eb2e3cfa9673ff8f5e": {
+  "window": "2025",
+  "ids": [
+   "AnsibleDumper",
+   "_constructor",
+   "_dumper",
+   "_internal",
+   "_register_representers",
+   "construct_yaml_str",
+   "core",
+   "from_yaml",
+   "from_yaml_all",
+   "get_node_from_ciphertext",
+   "is_intermediate_iterable",
+   "is_intermediate_mapping",
+   "represent_ansible_tagged_object",
+   "represent_vault_exception_marker",
+   "to_nice_yaml",
+   "to_yaml"
+  ],
+  "ids_in_statement": [
+   "from_yaml",
+   "from_yaml_all",
+   "to_nice_yaml",
+   "to_yaml"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "constructor",
+   "dumper",
+   "internal"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-46abcfcc824c199ad17ba5e3a9ceaf161107aa67-v8e9f5fb9d5a061ba3238a22812e2e9e45cd3fab6": {
+  "window": "2025",
+  "ids": [
+   "_MODULE_METADATA",
+   "_get_module_metadata",
+   "module_common",
+   "version_added"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "module_common"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-11f5563895b3549d266435d7b15624fb633bb83b-ve7c7df7074a664175e96f17288aba1d3c190009b": {
+  "window": "2025",
+  "ids": [
+   "AnsibleEnvironment",
+   "_CachedModule",
+   "_allowed_unsafe_attributes",
+   "_jinja_bits",
+   "_json",
+   "_utils",
+   "_visit",
+   "console",
+   "default",
+   "is_safe_attribute",
+   "module_common"
+  ],
+  "ids_in_statement": [
+   "default"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "console",
+   "jinja_bits",
+   "module_common"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-649c9ec4431feca274e4d14d7a1bc835d70c10b9-vdb819d2514d053235746eef7d28fa841e3f5c053": {
+  "window": "2025",
+  "ids": [
+   "_datatag",
+   "_json",
+   "_utils",
+   "_visit",
+   "transform_to_native_types",
+   "value_type"
+  ],
+  "ids_in_statement": [
+   "transform_to_native_types"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "datatag"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-38823665858c57ffd1fbc08c6acbead20d339c51-veb5e57a8f08479c623729e3c17cc5ce7b88dd43c": {
+  "window": "2025",
+  "ids": [
+   "Options",
+   "_ANSIBALLZ_DEBUGGER_CONFIG",
+   "_ANSIBALLZ_DEBUGPY_CONFIG",
+   "_ANSIBALLZ_PYDEVD_CONFIG",
+   "_ANSIBLE_ANSIBALLZ_DEBUGPY_CONFIG",
+   "_builder",
+   "_debugpy",
+   "_get_source_mapping",
+   "_pydevd",
+   "_translate_path",
+   "create",
+   "debugger_enabled",
+   "get_extensions",
+   "source_mapping",
+   "version_added"
+  ],
+  "ids_in_statement": [
+   "_ANSIBLE_ANSIBALLZ_DEBUGPY_CONFIG"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "builder",
+   "debugpy",
+   "pydevd"
+  ],
+  "stems_named": [
+   "debugpy",
+   "pydevd"
+  ]
+ },
+ "instance_ansible__ansible-f2612fbe3ae3c9d5aafab612ee3f04dc2eb24378-v8aad1418f6069d90de963d5187204419f62ad893": {
+  "window": "2025",
+  "ids": [
+   "SequenceProxy",
+   "_builder",
+   "_collection_proxy",
+   "_get_options",
+   "_internal",
+   "_jinja_plugins",
+   "_json",
+   "_visit",
+   "experimental",
+   "mark",
+   "visit"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "builder",
+   "collection_proxy",
+   "internal",
+   "jinja_plugins"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-4c04b8c7c3f43b9c50831e97e4479e428cef9bd6-v9ed7164ed6041593bc65056d5e53f098174aeaf4": {
+  "window": "2025",
+  "ids": [
+   "included_file",
+   "process_include_results"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "included_file"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-558676fcdc6d3f083f4a5582427675842dbf4c44-v3518d48146b3ecda6f8cfc6c33922aa9d492ad4f": {
+  "window": "2025",
+  "ids": [
+   "_engine",
+   "template"
+  ],
+  "ids_in_statement": [
+   "template"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "engine"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-065f202d3021ed0a61dbb34be9bce2bc767dba10-v36f00cdf1a9d8ae029b0ea2ea912c539562ad34a": {
+  "window": "2025",
+  "ids": [
+   "Block",
+   "FieldAttributeBase",
+   "Handler",
+   "Play",
+   "PlayContext",
+   "Role",
+   "RoleMetadata",
+   "Task",
+   "_process_pending_results",
+   "ansible_connection_cli_stub",
+   "base",
+   "block",
+   "deserialize",
+   "dump_attrs",
+   "from_attrs",
+   "handler",
+   "metadata",
+   "play",
+   "play_context",
+   "role",
+   "serialize",
+   "start_connection",
+   "strategy",
+   "task",
+   "task_executor"
+  ],
+  "ids_in_statement": [
+   "Play",
+   "PlayContext",
+   "Task",
+   "deserialize",
+   "dump_attrs",
+   "from_attrs",
+   "metadata",
+   "play",
+   "role",
+   "serialize",
+   "task"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "ansible_connection_cli_stub",
+   "handler",
+   "play_context",
+   "task_executor"
+  ],
+  "stems_named": [
+   "play_context",
+   "task_executor"
+  ]
+ },
+ "instance_ansible__ansible-27a56a34df7c7d879c2c0473aef5c58490024319-vc87dc6ed7d983c102addb14956ec25bf1b794ae1": {
+  "window": "2025",
+  "ids": [
+   "Play",
+   "_get_next_task_from_state",
+   "_metadata_candidate_paths",
+   "_metadata_path",
+   "_post_validate_validate_argspec",
+   "argument_spec",
+   "argument_spec_name",
+   "play",
+   "play_iterator",
+   "validate_args_context"
+  ],
+  "ids_in_statement": [
+   "play"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "play_iterator"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-5e8815b82360d065308550017d548a106a2aa0fc-vced362a50d7825e51d7a160f6c14769a8f9b7338": {
+  "window": "2025",
+  "ids": [
+   "_list_plugins_from_paths"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-58bad718597540acdb9d861b803d5e3cfba240e2-v79ddee15a051ede4dd598a22bb600e9432387226": {
+  "window": "2025",
+  "ids": [
+   "DeferredWarningContext",
+   "Display",
+   "_DeferredWarningContext",
+   "_apply_task_result_compat",
+   "_deprecated",
+   "_deprecated_with_plugin_info",
+   "_deprecation_warnings_enabled",
+   "_display_utils",
+   "_error",
+   "_execute",
+   "_find_fq_plugin",
+   "_format_message",
+   "_get_deprecation_message_with_plugin_info",
+   "_join_sentences",
+   "_warning",
+   "capture",
+   "deprecation_warnings_enabled",
+   "display",
+   "error_as_warning",
+   "format_message",
+   "get_deprecation_message",
+   "get_deprecation_message_with_plugin_info",
+   "get_deprecation_warnings",
+   "get_warnings",
+   "get_with_context",
+   "join_sentences",
+   "loader",
+   "self._deprecation_warnings",
+   "self._seen",
+   "self._warnings",
+   "task_executor",
+   "warning"
+  ],
+  "ids_in_statement": [
+   "Display",
+   "_DeferredWarningContext",
+   "capture",
+   "display",
+   "warning"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "display_utils",
+   "task_executor"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-d16aaec92d3e4d1d6e5a0e0f3db874f4d64b13d0-v2cedaa24b6b0d7cbe691f8aae0f23764ccdb38dd": {
+  "window": "2026",
+  "ids": [
+   "execute_list_collection",
+   "execute_list_role",
+   "galaxy"
+  ],
+  "ids_in_statement": [
+   "galaxy"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "galaxy"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-f2357cdc53c99b7444f09deea398f0b80f0cb66f-v3661f34811d2746e249730fa77b0b61fdfe5e5a4": {
+  "window": "2026",
+  "ids": [
+   "_apply_action_arg_defaults",
+   "_get_action_arg_defaults",
+   "module_common"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "module_common"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-2cedaa24b6b0d7cbe691f8aae0f23764ccdb38dd-v7665917d51a0de419c10ce78d7dcae89e1208d49": {
+  "window": "2026",
+  "ids": [
+   "CallbackBase",
+   "ModuleDocFragment",
+   "_dump_results",
+   "_get_yaml_width",
+   "_serialize_diff",
+   "callback",
+   "no-break",
+   "result_format_callback",
+   "result_yaml_line_width",
+   "terminal-width",
+   "version_added"
+  ],
+  "ids_in_statement": [
+   "callback"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "callback",
+   "result_format_callback"
+  ],
+  "stems_named": [
+   "callback"
+  ]
+ },
+ "instance_ansible__ansible-90595736ed35a88e63b6c680d6a1daa38a2ccce1-v29086acfa61f32a9e5b087abdaf4336330ab5456": {
+  "window": "2026",
+  "ids": [
+   "_ensure_become_success",
+   "become",
+   "check_password_prompt",
+   "local"
+  ],
+  "ids_in_statement": [
+   "become",
+   "local"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-d9deb945b0186724585747477940fdd1b752325e-v7f17759bfebb4bce227c7a208bdf0a585064bf44": {
+  "window": "2026",
+  "ids": [
+   "_poll_async_result",
+   "delegate_to",
+   "task_executor"
+  ],
+  "ids_in_statement": [
+   "delegate_to"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "task_executor"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-cc2f35da5b9c4d1159933da383f461517ab6017a-v52b7d4d092359e776da0b79db9752bfc6ca91969": {
+  "window": "2026",
+  "ids": [
+   "ModuleDocFragment",
+   "default",
+   "default_callback",
+   "display_included_hosts",
+   "v2_playbook_on_include",
+   "version_added"
+  ],
+  "ids_in_statement": [
+   "default"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "default_callback"
+  ],
+  "stems_named": [
+   "default_callback"
+  ]
+ },
+ "instance_ansible__ansible-2341354ffaefc8521e6083d3bbfce529143e1d29-v99708930841723f3ecc20e95e82a0cd780003dbd": {
+  "window": "2026",
+  "ids": [
+   "LibRPM",
+   "RpmKey",
+   "_compute_v4_fingerprint",
+   "_compute_v6_fingerprint",
+   "_drop_key_rpm4",
+   "_drop_key_rpm6",
+   "_find_key_packets",
+   "_get_key_version",
+   "_parse_armor",
+   "_parse_packet_header",
+   "allmatches",
+   "batch",
+   "delete",
+   "drop_key",
+   "dry-run",
+   "erase",
+   "execute_command",
+   "fetch_key",
+   "fixed-list-mode",
+   "get_fingerprints_from_armor",
+   "get_installed_keys",
+   "get_key_ids_from_armor",
+   "getfingerprints",
+   "getkeyid",
+   "identify_keys",
+   "import-options",
+   "import_key",
+   "is_key_imported",
+   "is_keyid",
+   "is_pubkey",
+   "key_info",
+   "key_packets",
+   "no-tty",
+   "normalize_keyid",
+   "rpm_key",
+   "using_librpm6",
+   "with-colons"
+  ],
+  "ids_in_statement": [
+   "erase",
+   "rpm_key"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "rpm_key"
+  ],
+  "stems_named": [
+   "rpm_key"
+  ]
+ },
+ "instance_ansible__ansible-948f8f42d09e9ad1f0582611fa17a6f5ad52a395-v2341354ffaefc8521e6083d3bbfce529143e1d29": {
+  "window": "2026",
+  "ids": [
+   "AnsibleDumper",
+   "VaultBehaviors",
+   "VaultDecryptionContext",
+   "_dumper",
+   "core",
+   "represent_ansible_tagged_object",
+   "represent_vaulted_value",
+   "to_yaml",
+   "vault_behavior",
+   "version_added"
+  ],
+  "ids_in_statement": [
+   "to_yaml"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "dumper",
+   "to_yaml"
+  ],
+  "stems_named": [
+   "to_yaml"
+  ]
+ },
+ "instance_ansible__ansible-b1323f3ab1df54f86015a7ec11814e17b2b44896-v948f8f42d09e9ad1f0582611fa17a6f5ad52a395": {
+  "window": "2026",
+  "ids": [
+   "AnsibleRequirement",
+   "ConcreteArtifactsManager",
+   "_find_matches",
+   "_get_runtime_from_dir",
+   "_get_runtime_from_tar",
+   "_resolve_depenency_map",
+   "canonical_package_id",
+   "collection",
+   "concrete_artifact_manager",
+   "dataclasses",
+   "download_collections",
+   "find_matches",
+   "from_collection",
+   "get_collection_version_metadata",
+   "get_collection_versions",
+   "get_dependencies",
+   "get_direct_requires_ansible",
+   "install_collections",
+   "is_satisfied_by",
+   "providers",
+   "self._parent",
+   "self._requirements",
+   "self.has_candidate"
+  ],
+  "ids_in_statement": [
+   "collection"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "concrete_artifact_manager",
+   "dataclasses",
+   "providers"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-51d5a456ef5342f5b18739d4211ac09ff9ad9a70-v895481957b6613ad7e0e511c98914c4ebec111cc": {
+  "window": "2026",
+  "ids": [
+   "_is_pipelining_enabled",
+   "_make_tmp_path",
+   "_remote_expand_user",
+   "action",
+   "connection",
+   "expand_user",
+   "is_pipelining_enabled",
+   "mkdtemp",
+   "powershell"
+  ],
+  "ids_in_statement": [
+   "connection",
+   "powershell"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "powershell"
+  ],
+  "stems_named": [
+   "powershell"
+  ]
+ },
+ "instance_ansible__ansible-a51536f311d937ee92f7185fac445ca39b2efefa-v03c851d681fab21295c2ea2eec1fdf68fcc60039": {
+  "window": "2026",
+  "ids": [
+   "concrete_artifact_manager",
+   "download_url",
+   "galaxy",
+   "galaxy_api_proxy",
+   "get_collection_version_metadata",
+   "get_galaxy_artifact_path",
+   "get_galaxy_artifact_source_info",
+   "method_wrapper",
+   "save_collection_source",
+   "self._galaxy_collection_cache",
+   "version_url"
+  ],
+  "ids_in_statement": [
+   "galaxy"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "concrete_artifact_manager",
+   "galaxy",
+   "galaxy_api_proxy"
+  ],
+  "stems_named": [
+   "galaxy"
+  ]
+ },
+ "instance_ansible__ansible-36e9711c26f4efcf3df7b1eb5c66dd1d78785c14-v4da24b8128c8e334f3817f4700f4276c855856db": {
+  "window": "2026",
+  "ids": [
+   "AnsibleTemplate",
+   "_jinja_bits"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "jinja_bits"
+  ],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-260fcabb7996a2b64c3daf249c5c0e8ef757311c-v81c461545382fc9f93ba39d966d80f531e3dff9e": {
+  "window": "2026",
+  "ids": [
+   "Block",
+   "Play",
+   "_load",
+   "_load_always",
+   "_load_block",
+   "_load_post_tasks",
+   "_load_pre_tasks",
+   "_load_rescue",
+   "_load_tasks",
+   "block",
+   "play"
+  ],
+  "ids_in_statement": [
+   "block",
+   "play"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-c9f5005be7119648fd33bcce489064e0af4d6d3d-v6d350ae78c5dbdc8204db05f20bcde9599e439af": {
+  "window": "2026",
+  "ids": [
+   "ModuleDocFragment",
+   "redirect_request",
+   "url_redirect_argument_spec",
+   "urls"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-3adecacccf408960128d7cc122e8212a88ae4e9b-vb401c9246e879ae15f710be8a4fea38bcecd960f": {
+  "window": "2026",
+  "ids": [
+   "_get_ppa_info",
+   "apt_key",
+   "apt_repository",
+   "download_key",
+   "fetch_key",
+   "get_url",
+   "is_fetch_success",
+   "rpm_key",
+   "url_get",
+   "urls"
+  ],
+  "ids_in_statement": [
+   "rpm_key"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "apt_key",
+   "apt_repository",
+   "get_url",
+   "rpm_key"
+  ],
+  "stems_named": [
+   "rpm_key"
+  ]
+ },
+ "instance_ansible__ansible-f074c20929aad799b935a89494f7cc565ce4b249-v776f90ae4b03fa02cdbf866e5268070d745715a8": {
+  "window": "2026",
+  "ids": [
+   "MultipartProtocol",
+   "_CTE",
+   "_EncToCTEMap",
+   "_Multipart",
+   "_MultipartField",
+   "_MultipartReader",
+   "_Part",
+   "_encode",
+   "_encode_base64",
+   "_encode_passthru",
+   "_generate_header",
+   "as_bytes",
+   "as_fp",
+   "as_iter",
+   "content_type",
+   "create_multipart",
+   "fetch_file",
+   "mime_type",
+   "multipart_encoding",
+   "prepare_multipart",
+   "read",
+   "readable",
+   "readinto",
+   "self._parts",
+   "set_multipart_encoding",
+   "text_form_field",
+   "urls"
+  ],
+  "ids_in_statement": [
+   "mime_type"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_ansible__ansible-49f1615157c54a119d0e51b4df0e7c410ec0e766-vff6b7e404a79ec98ecf99d41e923b95ae9d4fa2d": {
+  "window": "2026",
+  "ids": [
+   "_parse_pipeline_result",
+   "_winrm_exec",
+   "psrp",
+   "winrm"
+  ],
+  "ids_in_statement": [
+   "psrp",
+   "winrm"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "winrm"
+  ],
+  "stems_named": [
+   "winrm"
+  ]
+ },
+ "instance_ansible__ansible-30d7849e7efc5f0d39badd4ac52511180e6f2b9d-v49f1615157c54a119d0e51b4df0e7c410ec0e766": {
+  "window": "2026",
+  "ids": [
+   "console",
+   "get_docstring",
+   "get_plugin_docs",
+   "get_plugin_metadata",
+   "helpdefault",
+   "module_args",
+   "plugin_docs"
+  ],
+  "ids_in_statement": [
+   "console",
+   "get_docstring"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "console",
+   "plugin_docs"
+  ],
+  "stems_named": [
+   "console"
+  ]
+ },
+ "instance_ansible__ansible-cb535cf3d3159e24b813f4eb9085340ff67c9ac1-vb7c0900272fd428f336f30714089e3916fcc10f9": {
+  "window": "2026",
+  "ids": [
+   "_execute_meta",
+   "strategy"
+  ],
+  "ids_in_statement": [
+   "strategy"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818": {
+  "window": "openlibrary",
+  "ids": [
+   "add_book",
+   "build_marc",
+   "compare_authors",
+   "editions_match",
+   "expand_record",
+   "find_enriched_match",
+   "find_match",
+   "match",
+   "merge_marc",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "add_book",
+   "build_marc",
+   "expand_record",
+   "merge_marc",
+   "utils"
+  ],
+  "paths_named_pr": [
+   "openlibrary/catalog/merge/merge_marc.py"
+  ],
+  "stems_eligible": [
+   "add_book",
+   "merge_marc"
+  ],
+  "stems_named": [
+   "add_book",
+   "merge_marc"
+  ]
+ },
+ "instance_internetarchive__openlibrary-ba3abfb6af6e722185d3715929ab0f3e5a134eed-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c": {
+  "window": "openlibrary",
+  "ids": [
+   "POST",
+   "add_book",
+   "code",
+   "get_publication_year",
+   "is_independently_published",
+   "is_promise_item",
+   "needs_isbn_and_lacks_one",
+   "published_in_future_year",
+   "utils",
+   "validate_record"
+  ],
+  "ids_in_statement": [
+   "POST"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237": {
+  "window": "openlibrary",
+  "ids": [
+   "add_book",
+   "needs_isbn",
+   "publication_year_too_old",
+   "source_requires_date_validation",
+   "utils",
+   "validate_record"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237": {
+  "window": "openlibrary",
+  "ids": [
+   "POST",
+   "add_book",
+   "code",
+   "get_missing_fields",
+   "publication_year_too_old",
+   "utils",
+   "validate_record"
+  ],
+  "ids_in_statement": [
+   "add_book",
+   "validate_record"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book"
+  ],
+  "stems_named": [
+   "add_book"
+  ]
+ },
+ "instance_internetarchive__openlibrary-30bc73a1395fba2300087c7f307e54bb5372b60a-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c": {
+  "window": "openlibrary",
+  "ids": [
+   "Batch",
+   "Cover",
+   "CoverDB",
+   "TarManager",
+   "Uploader",
+   "ZipManager",
+   "_get_batch",
+   "_get_batch_end_id",
+   "_get_current_batch_start_id",
+   "_get_s3",
+   "add_file",
+   "archive",
+   "audit",
+   "close",
+   "code",
+   "contains",
+   "count_files_in_zip",
+   "delete_files",
+   "filename_l",
+   "filename_m",
+   "filename_s",
+   "finalize",
+   "get_abspath",
+   "get_batch_archived",
+   "get_batch_failures",
+   "get_batch_unarchived",
+   "get_cover_url",
+   "get_covers",
+   "get_files",
+   "get_last_file_in_zip",
+   "get_pending",
+   "get_relpath",
+   "get_tarfile",
+   "get_unarchived_covers",
+   "get_zipfile",
+   "has_valid_files",
+   "id_to_item_and_batch_id",
+   "is_uploaded",
+   "is_zip_complete",
+   "open_tarfile",
+   "open_zipfile",
+   "process_pending",
+   "start_id",
+   "timestamp",
+   "update",
+   "update_completed_batch",
+   "upload",
+   "zip_path_to_item_and_batch_id",
+   "zipview_url",
+   "zipview_url_from_id"
+  ],
+  "ids_in_statement": [
+   "Cover",
+   "archive",
+   "upload"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-bb152d23c004f3d68986877143bb0f83531fe401-ve8c8d62a2b60610a3c4631f5f23ed866bada9818": {
+  "window": "openlibrary",
+  "ids": [
+   "Batch",
+   "Cover",
+   "CoverDB",
+   "TarManager",
+   "Uploader",
+   "ZipManager",
+   "_get_batch",
+   "_get_batch_end_id",
+   "_get_current_batch_start_id",
+   "_get_s3",
+   "add_file",
+   "archive",
+   "audit",
+   "close",
+   "code",
+   "contains",
+   "count_files_in_zip",
+   "delete_files",
+   "filename_l",
+   "filename_m",
+   "filename_s",
+   "finalize",
+   "get_abspath",
+   "get_batch_archived",
+   "get_batch_failures",
+   "get_batch_unarchived",
+   "get_cover_url",
+   "get_covers",
+   "get_files",
+   "get_last_file_in_zip",
+   "get_pending",
+   "get_relpath",
+   "get_tarfile",
+   "get_unarchived_covers",
+   "get_zipfile",
+   "has_valid_files",
+   "id_to_item_and_batch_id",
+   "is_uploaded",
+   "is_zip_complete",
+   "open_tarfile",
+   "open_zipfile",
+   "process_pending",
+   "start_id",
+   "timestamp",
+   "update",
+   "update_completed_batch",
+   "upload",
+   "zip_path_to_item_and_batch_id",
+   "zipview_url",
+   "zipview_url_from_id"
+  ],
+  "ids_in_statement": [
+   "Cover",
+   "archive",
+   "contains",
+   "update",
+   "upload"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-7c8dc180281491ccaa1b4b43518506323750d1e4-v298a7a812ceed28c4c18355a091f1b268fe56d86": {
+  "window": "openlibrary",
+  "ids": [
+   "find_aspects",
+   "flip_place",
+   "flip_subject",
+   "get_subjects",
+   "marc_binary",
+   "read_subjects",
+   "remove_trailing_dot",
+   "subjects_for_work",
+   "tidy_subject",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "find_aspects",
+   "get_subjects",
+   "read_subjects"
+  ],
+  "paths_named_pr": [
+   "openlibrary/catalog/marc/get_subjects.py",
+   "pyproject.toml"
+  ],
+  "stems_eligible": [
+   "get_subjects",
+   "marc_binary"
+  ],
+  "stems_named": [
+   "get_subjects"
+  ]
+ },
+ "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63": {
+  "window": "openlibrary",
+  "ids": [
+   "add_book",
+   "add_db_name",
+   "db_name",
+   "editions_match",
+   "expand_record",
+   "find_enriched_match",
+   "match",
+   "try_merge",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "match"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63": {
+  "window": "openlibrary",
+  "ids": [
+   "add_book",
+   "add_db_name",
+   "attempt_merge",
+   "build_titles",
+   "editions_match",
+   "expand_record",
+   "find_enriched_match",
+   "match",
+   "merge_marc",
+   "threshold_match",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "add_db_name",
+   "editions_match",
+   "expand_record"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book",
+   "merge_marc"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb": {
+  "window": "openlibrary",
+  "ids": [
+   "from_input",
+   "lists",
+   "setvalue",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "lists"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-3f7db6bbbcc7c418b3db72d157c6aed1d45b2ccf-v430f20c722405e462d9ef44dee7d34c41e76fe7a": {
+  "window": "openlibrary",
+  "ids": [
+   "Biblio",
+   "batch_import",
+   "contributors",
+   "get_line",
+   "get_line_as_biblio",
+   "imports",
+   "is_nonbook",
+   "isbndb",
+   "json",
+   "load_state",
+   "make_author",
+   "normalize_items",
+   "update_state"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "isbndb"
+  ],
+  "stems_named": [
+   "isbndb"
+  ]
+ },
+ "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "Biblio",
+   "ISBNdb",
+   "_get_languages",
+   "_get_list_if_present",
+   "_get_subjects",
+   "_get_year",
+   "contributors",
+   "en_us",
+   "get_language",
+   "get_line_as_biblio",
+   "isbndb",
+   "json",
+   "pt-br",
+   "zh-cn",
+   "zh-tw"
+  ],
+  "ids_in_statement": [
+   "ISBNdb",
+   "isbndb"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "comment",
+   "isbndb",
+   "sources"
+  ],
+  "stems_named": [
+   "isbndb"
+  ]
+ },
+ "instance_internetarchive__openlibrary-c4eebe6677acc4629cb541a98d5e91311444f5d4-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "ImportItem",
+   "STAGED_SOURCES",
+   "error",
+   "fetch_book_from_ol",
+   "find_staged_or_pending",
+   "from_isbn",
+   "imports",
+   "models"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-fdbc0d8f418333c7e575c40b661b582c301ef7ac-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "POST",
+   "add_book",
+   "code",
+   "error",
+   "find_staged_or_pending",
+   "from_isbn",
+   "imports",
+   "models",
+   "normalize_import_record"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "add_book"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-798a582540019363d14b2090755cc7b89a350788-v430f20c722405e462d9ef44dee7d34c41e76fe7a": {
+  "window": "openlibrary",
+  "ids": [
+   "List",
+   "ListChangeset",
+   "ListMixin",
+   "_get_subjects",
+   "_index_of_seed",
+   "add_seed",
+   "code",
+   "get_added_seed",
+   "get_changes",
+   "get_changes_v2",
+   "get_cover",
+   "get_exports",
+   "get_list",
+   "get_owner",
+   "get_removed_seed",
+   "get_seed",
+   "get_tags",
+   "get_url_suffix",
+   "lists",
+   "model",
+   "models",
+   "register_models",
+   "remove_seed",
+   "setup",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "List",
+   "ListChangeset",
+   "ListMixin",
+   "code",
+   "lists",
+   "model"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-308a35d6999427c02b1dbf5211c033ad3b352556-ve8c8d62a2b60610a3c4631f5f23ed866bada9818": {
+  "window": "openlibrary",
+  "ids": [
+   "List",
+   "ListChangeset",
+   "ListMixin",
+   "_get_subjects",
+   "_index_of_seed",
+   "add_seed",
+   "code",
+   "get_added_seed",
+   "get_changes",
+   "get_changes_v2",
+   "get_cover",
+   "get_exports",
+   "get_list",
+   "get_owner",
+   "get_removed_seed",
+   "get_seed",
+   "get_subject",
+   "get_tags",
+   "get_url_suffix",
+   "lists",
+   "model",
+   "models",
+   "register_models",
+   "remove_seed",
+   "setup",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "List",
+   "ListMixin",
+   "lists",
+   "model",
+   "models"
+  ],
+  "paths_named_pr": [
+   "openlibrary/core/lists/model.py",
+   "openlibrary/core/models.py",
+   "openlibrary/plugins/upstream/models.py"
+  ],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-322d7a46cdc965bfabbf9500e98fde098c9d95b2-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "AbstractSolrUpdater",
+   "AddRequest",
+   "AuthorSolrUpdater",
+   "CommitRequest",
+   "DeleteRequest",
+   "EditionSolrUpdater",
+   "SOLR_UPDATERS",
+   "SolrUpdateRequest",
+   "SolrUpdateState",
+   "WorkSolrUpdater",
+   "_solr_update",
+   "clear_requests",
+   "has_changes",
+   "key_prefix",
+   "key_test",
+   "preload_keys",
+   "solr_requests",
+   "solr_update",
+   "solr_updater",
+   "thing_type",
+   "to_json_command",
+   "to_solr_requests_json",
+   "tojson",
+   "update_author",
+   "update_key",
+   "update_keys",
+   "update_request",
+   "update_work"
+  ],
+  "ids_in_statement": [
+   "AddRequest",
+   "CommitRequest",
+   "DeleteRequest",
+   "SolrUpdateRequest",
+   "SolrUpdateState",
+   "update_keys",
+   "update_work"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "solr_updater",
+   "update_work"
+  ],
+  "stems_named": [
+   "update_work"
+  ]
+ },
+ "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "SolrUpdateState",
+   "_solr_update",
+   "build_edition_data",
+   "clear_requests",
+   "get_solr_base_url",
+   "get_solr_next",
+   "has_changes",
+   "index_subjects",
+   "load_config",
+   "make_request",
+   "set_solr_base_url",
+   "set_solr_next",
+   "solr_base_url",
+   "solr_insert_documents",
+   "solr_next",
+   "solr_update",
+   "to_solr_requests_json",
+   "update.chain",
+   "update_author",
+   "update_edition",
+   "update_key",
+   "update_keys",
+   "update_request",
+   "update_work",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "index_subjects",
+   "solr_base_url",
+   "solr_next",
+   "update_edition",
+   "update_work",
+   "utils"
+  ],
+  "paths_named_pr": [
+   "openlibrary/solr/update_edition.py",
+   "openlibrary/solr/update_work.py",
+   "openlibrary/solr/utils.py",
+   "scripts/solr_builder/solr_builder/index_subjects.py"
+  ],
+  "stems_eligible": [
+   "index_subjects",
+   "update_edition",
+   "update_work"
+  ],
+  "stems_named": [
+   "index_subjects",
+   "update_edition",
+   "update_work"
+  ]
+ },
+ "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb": {
+  "window": "openlibrary",
+  "ids": [
+   "SolrUpdateRequest",
+   "new_keys",
+   "update_key",
+   "update_keys",
+   "update_work",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "SolrUpdateRequest",
+   "update_key"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "update_work"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-6fdbbeee4c0a7e976ff3e46fb1d36f4eb110c428-v08d8e8889ec945ab821fb156c04c7d2e2810debb": {
+  "window": "openlibrary",
+  "ids": [
+   "List",
+   "ListRecord",
+   "POST",
+   "Seed",
+   "SeedDict",
+   "Subject",
+   "Thing",
+   "User",
+   "_get_ol_base_url",
+   "_get_rawseeds",
+   "_get_seed_strings",
+   "_get_subjects",
+   "_index_of_seed",
+   "_make_url",
+   "add_seed",
+   "document",
+   "get_export_list",
+   "get_owner",
+   "get_randomized_list_seeds",
+   "get_seed",
+   "get_seed_info",
+   "get_seeds",
+   "get_sorted_editions",
+   "get_subject_url",
+   "get_url",
+   "get_url_suffix",
+   "get_user",
+   "has_seed",
+   "helpers",
+   "is_seed_subject_string",
+   "lists",
+   "model",
+   "models",
+   "normalize_input_seed",
+   "process",
+   "process_seeds",
+   "remove_seed",
+   "subject_key_to_seed",
+   "title",
+   "urlsafe"
+  ],
+  "ids_in_statement": [
+   "List",
+   "Seed",
+   "SeedDict",
+   "Thing",
+   "add_seed",
+   "get_export_list",
+   "get_user",
+   "model"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26": {
+  "window": "openlibrary",
+  "ids": [
+   "create_import_jobs",
+   "get_feed",
+   "import_job",
+   "import_open_textbook_library",
+   "import_record",
+   "map_data"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "import_open_textbook_library"
+  ],
+  "stems_named": []
+ },
+ "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818": {
+  "window": "openlibrary",
+  "ids": [
+   "AnnotatedSeed",
+   "AnnotatedSeedDict",
+   "AnnotatedSeedThing",
+   "List",
+   "ListRecord",
+   "POST",
+   "Seed",
+   "SeedDict",
+   "ThingReferenceDict",
+   "_data",
+   "_get_edition_keys_from_solr",
+   "_get_seed_strings",
+   "_index_of_seed",
+   "add_seed",
+   "align-items",
+   "cached_get_list_book_keys",
+   "code",
+   "export",
+   "flex-direction",
+   "flex-wrap",
+   "from_db",
+   "from_input",
+   "from_json",
+   "get_all_editions",
+   "get_book_keys",
+   "get_editions",
+   "get_list",
+   "get_list_editions",
+   "get_query_term",
+   "get_seed",
+   "get_seeds",
+   "get_work_keys",
+   "has_seed",
+   "is_empty_annotated_seed",
+   "lists",
+   "margin-top",
+   "model",
+   "normalize_input_seed",
+   "process_seeds",
+   "remove_seed",
+   "rewrite_list_query",
+   "seed",
+   "seed_json",
+   "to_db",
+   "to_json",
+   "unflatten",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "seed"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "SearchResultsWork",
+   "feed_updates",
+   "search-result-item",
+   "view_body"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "DistributionInfo",
+   "check_qt_version",
+   "crashdialog",
+   "dist_version",
+   "distribution",
+   "earlyinit",
+   "is_new_qtwebkit",
+   "on_version_success",
+   "parse_version",
+   "qtutils",
+   "utils",
+   "version",
+   "version_check"
+  ],
+  "ids_in_statement": [
+   "distribution",
+   "parse_version",
+   "utils",
+   "version"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "crashdialog",
+   "earlyinit",
+   "qtutils"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_color_percentage",
+   "_on_load_finished",
+   "_on_load_progress",
+   "downloads",
+   "get_status_color",
+   "interpolate_color",
+   "qtutils",
+   "tabbedbrowser",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "downloads",
+   "interpolate_color",
+   "qtutils",
+   "tabbedbrowser",
+   "utils"
+  ],
+  "paths_named_pr": [
+   "qutebrowser/browser/downloads.py",
+   "qutebrowser/mainwindow/tabbedbrowser.py",
+   "qutebrowser/utils/qtutils.py",
+   "qutebrowser/utils/utils.py"
+  ],
+  "stems_eligible": [
+   "qtutils",
+   "tabbedbrowser"
+  ],
+  "stems_named": [
+   "qtutils",
+   "tabbedbrowser"
+  ]
+ },
+ "instance_qutebrowser__qutebrowser-96b997802e942937e81d2b8a32d08f00d3f4bc4e-v5fc38aaf22415ab0b70567368332beee7955b367": {
+  "window": "qutebrowser",
+  "ids": [
+   "later",
+   "parse_duration",
+   "utilcmds",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "parse_duration"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "utilcmds"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-cc360cd4a34a126274c7b51f3b63afbaf3e05a02-v5fc38aaf22415ab0b70567368332beee7955b367": {
+  "window": "qutebrowser",
+  "ids": [
+   "later",
+   "parse_duration",
+   "utilcmds",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "parse_duration",
+   "utils"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "utilcmds"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-70248f256f93ed9b1984494d0a1a919ddd774892-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "later",
+   "parse_duration",
+   "utilcmds",
+   "utils"
+  ],
+  "ids_in_statement": [
+   "later"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "utilcmds"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-01d1d1494411380d97cac14614a829d3a69cecaf-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "ModuleInfo",
+   "_module_versions",
+   "_possibly_show_missing_dependency_warning",
+   "_reset_cache",
+   "braveadblock",
+   "init",
+   "version"
+  ],
+  "ids_in_statement": [
+   "version"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "braveadblock"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-e57b6e0eeeb656eb2c84d6547d5a0a7333ecee85-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "BlocklistDownloads",
+   "_on_download_finished",
+   "adblock",
+   "adblock_update",
+   "blockutils",
+   "braveadblock",
+   "initiate",
+   "on_all_downloaded",
+   "on_single_download",
+   "self._in_progress"
+  ],
+  "ids_in_statement": [
+   "BlocklistDownloads"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "adblock",
+   "blockutils",
+   "braveadblock"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-fcfa069a06ade76d91bac38127f3235c13d78eb1-v5fc38aaf22415ab0b70567368332beee7955b367": {
+  "window": "qutebrowser",
+  "ids": [
+   "UserVersion",
+   "from_int",
+   "init",
+   "to_int"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-36ade4bba504eb96f05d32ceab9972df7eb17bcc-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "_qtwebengine_args",
+   "_qtwebengine_enabled_features",
+   "_qtwebengine_features",
+   "feature_flags",
+   "qt_args",
+   "qtargs"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "FilePathCategory",
+   "_contractuser",
+   "completion.favorite_paths",
+   "data",
+   "filepathcategory",
+   "none_ok",
+   "rowCount",
+   "self._paths",
+   "set_pattern",
+   "urlmodel",
+   "valid_values"
+  ],
+  "ids_in_statement": [
+   "completion.favorite_paths"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "filepathcategory",
+   "urlmodel"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "_buffer",
+   "_resolve_buffer_index",
+   "_resolve_tab_index",
+   "_tabs",
+   "buffer",
+   "commands",
+   "delete_buffer",
+   "delete_tab",
+   "miscmodels",
+   "other_buffer",
+   "other_tabs",
+   "tab_entries",
+   "tab_focus",
+   "tab_select",
+   "tab_take",
+   "tabs"
+  ],
+  "ids_in_statement": [
+   "buffer"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "miscmodels"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-f631cd4422744160d9dcf7a0455da532ce973315-v35616345bb8052ea303186706cec663146f0f184": {
+  "window": "qutebrowser",
+  "ids": [
+   "StateConfig",
+   "VersionChange",
+   "_open_special_pages",
+   "_set_changed_attributes",
+   "allowed_values",
+   "configfiles",
+   "matches_filter",
+   "valid_values"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "configfiles"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-54bcdc1eefa86cc20790973d6997b60c3bba884c-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "_glob_resources",
+   "preload_resources",
+   "resource_path",
+   "utils"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-34a13afd36b5e529d553892b1cd8b9d5ce8881c4-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24": {
+  "window": "qutebrowser",
+  "ids": [
+   "_parse_from_file",
+   "_safe_read",
+   "_safe_seek",
+   "_unpack",
+   "get_rodata_header",
+   "parse_webenginecore"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-394bfaed6544c952c6b3463751abab3176ad4997-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24": {
+  "window": "qutebrowser",
+  "ids": [
+   "Bitness",
+   "Bitness.x32",
+   "Bitness.x64",
+   "Endianness",
+   "Header",
+   "Ident",
+   "ParseError",
+   "SectionHeader",
+   "UserAgent",
+   "VersionNumber",
+   "Versions",
+   "WebEngineVersions",
+   "_CHROMIUM_VERSIONS",
+   "_FORMAT",
+   "_FORMATS",
+   "_backend",
+   "_chromium_version",
+   "_find_versions",
+   "_infer_chromium_version",
+   "_parse_from_file",
+   "_unpack",
+   "_variant",
+   "darkmode",
+   "from_elf",
+   "from_pyqt",
+   "from_ua",
+   "get_rodata_header",
+   "parse",
+   "parse_webenginecore",
+   "qt_version",
+   "qtwebengine_versions",
+   "unknown",
+   "utils",
+   "version",
+   "websettings"
+  ],
+  "ids_in_statement": [
+   "WebEngineVersions",
+   "version"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "darkmode",
+   "websettings"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-3d01c201b8aa54dd71d4f801b1dd12feb4c0a08a-v5fc38aaf22415ab0b70567368332beee7955b367": {
+  "window": "qutebrowser",
+  "ids": [
+   "_glob",
+   "_glob_resources",
+   "_resource_keyerror_workaround",
+   "_resource_path",
+   "keyerror_workaround",
+   "path",
+   "preload",
+   "preload_resources",
+   "read_file",
+   "read_file_binary",
+   "resources"
+  ],
+  "ids_in_statement": [
+   "read_file",
+   "resources"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-ef5ba1a0360b39f9eff027fbdc57f363597c3c3b-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_lang_override",
+   "_get_locale_pak_path",
+   "_qtwebengine_args",
+   "locale_name",
+   "qt.workarounds.locale",
+   "qtargs",
+   "webengine_version"
+  ],
+  "ids_in_statement": [
+   "qt.workarounds.locale"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_lang_override",
+   "_get_locale_pak_path",
+   "_qtwebengine_args",
+   "locale_name",
+   "qt.workarounds.locale",
+   "qtargs",
+   "webengine_version"
+  ],
+  "ids_in_statement": [
+   "qt.workarounds.locale"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-16de05407111ddd82fa12e54389d532362489da9-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_lang_override",
+   "_get_locale_pak_path",
+   "_qtwebengine_args",
+   "locale_name",
+   "qt.workarounds.locale",
+   "qtargs",
+   "webengine_version"
+  ],
+  "ids_in_statement": [
+   "qt.workarounds.locale"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-9b71c1ea67a9e7eb70dd83214d881c2031db6541-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_lang_override",
+   "_get_locale_pak_path",
+   "_qtwebengine_args",
+   "locale_name",
+   "qt.workarounds.locale",
+   "qtargs",
+   "webengine_version"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-44e64199ed38003253f0296badd4a447645067b6-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "WebEngineVersions",
+   "from_pyqt",
+   "from_pyqt_importlib",
+   "from_qt",
+   "pyqt_webengine_version",
+   "qtwebengine_versions",
+   "version"
+  ],
+  "ids_in_statement": [
+   "from_pyqt",
+   "version"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-66cfa15c372fa9e613ea5a82d3b03e4609399fb6-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d": {
+  "window": "qutebrowser",
+  "ids": [
+   "_get_lang_override",
+   "_get_locale_pak_path",
+   "_get_pak_name",
+   "_qtwebengine_args",
+   "locale_name",
+   "qt.workarounds.locale",
+   "qtargs",
+   "webengine_version"
+  ],
+  "ids_in_statement": [
+   "qt.workarounds.locale"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "qtargs"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-0b621cb0ce2b54d3f93d8d41d8ff4257888a87e5-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "QProcess.Crashed",
+   "QProcess.FailedToStart",
+   "QProcess.Timedout",
+   "QProcess.WriteError",
+   "_on_error",
+   "guiprocess"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "guiprocess"
+  ],
+  "stems_named": []
+ },
+ "instance_qutebrowser__qutebrowser-c09e1439f145c66ee3af574386e277dd2388d094-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "GUIProcess",
+   "_cleanup",
+   "_on_finished",
+   "_post_start",
+   "all_processes",
+   "guiprocess",
+   "miscmodels",
+   "process",
+   "qute_process",
+   "qutescheme"
+  ],
+  "ids_in_statement": [
+   "guiprocess",
+   "process"
+  ],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "guiprocess",
+   "miscmodels",
+   "qutescheme"
+  ],
+  "stems_named": [
+   "guiprocess"
+  ]
+ },
+ "instance_qutebrowser__qutebrowser-cf06f4e3708f886032d4d2a30108c2fddb042d81-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "GUIProcess",
+   "_on_finished",
+   "_on_ready_read",
+   "_on_ready_read_stderr",
+   "_on_ready_read_stdout",
+   "_process_text",
+   "guiprocess"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "guiprocess"
+  ],
+  "stems_named": [
+   "guiprocess"
+  ]
+ },
+ "instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171": {
+  "window": "qutebrowser",
+  "ids": [
+   "StatusBar",
+   "StatusbarWidget",
+   "_clear_widgets",
+   "_draw_widgets",
+   "_validate_valid_values",
+   "configtypes"
+  ],
+  "ids_in_statement": [],
+  "paths_named_pr": [],
+  "stems_eligible": [
+   "configdata",
+   "configtypes"
+  ],
+  "stems_named": []
+ }
+}

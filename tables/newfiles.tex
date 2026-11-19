@@ -1,25 +1,29 @@
 \begin{table*}[t]
 \centering
-\caption{Existing-file and new-file localization. Existing-file F1 is the micro-F1 of the predictions that exist at the base commit, scored against $G_{PR}^{exist}$. New recall is the share of the 185 files created by the resolving PRs whose exact path was predicted, over all windows. Phantom is the mean share of predicted paths that neither exist at the base commit nor are created by the PR.}
+\caption{Existing-file and new-file localization. Existing-file F1 is the micro-F1 of the predictions that exist at the base commit, scored against $G_{PR}^{exist}$. New recall is the share of files created by the resolving PRs whose exact path was predicted, separately for the 10 new source files (by the $G_{SRC}$ rule) and the 175 new tests, changelog fragments, and other files. The last three columns count predicted paths that neither exist at the base commit nor are created by the PR, per issue, split into proposed tests, changelogs, and other non-source files, and source paths, and give the share of all predicted paths that are such source paths.}
 \label{tab:newfiles}
 \small
-\begin{tabular}{lrrrrrrr}
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
 \toprule
-& \multicolumn{5}{c}{Existing-file F1} & New & \\
-\cmidrule(lr){2-6}
-Method & Ans.\ 2020 & Ans.\ 2025 & Ans.\ 2026 & OpenLib. & Qutebr. & recall & Phantom \\
+& \multicolumn{5}{c}{Existing-file F1} & \multicolumn{2}{c}{New recall} & \multicolumn{3}{c}{Non-existent paths} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-11}
+Method & Ans.\ 2020 & Ans.\ 2025 & Ans.\ 2026 & OpenLib. & Qutebr. & Source & Other & Test etc./iss. & Source/iss. & Source share \\
 \midrule
-Plain LLM (Haiku) & .324 & .273 & .297 & .161 & .165 & 1.9\% & 62.8\% \\
-Plain LLM (Sonnet) & .368 & .282 & .374 & .264 & .425 & 1.8\% & 36.1\% \\
-Single-agent RLM (Haiku) & .145 & .144 & .255 & .132 & .167 & 0.9\% & 11.9\% \\
-Single-agent RLM (Sonnet) & .429 & .479 & .515 & .584 & .645 & 3.9\% & 18.8\% \\
-Coordinator only (Haiku) & .463 & .509 & .512 & .613 & .720 & 2.3\% & 9.5\% \\
-Domain agents, adaptive (Haiku) & .503 & .472 & .589 & .632 & .720 & 2.7\% & 9.6\% \\
-Codex 5.5 High (CLI) & .607 & .572 & .669 & .707 & .749 & 8.5\% & 14.4\% \\
-Reformulate-Retrieve-Localize & .288 & .212 & .284 & .415 & .269 & 0.5\% & 0.2\% \\
-Agentless (file stage) & .322 & .259 & .363 & .307 & .300 & 0.0\% & 0.0\% \\
-CoSIL (file stage) & .316 & .273 & .354 & .305 & .277 & 0.0\% & 0.0\% \\
-LocAgent & .398 & .358 & .479 & .498 & .407 & 0.0\% & 0.0\% \\
+Plain LLM (Haiku) & .323 & .270 & .297 & .161 & .165 & 10\% & 1\% & 1.88 & 2.57 & 36\% \\
+Plain LLM (Sonnet) & .368 & .284 & .374 & .264 & .425 & 17\% & 1\% & 0.71 & 0.95 & 20\% \\
+Single-agent RLM (Haiku) & .463 & .542 & .571 & .571 & .686 & 17\% & 1\% & 0.30 & 0.19 & 3\% \\
+Single-agent RLM (Sonnet) & .546 & .631 & .631 & .644 & .790 & 30\% & 2\% & 0.10 & 0.05 & 1\% \\
+Coordinator, REPL only (Haiku) & .512 & .564 & .616 & .641 & .730 & 30\% & 1\% & 0.19 & 0.09 & 2\% \\
+Coordinator only (Haiku) & .544 & .556 & .606 & .663 & .753 & 23\% & 1\% & 0.26 & 0.08 & 1\% \\
+Coordinator + registry map (Haiku) & .563 & .529 & .535 & .633 & .720 & 20\% & 1\% & 0.19 & 0.08 & 1\% \\
+Domain agents, adaptive (Haiku) & .516 & .538 & .561 & .629 & .730 & 23\% & 2\% & 0.38 & 0.12 & 2\% \\
+Codex CLI (GPT-6.1-Terra, high) & .585 & .656 & .691 & .715 & .757 & 30\% & 1\% & 0.37 & 0.01 & 0\% \\
+Reformulate-Retrieve-Localize & .288 & .212 & .284 & .415 & .269 & 10\% & 0\% & 0.00 & 0.01 & 0\% \\
+Agentless (file stage) & .322 & .259 & .363 & .307 & .300 & 0\% & 0\% & 0.00 & 0.00 & 0\% \\
+CoSIL (file stage) & .316 & .273 & .354 & .305 & .277 & 0\% & 0\% & 0.00 & 0.00 & 0\% \\
+LocAgent & .398 & .358 & .479 & .498 & .407 & 0\% & 0\% & 0.00 & 0.00 & 0\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table*}

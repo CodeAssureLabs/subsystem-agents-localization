@@ -30,7 +30,9 @@ from common import ANSIBLE_WINDOWS, HERE, NEW_WINDOWS, ROOT, bare_for, is_source
 
 from tokenizer import tokenize  # noqa: E402  (same tokenizer as the original BM25 baseline)
 
-EXTS = {".py", ".rst", ".txt", ".yml", ".yaml", ".cs", ".ps1", ".psm1", ".md", ".j2", ".ini", ".cfg"}
+# Every text format that occurs in a gold set, plus common configuration and template formats.
+EXTS = {".py", ".rst", ".txt", ".yml", ".yaml", ".cs", ".ps1", ".psm1", ".md", ".j2", ".ini", ".cfg",
+        ".asciidoc", ".adoc", ".html", ".sql", ".less", ".css", ".js", ".json", ".toml", ".sh"}
 KS = list(range(1, 31))
 TOPN = 300
 gold = load_gold()

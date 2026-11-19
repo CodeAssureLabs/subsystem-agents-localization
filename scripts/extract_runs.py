@@ -59,6 +59,52 @@ for y in ("2020", "2025", "2026"):
         RUNS[y].setdefault(f.stem.rsplit("_", 1)[0], []).append(str(f.relative_to(ROOT)))
 
 
+# IEEE Access revision (R1): corrected harness (isolated single-commit checkouts, access guard,
+# step-limit final answer, errors recorded) in new_runs_r1/<window>/<condition>_<n>.json.
+# These replace the earlier coordinator-only, domain-agent and Haiku RLM runs, which are kept
+# under the *_r0 names for the comparison reported in the response to reviewers.
+R1 = ROOT / "revision" / "new_runs_r1"
+R1_METHOD = {"nospawn": "ds_nospawn", "adaptive": "ds_adaptive", "repl": "ds_repl", "rlm": "rlm_haiku",
+             "rlm_sonnet": "rlm_sonnet", "codex": "codex", "nudged": "ds_nudged", "seeded": "ds_seeded",
+             "maponly": "ds_maponly"}
+R1_WINDOW = {"ansible_2020": "2020", "ansible_2025": "2025", "ansible_2026": "2026",
+             "openlibrary": "openlibrary", "qutebrowser": "qutebrowser"}
+for wdir, w in R1_WINDOW.items():
+    found = {}
+    for f in sorted((R1 / wdir).glob("*_[0-9].json")):
+        found.setdefault(R1_METHOD[f.stem.rsplit("_", 1)[0]], []).append(str(f.relative_to(ROOT)))
+    for m, files in found.items():
+        if m in RUNS[w]:
+            RUNS[w][m + "_r0"] = RUNS[w].pop(m)
+        RUNS[w][m] = files
+
+# The configurations that consult domain agents (adaptive, nudged, seeded) were run under the strict
+# guard with every action of every agent logged (harness action_log), in new_runs_r2/; these
+# replace their runs in new_runs_r1/.
+R2 = ROOT / "revision" / "new_runs_r2"
+R2_CONDITIONS = ("adaptive", "nudged", "seeded")
+for wdir, w in R1_WINDOW.items():
+    found = {}
+    for f in sorted((R2 / wdir).glob("*_[0-9].json")):
+        cond = f.stem.rsplit("_", 1)[0]
+        if cond in R2_CONDITIONS:
+            found.setdefault(R1_METHOD[cond], []).append(str(f.relative_to(ROOT)))
+    for m, files in found.items():
+        RUNS[w][m] = files
+
+
+def reported_reports():
+    """(window folder, report path) of every agentic run report that the paper uses."""
+    out = []
+    for wdir in R1_WINDOW:
+        for base in (R1, R2):
+            for f in sorted((base / wdir).glob("*_[0-9].json")):
+                cond = f.stem.rsplit("_", 1)[0]
+                if (base == R2) == (cond in R2_CONDITIONS):
+                    out.append((wdir, f))
+    return out
+
+
 # Published localization baselines (revision/baselines/results/<tool>/run<i>/), all windows.
 BASELINES = ROOT / "baselines"
 HAIKU = {"in": 1.0, "out": 5.0, "cache_write": 1.25, "cache_read": 0.10}  # $ per million tokens
@@ -118,13 +164,15 @@ def add_baselines(out):
                     by_window.setdefault(w, {})[iid] = rec
             for w, insts in by_window.items():
                 instances = {iid: {"pred": sorted({norm(p) for p in rec["pred"] if isinstance(p, str)}),
+                                   # The tools return ranked lists; keep the order for top-K evaluation.
+                                   "ranked": list(dict.fromkeys(norm(p) for p in rec["pred"] if isinstance(p, str))),
                                    "tokens": rec["tokens"], "cost_usd": rec["cost_usd"], "input_tokens": 0,
                                    "output_tokens": 0, "root_iterations": None, "repl_calls": None,
                                    "subagent_calls": None, "commit": None, "status": None} for iid, rec in insts.items()}
                 # Issues the tool never completed (e.g. a hung call that was capped) count as failures.
                 for iid in out["windows"][w]:
                     if iid not in instances:
-                        instances[iid] = {"pred": [], "tokens": 0, "cost_usd": 0.0, "input_tokens": 0,
+                        instances[iid] = {"pred": [], "ranked": [], "tokens": 0, "cost_usd": 0.0, "input_tokens": 0,
                                           "output_tokens": 0, "root_iterations": None, "repl_calls": None,
                                           "subagent_calls": None, "commit": None, "status": "failed"}
                 out["runs"].setdefault(w, {}).setdefault(tool, []).append({
@@ -132,11 +180,17 @@ def add_baselines(out):
                     "query_tokens": sum(v["tokens"] for v in instances.values()), "instances": instances})
 
 
+# Only strip what is not part of a repository-relative path: diff prefixes, a leading slash,
+# and an explicit checkout folder (owner__repo or repos/<name>/). Valid top-level directories
+# such as test/ must survive: test/lib/ansible_test/... is a real Ansible path.
+CHECKOUT_PREFIX = re.compile(r"^.*?(?:ansible__ansible|internetarchive__openlibrary|qutebrowser__qutebrowser|repos_isolated/[^/]+/[^/]+|repos/[^/]+/[^/]+)/")
+
+
 def norm(p):
     p = p.strip().strip("`'\"")
+    p = CHECKOUT_PREFIX.sub("", p)
     p = re.sub(r"^(\./|a/|b/)", "", p)
-    p = re.sub(r"^.*?/(?=(lib|docs|test|changelogs|hacking|packaging)/)", "", p)
-    return p
+    return p.lstrip("/")
 
 
 def preds(r):
@@ -175,7 +229,14 @@ def main():
                         "repl_calls": r.get("repl_calls"),
                         "subagent_calls": r.get("subagent_consult_calls"),
                         "commit": r.get("actual_commit") or x["benchmark"].get("fixed_commit"),
-                        "status": r.get("status"),
+                        # Some runner paths record a per-issue timeout only in the answer text.
+                        "status": "timeout" if "timed out after" in str(r.get("answer", "")) else r.get("status"),
+                        "error": r.get("error") or (str(r.get("answer", "")).startswith("|ERROR|") or None),
+                        "step_limit": r.get("step_limit_reached"),
+                        "tool_calls": len(r["tool_calls"]) if isinstance(r.get("tool_calls"), list) else None,
+                        "blocked": len(r.get("blocked_access") or []),
+                        "turns": r.get("turn_count"),
+                        "first_turn_refused": r.get("first_turn_answers_refused"),
                     }
                     meta = out["windows"].setdefault(window, {}).setdefault(iid, {})
                     if r.get("problem_statement"):

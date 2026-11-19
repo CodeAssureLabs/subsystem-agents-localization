@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Micro-F1 under the source gold set $G_{SRC}$, defined by the same rule in every repository. Each window shows the mean over $n$ independent runs with the 95\% Student-$t$ half-width across runs, omitted when $n=1$. Pooled is the micro-F1 over all 105 issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. Tokens is the mean number of input and output tokens per issue, excluding the one-off registry initialization. The non-LLM rankers return the top-$K$ files. $K$, and the learning-to-rank model, are chosen on other windows only, namely the two other Ansible windows for Ansible and all Ansible windows for the two added repositories. The best value per column is in bold and the second best is underlined.}
+\caption{Micro-F1 under the source gold set $G_{SRC}$, defined by the same rule in every repository. Each window shows the mean over $n$ independent runs with the 95\% Student-$t$ half-width across runs, omitted when $n=1$. Pooled is the micro-F1 over all 105 issues with a 95\% issue-level bootstrap CI (5{,}000 resamples), which reflects the sampling of issues rather than of runs. The published localizers are scored on their complete ranked lists and, in the rows marked top-$K$, on their first $K$ files with $K$ chosen on the other four windows. Tokens is the mean number of input and output tokens per issue, excluding the one-off registry initialization. The non-LLM rankers return the top-$K$ files. $K$, and the learning-to-rank model, are chosen on other windows only, namely the two other Ansible windows for Ansible and all Ansible windows for the two added repositories. The best value per column is in bold and the second best is underlined.}
 \label{tab:main}
 \small
 \setlength{\tabcolsep}{3.5pt}
@@ -11,23 +11,30 @@
 \cmidrule(lr){3-5}
 Method & $n$ & 2020 & 2025 & 2026 & \texttt{openlibrary} & \texttt{qutebrowser} & Pooled [95\% CI] & Tokens/issue \\
 \midrule
-Plain LLM (Haiku) & 5/3/3/3/3 & .257\,$\pm$\,.029 & .260\,$\pm$\,.025 & .325\,$\pm$\,.172 & .099\,$\pm$\,.017 & .097\,$\pm$\,.041 & .197 [.149, .250] & 1k \\
-Plain LLM (Sonnet) & 3/3/3/3/3 & .461\,$\pm$\,.028 & .301\,$\pm$\,.055 & .497\,$\pm$\,.027 & .223\,$\pm$\,.047 & .372\,$\pm$\,.127 & .356 [.291, .422] & 1k \\
-Single-agent RLM (Haiku) & 3/3/3/3/3 & .210\,$\pm$\,.305 & .261\,$\pm$\,.164 & .350\,$\pm$\,.151 & .177\,$\pm$\,.154 & .189\,$\pm$\,.059 & .188 [.134, .264] & 38k \\
-Single-agent RLM (Sonnet) & 5/3/3/3/3 & .435\,$\pm$\,.050 & .468\,$\pm$\,.191 & .698\,$\pm$\,.152 & .578\,$\pm$\,.126 & .643\,$\pm$\,.142 & .558 [.505, .614] & 0.30M \\
+Plain LLM (Haiku) & 5/3/3/3/3 & .257\,$\pm$\,.029 & .276\,$\pm$\,.014 & .322\,$\pm$\,.171 & .099\,$\pm$\,.017 & .097\,$\pm$\,.041 & .199 [.152, .253] & 1k \\
+Plain LLM (Sonnet) & 3/3/3/3/3 & .465\,$\pm$\,.033 & .322\,$\pm$\,.070 & .497\,$\pm$\,.027 & .223\,$\pm$\,.047 & .372\,$\pm$\,.127 & .362 [.297, .425] & 1k \\
+Single-agent RLM (Haiku) & 3/3/3/3/3 & .491\,$\pm$\,.113 & .571\,$\pm$\,.089 & .747\,$\pm$\,.055 & .528\,$\pm$\,.033 & .724\,$\pm$\,.071 & .598 [.538, .657] & 0.32M \\
+Single-agent RLM (Sonnet) & 1/1/1/1/1 & .618 & \underline{.698} & .786 & \underline{.653} & \textbf{.831} & \underline{.714 [.660, .767]} & 0.28M \\
 \midrule
-Coordinator only (Haiku) & 3/3/3/3/3 & .518\,$\pm$\,.140 & \underline{.551\,$\pm$\,.111} & .698\,$\pm$\,.142 & .593\,$\pm$\,.029 & .747\,$\pm$\,.071 & .620 [.561, .678] & 0.86M \\
-Domain agents, adaptive (Haiku) & 5/3/3/3/3 & \underline{.570\,$\pm$\,.034} & .539\,$\pm$\,.191 & \underline{.753\,$\pm$\,.133} & \underline{.604\,$\pm$\,.046} & \underline{.749\,$\pm$\,.015} & \underline{.637 [.589, .685]} & 1.00M \\
+Coordinator, REPL only (Haiku) & 3/3/3/3/3 & .588\,$\pm$\,.074 & .655\,$\pm$\,.072 & .799\,$\pm$\,.099 & .621\,$\pm$\,.050 & .766\,$\pm$\,.042 & .677 [.628, .724] & 0.65M \\
+Coordinator only (Haiku) & 3/3/3/3/3 & .618\,$\pm$\,.072 & .660\,$\pm$\,.173 & .776\,$\pm$\,.015 & .651\,$\pm$\,.037 & .793\,$\pm$\,.034 & .695 [.649, .742] & 0.85M \\
+Coordinator + registry map (Haiku) & 3/3/3/3/3 & \underline{.639\,$\pm$\,.019} & .659\,$\pm$\,.016 & \underline{.805\,$\pm$\,.029} & .616\,$\pm$\,.061 & .753\,$\pm$\,.049 & .684 [.634, .734] & 0.85M \\
+Domain agents, adaptive (Haiku) & 3/3/3/3/3 & .564\,$\pm$\,.051 & .636\,$\pm$\,.094 & .758\,$\pm$\,.066 & .609\,$\pm$\,.088 & .786\,$\pm$\,.092 & .664 [.614, .715] & 1.12M \\
 \midrule
-Codex 5.5 High (CLI) & 5/3/3/3/3 & \textbf{.684\,$\pm$\,.043} & \textbf{.629\,$\pm$\,.070} & \textbf{.829\,$\pm$\,.054} & \textbf{.682\,$\pm$\,.047} & \textbf{.833\,$\pm$\,.020} & \textbf{.724 [.673, .774]} & 0.86M \\
+Codex CLI (GPT-6.1-Terra, high) & 3/3/3/3/3 & \textbf{.678\,$\pm$\,.050} & \textbf{.712\,$\pm$\,.031} & \textbf{.872\,$\pm$\,.029} & \textbf{.718\,$\pm$\,.025} & \underline{.811\,$\pm$\,.012} & \textbf{.751 [.701, .800]} & 0.11M \\
 \midrule
-Reformulate-Retrieve-Localize & 3/3/3/3/3 & .392\,$\pm$\,.000 & .293\,$\pm$\,.000 & .360\,$\pm$\,.000 & .484\,$\pm$\,.000 & .330\,$\pm$\,.015 & .375 [.332, .417] & 0.29M \\
-Agentless (file stage) & 3/3/3/3/3 & .444\,$\pm$\,.000 & .352\,$\pm$\,.000 & .475\,$\pm$\,.000 & .355\,$\pm$\,.000 & .373\,$\pm$\,.000 & .395 [.350, .441] & 4k \\
-CoSIL (file stage) & 3/3/3/3/3 & .415\,$\pm$\,.000 & .363\,$\pm$\,.018 & .456\,$\pm$\,.000 & .351\,$\pm$\,.012 & .333\,$\pm$\,.014 & .378 [.338, .419] & 4k \\
-LocAgent & 3/3/3/3/3 & .550\,$\pm$\,.084 & .475\,$\pm$\,.045 & .614\,$\pm$\,.089 & .578\,$\pm$\,.065 & .499\,$\pm$\,.053 & .540 [.490, .591] & 1.37M \\
+Reformulate-Retrieve-Localize & 3/3/3/3/3 & .392\,$\pm$\,.000 & .293\,$\pm$\,.000 & .360\,$\pm$\,.000 & .484\,$\pm$\,.000 & .330\,$\pm$\,.015 & .375 [.330, .418] & 0.29M \\
+Agentless (file stage) & 3/3/3/3/3 & .444\,$\pm$\,.000 & .352\,$\pm$\,.000 & .475\,$\pm$\,.000 & .355\,$\pm$\,.000 & .373\,$\pm$\,.000 & .395 [.351, .440] & 4k \\
+CoSIL (file stage) & 3/3/3/3/3 & .415\,$\pm$\,.000 & .363\,$\pm$\,.018 & .456\,$\pm$\,.000 & .351\,$\pm$\,.012 & .333\,$\pm$\,.014 & .378 [.337, .418] & 4k \\
+LocAgent & 3/3/3/3/3 & .550\,$\pm$\,.084 & .475\,$\pm$\,.045 & .614\,$\pm$\,.089 & .578\,$\pm$\,.065 & .499\,$\pm$\,.053 & .540 [.488, .592] & 1.37M \\
 \midrule
-BM25 & det. & .310 & .298 & .432 & .464 & .448 & -- & -- \\
-Learning-to-rank & det. & .390 & .347 & .436 & .452 & .446 & -- & -- \\
+RRL, held-out top-$K$ & 3/3/3/3/3 & .408\,$\pm$\,.000 & .281\,$\pm$\,.000 & .376\,$\pm$\,.000 & .479\,$\pm$\,.000 & .351\,$\pm$\,.017 & .382 [.337, .427] & 0.29M \\
+Agentless, held-out top-$K$ & 3/3/3/3/3 & .525\,$\pm$\,.000 & .345\,$\pm$\,.000 & .562\,$\pm$\,.000 & .372\,$\pm$\,.000 & .382\,$\pm$\,.000 & .429 [.379, .480] & 4k \\
+CoSIL, held-out top-$K$ & 3/3/3/3/3 & .423\,$\pm$\,.000 & .399\,$\pm$\,.056 & .504\,$\pm$\,.035 & .371\,$\pm$\,.000 & .377\,$\pm$\,.041 & .409 [.363, .455] & 4k \\
+LocAgent, held-out top-$K$ & 3/3/3/3/3 & .589\,$\pm$\,.052 & .466\,$\pm$\,.027 & .705\,$\pm$\,.027 & .627\,$\pm$\,.047 & .560\,$\pm$\,.002 & .586 [.545, .627] & 1.37M \\
+\midrule
+BM25 & det. & .310 & .314 & .432 & .500 & .448 & -- & -- \\
+Learning-to-rank & det. & .390 & .347 & .416 & .476 & .448 & -- & -- \\
 \bottomrule
 \end{tabular}}
 \end{table*}
